@@ -1,0 +1,103 @@
+# Configuration unique de l'agent EURUSD. Aucune règle de risque ou de coût n'est codée en dur ailleurs.
+# Règles FTMO vérifiées le 2026-10-29 sur https://ftmo.com/en/trading-objectives/ (2-Step).
+
+data:
+  path: ../data_eurusd/EURUSD_M1_2015_2026.npz.xz     # relatif à la racine du dépôt
+  sha256: 2fc008d46678332ce68dba20af54fa283df49c02e17a8ee20158e5b1f721a56e
+  point: 0.00001
+  contract_size: 100000
+  # jours serveur exclus car partiels (premier jour d'export, jour d'export en cours)
+  drop_server_days: ["2015-01-02", "2026-10-29"]
+
+splits:                       # dates UTC, bornes incluses ; aucun accès au test dans ce dépôt
+  train:       ["2015-01-05", "2025-06-30"]
+  calibration: ["2025-07-01", "2025-12-31"]
+  validation:  ["2026-01-01", "2026-10-28"]
+  validation_blocks: [["2026-01-01", "2026-04-30"], ["2026-05-01", "2026-07-31"], ["2026-08-01", "2026-10-28"]]
+  protected_test_from: "2026-11-02"   # données forward, consultées une seule fois après gel + autorisation
+
+challenge:                    # FTMO 2-Step, compte Swing
+  account_type: swing
+  initial_capital: 10000.0
+  currency: USD
+  leverage: 30.0
+  profit_target_phase1: 0.10
+  profit_target_phase2: 0.05
+  max_daily_loss: 0.05        # du capital initial ; base = solde à 00:00 Europe/Prague ; équité flottante incluse
+  max_total_loss: 0.10        # statique, du capital initial
+  daily_reset_tz: Europe/Prague
+  min_trading_days: 4
+  max_duration_days: null
+
+internal_risk:                # limites internes plus prudentes que FTMO
+  risk_per_trade: 0.005       # fraction du capital initial (R)
+  daily_halt: 0.015           # arrêt des entrées du jour FTMO, équité flottante incluse
+  weekly_halt: 0.04           # arrêt des entrées de la semaine (lundi-vendredi, jour serveur)
+  total_halt: 0.08            # arrêt global des entrées
+  max_trades_per_day: 3
+  max_margin_usage: 0.9       # fraction de l'équité utilisable en marge
+
+session:                      # heure serveur = heure de New York + 7 h (journée serveur = 17:00 NY)
+  entry_start_ny: "02:00"
+  entry_end_ny: "16:00"       # aucune nouvelle entrée à partir de cette heure
+  force_close_ny: "16:45"     # clôture forcée (avant le rollover de 17:00 NY)
+  decision_tf: 5min
+
+execution:
+  commission_per_lot_side: 3.5     # USD, valeur prudente par défaut, à confirmer sur un trade démo Swing
+  entry_slippage_pts: 2            # 0,2 pip
+  exit_slippage_pts: 2
+  stop_slippage_pts: 5             # 0,5 pip en plus sur les stops
+  latency_bars_m1: 0               # 0 = remplissage à l'ouverture de la barre M1 qui suit la décision
+  spread:
+    profile_fit: ["2022-01-03", "2024-12-31"]   # dans l'entraînement ; p75 par quart d'heure serveur
+    profile_quantile: 0.75
+    trust_observed_from: "2022-01-01"            # avant : spreads historiques non homogènes (7-8 pts, 50 pts constants)
+    floor_pts: 1
+    stress_multiplier: 1.0                       # 1.5 pour le test de stress
+
+trade:
+  stop_atr_tf: 15min
+  stop_atr_period: 14
+  stop_atr_mult: 1.0
+  min_stop_cost_mult: 3.0     # stop >= 3 x coût aller-retour
+  min_stop_pts: 30            # 3 pips
+  take_profit_r: 4.0
+
+reward:
+  violation_penalty_r: 10.0   # pénalité (en R) pour une violation FTMO
+  invalid_action_penalty_r: 0.0
+
+ppo:                          # étape A : PPO compact
+  n_env: 16
+  n_steps: 256                # pas par environnement et par mise à jour
+  episode_days: 5
+  gamma: 0.995
+  gae_lambda: 0.95
+  clip: 0.2
+  lr: 0.0003
+  epochs: 4
+  minibatch: 1024
+  value_coef: 0.5
+  entropy_coef: 0.01
+  max_grad_norm: 0.5
+  hidden: 32
+  fuse: 64
+  timeframes: [M5, H1]
+  eval_every: 25              # mises à jour entre deux évaluations sur la calibration
+  checkpoint_every: 25
+
+promotion:                    # un candidat remplace le champion seulement si TOUT est vrai (validation, coûts stressés, >= 5 seeds)
+  min_seeds: 5
+  median_mean_R: 0.10
+  median_profit_factor: 1.15
+  min_block_return_pct: -3.0
+  max_drawdown_pct: 6.0
+  worst_seed_max_drawdown_pct: 8.0
+  max_violations: 0
+  max_top5_days_share: 0.50
+  trades_per_day: [0.3, 3.0]
+  mc_p_pass_min: 0.50
+  mc_p_fail_max: 0.20
+  mc_median_days_max: 30
+  must_beat: best_explicit_strategy   # le premier champion = meilleure stratégie explicite (étape B)

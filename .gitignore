@@ -8,3 +8,6 @@ __pycache__/
 *.csv
 .env
 STOP
+
+runs/
+.pytest_cache/
