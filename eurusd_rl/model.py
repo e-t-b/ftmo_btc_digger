@@ -24,7 +24,7 @@ class TFEncoder(nn.Module):
 
 
 class ActorCritic(nn.Module):
-    def __init__(self, tfs=("M5", "H1"), h: int = 32, fuse: int = 64, n_actions: int = 4):
+    def __init__(self, tfs=("M5", "H1"), h: int = 32, fuse: int = 64, n_actions: int = 4, wait_bias: float = 0.0):
         super().__init__()
         self.tfs = tuple(tfs)
         self.enc = nn.ModuleDict({tf: TFEncoder(len(BAR_FEATS), h) for tf in self.tfs})
@@ -35,6 +35,8 @@ class ActorCritic(nn.Module):
         self.pi = nn.Linear(fuse, n_actions)
         self.v = nn.Linear(fuse, 1)
         nn.init.orthogonal_(self.pi.weight, 0.01); nn.init.zeros_(self.pi.bias)
+        with torch.no_grad():
+            self.pi.bias[0] = wait_bias          # exploration étalée : entrées et sorties rares au départ
         nn.init.orthogonal_(self.v.weight, 1.0); nn.init.zeros_(self.v.bias)
 
     def forward(self, obs: dict):

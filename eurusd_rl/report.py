@@ -33,7 +33,7 @@ class Uniform(torch.nn.Module):
 
 def load_policy(path: Path, cfg: dict) -> ActorCritic:
     P = cfg["ppo"]
-    m = ActorCritic(P["timeframes"], P["hidden"], P["fuse"])
+    m = ActorCritic(P["timeframes"], P["hidden"], P["fuse"], wait_bias=P.get("wait_bias_init", 0.0))
     m.load_state_dict(load_ckpt(path)["model"])
     m.eval()
     return m

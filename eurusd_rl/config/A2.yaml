@@ -1,0 +1,9 @@
+# Pilote A2 : corrige l'absence d'apprentissage de A1 (KL ~1e-5, récompense plate).
+# 1) perte de politique limitée aux pas avec un vrai choix (97 % des pas n'ont que WAIT de valide) ;
+# 2) biais initial WAIT = +4 : ~1,7 % de probabilité d'entrée par pas et durée de détention initiale ~4 h,
+#    au lieu d'une politique uniforme qui épuise les 3 trades du jour dans les premières minutes.
+base: default.yaml
+override:
+  ppo:
+    wait_bias_init: 4.0
+    policy_loss_on_choices_only: true

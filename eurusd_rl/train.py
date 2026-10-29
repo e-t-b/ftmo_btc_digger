@@ -88,7 +88,7 @@ def train(cfg: dict, run: Path, seed: int, updates: int, resume: bool = False, m
     lo, hi = period_bounds(mk, cfg["splits"]["train"])
     clo, chi = period_bounds(mk, cfg["splits"]["calibration"])
     venv = E.VecEnv(mk, cfg, P["n_env"], lo, hi, episode_days=P["episode_days"], seed=seed)
-    model = ActorCritic(P["timeframes"], P["hidden"], P["fuse"])
+    model = ActorCritic(P["timeframes"], P["hidden"], P["fuse"], wait_bias=P.get("wait_bias_init", 0.0))
     opt = torch.optim.Adam(model.parameters(), lr=P["lr"], eps=1e-5)
     start, best = 0, -np.inf
     hist_path = run / "validation_history.jsonl"
@@ -130,7 +130,9 @@ def train(cfg: dict, run: Path, seed: int, updates: int, resume: bool = False, m
         keys = buf.obs[0].keys()
         flat = {k: np.concatenate([o[k] for o in buf.obs]) for k in keys}
         A = buf.act.reshape(-1); LP = buf.logp.reshape(-1); ADV = adv.reshape(-1); RET = ret.reshape(-1)
-        ADV = (ADV - ADV.mean()) / (ADV.std() + 1e-8)
+        # seuls les pas avec un vrai choix (>= 2 actions valides) entrent dans la perte de politique
+        CHOICE = flat["mask"].sum(1) >= 2 if P.get("policy_loss_on_choices_only", False) else np.ones(len(A), bool)
+        ADV = (ADV - ADV[CHOICE].mean()) / (ADV[CHOICE].std() + 1e-8)
         model.train()
         n = len(A)
         g = np.random.default_rng(seed * 100003 + u)
@@ -145,24 +147,26 @@ def train(cfg: dict, run: Path, seed: int, updates: int, resume: bool = False, m
                 lp = lp_all.gather(1, torch.from_numpy(A[idx])[:, None]).squeeze(1)
                 ratio = torch.exp(lp - torch.from_numpy(LP[idx]))
                 adv_t = torch.from_numpy(ADV[idx]).float()
-                pl = -torch.min(ratio * adv_t, torch.clamp(ratio, 1 - P["clip"], 1 + P["clip"]) * adv_t).mean()
+                ch = torch.from_numpy(CHOICE[idx])
+                surr = torch.min(ratio * adv_t, torch.clamp(ratio, 1 - P["clip"], 1 + P["clip"]) * adv_t)
+                pl = -(surr * ch).sum() / ch.sum().clamp(min=1)
                 vl = Fnn.mse_loss(v, torch.from_numpy(RET[idx]).float())
                 p_all = lp_all.exp()
-                ent = -(p_all * torch.where(p_all > 0, lp_all, torch.zeros_like(lp_all))).sum(-1).mean()
+                ent = (-(p_all * torch.where(p_all > 0, lp_all, torch.zeros_like(lp_all))).sum(-1) * ch).sum() / ch.sum().clamp(min=1)
                 loss = pl + P["value_coef"] * vl - P["entropy_coef"] * ent
                 opt.zero_grad()
                 loss.backward()
                 torch.nn.utils.clip_grad_norm_(model.parameters(), P["max_grad_norm"])
                 opt.step()
                 with torch.no_grad():
-                    kl = ((ratio - 1) - torch.log(ratio)).mean().item()
-                    cf = ((ratio - 1).abs() > P["clip"]).float().mean().item()
+                    kl = (((ratio - 1) - torch.log(ratio)) * ch).sum().item() / max(ch.sum().item(), 1)
+                    cf = (((ratio - 1).abs() > P["clip"]).float() * ch).sum().item() / max(ch.sum().item(), 1)
                 stats.append((pl.item(), vl.item(), ent.item(), kl, cf))
         s = np.mean(stats, 0)
         rec = {"update": u + 1, "steps": (u + 1) * T * N, "reward_per_step": float(buf.rew.mean()),
                "reward_sum_R": float(buf.rew.sum()), "policy_loss": s[0], "value_loss": s[1], "entropy": s[2],
                "approx_kl": s[3], "clip_frac": s[4], "actions_share": (act_count / act_count.sum()).round(4).tolist(),
-               "elapsed_s": round(time.time() - t0, 1)}
+               "choice_share": float(CHOICE.mean()), "elapsed_s": round(time.time() - t0, 1)}
         progress.append(rec)
         with open(run / "progress.jsonl", "a", encoding="utf-8") as f:
             f.write(json.dumps(rec) + "\n")

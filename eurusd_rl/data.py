@@ -20,10 +20,24 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 
 
+def _merge(a: dict, b: dict) -> dict:
+    out = dict(a)
+    for k, v in b.items():
+        out[k] = _merge(a[k], v) if isinstance(v, dict) and isinstance(a.get(k), dict) else v
+    return out
+
+
 def load_config(path: str | Path | None = None) -> dict:
+    """Charge une config. Une config d'expérience peut déclarer `base:` (fichier voisin) et `override:`."""
     p = Path(path) if path else Path(__file__).parent / "config" / "default.yaml"
+    if not p.is_absolute() and not p.exists():
+        p = Path(__file__).parent / "config" / p
     with open(p, encoding="utf-8") as f:
-        return yaml.safe_load(f)
+        cfg = yaml.safe_load(f)
+    if "base" in cfg:
+        base = load_config(p.parent / cfg["base"])
+        cfg = _merge(base, cfg.get("override", {}))
+    return cfg
 
 
 def sha256_file(path: str | Path) -> str:
