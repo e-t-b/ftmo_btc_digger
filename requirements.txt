@@ -4,3 +4,4 @@ scipy
 matplotlib
 pyarrow
 MetaTrader5; sys_platform == 'win32'
+numba

@@ -1,0 +1,139 @@
+{
+  "period": {
+    "start": "2018-01-01",
+    "end": "2024-06-30"
+  },
+  "metrics": {
+    "n": 382,
+    "expectancy_r": -0.0644,
+    "pf": 0.823,
+    "hit": 0.353,
+    "total_pct": -12.06,
+    "max_dd_pct": -19.96,
+    "max_dd_intraday_pct": -20.23,
+    "worst_day_pct": -0.98,
+    "worst_intraday_day_pct": -0.98,
+    "day_stops": 0
+  },
+  "per_symbol": {
+    "EURUSD": {
+      "n": 0,
+      "expectancy_r": null,
+      "pnl_pct": 0.0
+    },
+    "USDJPY": {
+      "n": 250,
+      "expectancy_r": -0.0879,
+      "pnl_pct": -10.79
+    },
+    "AUDUSD": {
+      "n": 0,
+      "expectancy_r": null,
+      "pnl_pct": 0.0
+    },
+    "US100.cash": {
+      "n": 132,
+      "expectancy_r": -0.0198,
+      "pnl_pct": -1.27
+    },
+    "BTCUSD": {
+      "n": 0,
+      "expectancy_r": null,
+      "pnl_pct": 0.0
+    }
+  },
+  "per_year": [
+    {
+      "year": 2018,
+      "n": 109,
+      "exp_r": 0.042,
+      "pnl_pct": 2.201
+    },
+    {
+      "year": 2019,
+      "n": 39,
+      "exp_r": -0.174,
+      "pnl_pct": -3.307
+    },
+    {
+      "year": 2023,
+      "n": 124,
+      "exp_r": -0.105,
+      "pnl_pct": -6.386
+    },
+    {
+      "year": 2024,
+      "n": 110,
+      "exp_r": -0.085,
+      "pnl_pct": -4.566
+    }
+  ],
+  "stress": {
+    "n": 382,
+    "expectancy_r": -0.096,
+    "pf": 0.748,
+    "hit": 0.343,
+    "total_pct": -17.82,
+    "max_dd_pct": -25.15,
+    "max_dd_intraday_pct": -25.43,
+    "worst_day_pct": -1.01,
+    "worst_intraday_day_pct": -1.01,
+    "day_stops": 0
+  },
+  "robustness": {
+    "USDJPY": {
+      "cfg": "N60_L50_lo0.15_hi1.0_k3.5",
+      "mean_r": 0.0388,
+      "neighbours": {
+        "N30_L50_lo0.15_hi1.0_k3.5": 0.0169,
+        "N60_L20_lo0.15_hi1.0_k3.5": 0.024,
+        "N60_L50_lo0.0_hi1.0_k3.5": 0.0183,
+        "N60_L50_lo0.15_hi0.5_k3.5": 0.041,
+        "N60_L50_lo0.15_hi1.0_k2.0": -0.0525
+      },
+      "ok": true
+    },
+    "US100.cash": {
+      "cfg": "N60_L20_lo0.0_hi1.0_k3.5",
+      "mean_r": 0.0966,
+      "neighbours": {
+        "N30_L20_lo0.0_hi1.0_k3.5": 0.1057,
+        "N60_L50_lo0.0_hi1.0_k3.5": 0.09,
+        "N60_L20_lo0.15_hi1.0_k3.5": 0.0959,
+        "N60_L20_lo0.0_hi0.5_k3.5": 0.1042,
+        "N60_L20_lo0.0_hi1.0_k2.0": 0.056
+      },
+      "ok": true
+    }
+  },
+  "monte_carlo": {
+    "p_pass": 0.00015,
+    "p_fail_phase1": 0.0061,
+    "p_fail_phase2": 0.0,
+    "p_unresolved": 0.99375,
+    "median_days_phase1": 198.0,
+    "median_days_total": 403.0
+  },
+  "tp4r_reference": {
+    "USDJPY": {
+      "trailing_mean_r": 0.0388,
+      "tp4r_mean_r": -0.041
+    },
+    "US100.cash": {
+      "trailing_mean_r": 0.0966,
+      "tp4r_mean_r": 0.1006
+    }
+  },
+  "checks": {
+    "1_trades>=300": true,
+    "2_expectancy>=0.20R": false,
+    "3_PF>=1.3": false,
+    "4_maxDD<=6%": false,
+    "5_MC_pass>=50%": false,
+    "6_stress_expectancy>0": false,
+    "7_robustness": true
+  },
+  "dev_pass": false,
+  "semesters_traded": 7,
+  "semesters_total": 49
+}
