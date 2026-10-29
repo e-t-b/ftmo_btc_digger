@@ -22,9 +22,15 @@ import common
 from common import resample
 from data import load_mt5_csv
 
-SESSIONS = {"tokyo": ("Asia/Tokyo", 9, 0), "london": ("Europe/London", 8, 0), "ny": ("America/New_York", 9, 30)}
+SESSIONS = {"tokyo": ("Asia/Tokyo", 9, 0), "london": ("Europe/London", 8, 0), "ny": ("America/New_York", 9, 30),
+            "frankfurt": ("Europe/Berlin", 9, 0)}
+# sessions testées par instrument : forex/BTC = les 3 sessions ; indices cash = leur propre ouverture
+PAIR_SESSIONS = {"US100.cash": ["ny"], "US500.cash": ["ny"], "US30.cash": ["ny"], "GER40.cash": ["frankfurt"],
+                 "UK100.cash": ["london"], "JP225.cash": ["tokyo"]}
 COSTS = {"EURUSD": dict(comm=0.45, slip=0.2, lev=30.0), "GBPUSD": dict(comm=0.38, slip=0.2, lev=30.0),
          "BTCUSD": dict(comm=6.5, slip=1.0, lev=2.0)}
+for _k in ("US100.cash", "US500.cash", "US30.cash", "GER40.cash", "UK100.cash", "JP225.cash"):
+    COSTS[_k] = dict(comm=0.0, slip=0.2, lev=20.0)          # indices FTMO : 0 commission, spread réel dans les données
 WINDOW_MIN, HOLD_MIN, TP_R = 120, 240, 2.0
 RISK, MAX_PER_SESSION, DAY_HALT, WEEK_HALT, MIN_R_COSTS = 0.005, 2, 0.025, 0.06, 3.0
 
@@ -46,9 +52,11 @@ def prep(m1):
     return dict(t=t, o=o, h=h, l=l, c=c, s=m5["spread_px"].to_numpy(float), bull=bull, bear=bear, trend=trend)
 
 
-def session_opens(first, last):
+def session_opens(first, last, names=None):
     out = []
     for name, (tz, hh, mm) in SESSIONS.items():
+        if names is not None and name not in names:
+            continue
         for d in pd.date_range(first.normalize() - pd.Timedelta(days=1), last.normalize() + pd.Timedelta(days=1), freq="B"):
             ts = pd.Timestamp(d.year, d.month, d.day, hh, mm, tz=tz).tz_convert("UTC").tz_localize(None)
             out.append((ts, name))
@@ -169,6 +177,7 @@ if __name__ == "__main__":
     ap.add_argument("--pairs", default="EURUSD,GBPUSD,BTCUSD")
     ap.add_argument("--split", default="2025-07-01")
     ap.add_argument("--out", default="results_sess")
+    ap.add_argument("--prior-trials", type=int, default=0, help="essais déjà comptés (DSR)")
     a = ap.parse_args()
     out = Path(a.out); out.mkdir(exist_ok=True)
     rows, series = [], {}
@@ -177,7 +186,7 @@ if __name__ == "__main__":
         m1 = load_mt5_csv(f"{a.data_dir}/{pair}_M1.csv")
         P = prep(m1)
         first, last = m1.index[0], m1.index[-1]
-        opens = session_opens(first + pd.Timedelta(days=30), last - pd.Timedelta(days=1))
+        opens = session_opens(first + pd.Timedelta(days=30), last - pd.Timedelta(days=1), PAIR_SESSIONS.get(pair))
         start, end, split = first + pd.Timedelta(days=30), last, pd.Timestamp(a.split)
         print(f"{pair}: {len(m1):,} M1 | {len(opens)} ouvertures | {start.date()} -> {end.date()}", flush=True)
         for N, mname, pat in product((15, 30), modes_grid, (0, 1)):
@@ -204,4 +213,4 @@ if __name__ == "__main__":
         b = sub.sort_values("in_sharpe", ascending=False).iloc[0]
         d = series[b.tag]
         print(f"{pair}: meilleur en échantillon = {b.tag} (Sharpe in {b.in_sharpe}) -> hors échantillon : n={b.out_n}, R net={b.out_R_net}, "
-              f"Sharpe={b.out_sharpe}, pire jour {b.out_pire_jour_pct}%, pire semaine {b.out_pire_semaine_pct}% | DSR plein échantillon={common.dsr(d, sr, len(sr)):.4f}")
+              f"Sharpe={b.out_sharpe}, pire jour {b.out_pire_jour_pct}%, pire semaine {b.out_pire_semaine_pct}% | DSR plein échantillon={common.dsr(d, sr, len(sr) + a.prior_trials):.4f}")
