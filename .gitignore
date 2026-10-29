@@ -1,0 +1,10 @@
+mt5_export/
+data/
+cache/
+results*/
+logs/
+__pycache__/
+*.pkl
+*.csv
+.env
+STOP
