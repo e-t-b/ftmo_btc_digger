@@ -110,24 +110,24 @@ def run_config(P, opens, pair, N, modes, pat):
             if i <= busy_until:
                 i += 1
                 continue
-            tr, sig, stop = P["trend"][i], 0, None
+            tr, sig, stop, kind = P["trend"][i], 0, None, ''
             ci, hi, li = c[i], h[i], l[i]
             if broke_up: ext_hi = max(ext_hi, hi)
             if broke_dn: ext_lo = min(ext_lo, li)
             long_pat = (not pat) or P["bull"][i]
             short_pat = (not pat) or P["bear"][i]
             if "ret" in modes and broke_up and li <= H + 0.1 * rng and ci > H and tr >= 0 and long_pat:
-                sig, stop, broke_up = 1, li - 0.15 * rng, False
+                sig, stop, broke_up = 1, li - 0.15 * rng, False; kind = 'ret'
             elif "ret" in modes and broke_dn and hi >= L - 0.1 * rng and ci < L and tr <= 0 and short_pat:
-                sig, stop, broke_dn = -1, hi + 0.15 * rng, False
+                sig, stop, broke_dn = -1, hi + 0.15 * rng, False; kind = 'ret'
             elif "rev" in modes and broke_up and ci < H and short_pat:
-                sig, stop, broke_up = -1, ext_hi + 0.05 * rng, False
+                sig, stop, broke_up = -1, ext_hi + 0.05 * rng, False; kind = 'rev'
             elif "rev" in modes and broke_dn and ci > L and long_pat:
-                sig, stop, broke_dn = 1, ext_lo - 0.05 * rng, False
+                sig, stop, broke_dn = 1, ext_lo - 0.05 * rng, False; kind = 'rev'
             elif "brk" in modes and (not broke_up) and (not broke_dn) and ci > H and ci - H <= rng and tr >= 1 and long_pat:
-                sig, stop = 1, mid
+                sig, stop = 1, mid; kind = 'brk'
             elif "brk" in modes and (not broke_up) and (not broke_dn) and ci < L and L - ci <= rng and tr <= -1 and short_pat:
-                sig, stop = -1, mid
+                sig, stop = -1, mid; kind = 'brk'
             if ci > H and not broke_dn and not broke_up and sig != -1:
                 broke_up, ext_hi = True, max(ext_hi, hi)
             if ci < L and not broke_up and not broke_dn and sig != 1:
@@ -146,7 +146,7 @@ def run_config(P, opens, pair, N, modes, pat):
                         notional = min(RISK / (R / entry), cs["lev"])
                         pnl = notional * r_net
                         te = pd.Timestamp(int(t[k]), unit="s")
-                        trades.append(dict(entry_time=pd.Timestamp(int(t[j]), unit="s"), exit_time=te, session=name, dir=sig,
+                        trades.append(dict(entry_time=pd.Timestamp(int(t[j]), unit="s"), exit_time=te, session=name, dir=sig, kind=kind, opr_bps=rng / mid * 1e4, trend=tr, k_after=i - i0, spread_bps=s[j] / o[j] * 1e4,
                                            R_bps=R / entry * 1e4, why=why, R_net=r_net / (R / entry), R_gross=r_gross / (R / entry),
                                            net=pnl))
                         day_pnl[te.normalize()] = day_pnl.get(te.normalize(), 0.0) + pnl
