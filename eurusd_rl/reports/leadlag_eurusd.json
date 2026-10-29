@@ -1,0 +1,583 @@
+{
+ "thresholds": {
+  "min_pips": 2.0,
+  "min_t": 3.1,
+  "min_year_share": 0.7
+ },
+ "n_tests": 24,
+ "results": {
+  "L1_GBPUSD_1min": {
+   "train": {
+    "n": 3543676,
+    "mean_pips": 0.005,
+    "t": 5.98,
+    "year_share_same_sign": 0.909,
+    "by_year": {
+     "2015": 0.0,
+     "2016": 0.01,
+     "2017": 0.0,
+     "2018": 0.01,
+     "2019": 0.0,
+     "2020": 0.01,
+     "2021": 0.0,
+     "2022": -0.0,
+     "2023": 0.01,
+     "2024": 0.01,
+     "2025": 0.01
+    }
+   },
+   "calibration": {
+    "n": 171935,
+    "mean_pips": -0.003,
+    "t": -1.08,
+    "year_share_same_sign": 1.0
+   },
+   "exploitable": false
+  },
+  "L2_GBPUSD_1min": {
+   "train": {
+    "n": 173504,
+    "mean_pips": 0.007,
+    "t": 0.91,
+    "year_share_same_sign": 0.455,
+    "by_year": {
+     "2015": -0.05,
+     "2016": 0.11,
+     "2017": -0.02,
+     "2018": -0.02,
+     "2019": 0.01,
+     "2020": 0.03,
+     "2021": -0.01,
+     "2022": -0.01,
+     "2023": -0.0,
+     "2024": 0.02,
+     "2025": 0.02
+    }
+   },
+   "calibration": {
+    "n": 8079,
+    "mean_pips": 0.006,
+    "t": 0.2,
+    "year_share_same_sign": 1.0
+   },
+   "exploitable": false
+  },
+  "L1_GBPUSD_5min": {
+   "train": {
+    "n": 707723,
+    "mean_pips": -0.019,
+    "t": -4.6,
+    "year_share_same_sign": 0.818,
+    "by_year": {
+     "2015": -0.05,
+     "2016": -0.02,
+     "2017": -0.03,
+     "2018": -0.05,
+     "2019": -0.01,
+     "2020": -0.01,
+     "2021": -0.02,
+     "2022": -0.02,
+     "2023": -0.01,
+     "2024": 0.03,
+     "2025": 0.0
+    }
+   },
+   "calibration": {
+    "n": 34299,
+    "mean_pips": -0.003,
+    "t": -0.2,
+    "year_share_same_sign": 1.0
+   },
+   "exploitable": false
+  },
+  "L2_GBPUSD_5min": {
+   "train": {
+    "n": 34580,
+    "mean_pips": -0.061,
+    "t": -1.89,
+    "year_share_same_sign": 0.636,
+    "by_year": {
+     "2015": -0.34,
+     "2016": 0.04,
+     "2017": 0.02,
+     "2018": -0.08,
+     "2019": -0.1,
+     "2020": 0.09,
+     "2021": -0.13,
+     "2022": -0.09,
+     "2023": -0.11,
+     "2024": 0.07,
+     "2025": -0.06
+    }
+   },
+   "calibration": {
+    "n": 1503,
+    "mean_pips": -0.001,
+    "t": -0.01,
+    "year_share_same_sign": 1.0
+   },
+   "exploitable": false
+  },
+  "L1_GBPUSD_15min": {
+   "train": {
+    "n": 235720,
+    "mean_pips": -0.032,
+    "t": -2.59,
+    "year_share_same_sign": 0.909,
+    "by_year": {
+     "2015": -0.09,
+     "2016": -0.05,
+     "2017": -0.03,
+     "2018": -0.01,
+     "2019": 0.0,
+     "2020": -0.04,
+     "2021": -0.0,
+     "2022": -0.01,
+     "2023": -0.07,
+     "2024": -0.02,
+     "2025": -0.03
+    }
+   },
+   "calibration": {
+    "n": 11431,
+    "mean_pips": -0.046,
+    "t": -1.01,
+    "year_share_same_sign": 1.0
+   },
+   "exploitable": false
+  },
+  "L2_GBPUSD_15min": {
+   "train": {
+    "n": 11919,
+    "mean_pips": -0.019,
+    "t": -0.21,
+    "year_share_same_sign": 0.545,
+    "by_year": {
+     "2015": -0.39,
+     "2016": -0.13,
+     "2017": -0.03,
+     "2018": -0.14,
+     "2019": 0.18,
+     "2020": -0.0,
+     "2021": -0.15,
+     "2022": 0.27,
+     "2023": 0.08,
+     "2024": 0.12,
+     "2025": 0.03
+    }
+   },
+   "calibration": {
+    "n": 470,
+    "mean_pips": 0.256,
+    "t": 0.56,
+    "year_share_same_sign": 1.0
+   },
+   "exploitable": false
+  },
+  "L1_GBPUSD_60min": {
+   "train": {
+    "n": 57048,
+    "mean_pips": 0.073,
+    "t": 1.44,
+    "year_share_same_sign": 0.545,
+    "by_year": {
+     "2015": 0.18,
+     "2016": 0.3,
+     "2017": 0.13,
+     "2018": -0.0,
+     "2019": 0.52,
+     "2020": -0.18,
+     "2021": -0.09,
+     "2022": 0.15,
+     "2023": 0.1,
+     "2024": -0.14,
+     "2025": -0.37
+    }
+   },
+   "calibration": {
+    "n": 2738,
+    "mean_pips": -0.119,
+    "t": -0.64,
+    "year_share_same_sign": 1.0
+   },
+   "exploitable": false
+  },
+  "L2_GBPUSD_60min": {
+   "train": {
+    "n": 3131,
+    "mean_pips": 0.801,
+    "t": 2.6,
+    "year_share_same_sign": 0.545,
+    "by_year": {
+     "2015": 2.45,
+     "2016": 3.74,
+     "2017": 1.54,
+     "2018": 0.31,
+     "2019": 3.2,
+     "2020": -1.12,
+     "2021": -0.75,
+     "2022": -0.44,
+     "2023": 0.87,
+     "2024": -0.8,
+     "2025": -1.32
+    }
+   },
+   "calibration": {
+    "n": 124,
+    "mean_pips": -0.87,
+    "t": -0.75,
+    "year_share_same_sign": 1.0
+   },
+   "exploitable": false
+  },
+  "L1_US500.cash_1min": {
+   "train": {
+    "n": 1230662,
+    "mean_pips": 0.004,
+    "t": 2.78,
+    "year_share_same_sign": 0.6,
+    "by_year": {
+     "2021": -0.0,
+     "2022": 0.01,
+     "2023": 0.01,
+     "2024": 0.01,
+     "2025": -0.01
+    }
+   },
+   "calibration": {
+    "n": 167138,
+    "mean_pips": 0.0,
+    "t": 0.02,
+    "year_share_same_sign": 1.0
+   },
+   "exploitable": false
+  },
+  "L2_US500.cash_1min": {
+   "train": {
+    "n": 66412,
+    "mean_pips": 0.022,
+    "t": 2.17,
+    "year_share_same_sign": 0.6,
+    "by_year": {
+     "2021": -0.04,
+     "2022": 0.05,
+     "2023": 0.04,
+     "2024": 0.01,
+     "2025": -0.02
+    }
+   },
+   "calibration": {
+    "n": 8331,
+    "mean_pips": -0.013,
+    "t": -0.56,
+    "year_share_same_sign": 1.0
+   },
+   "exploitable": false
+  },
+  "L1_US500.cash_5min": {
+   "train": {
+    "n": 241633,
+    "mean_pips": 0.005,
+    "t": 0.74,
+    "year_share_same_sign": 0.4,
+    "by_year": {
+     "2021": -0.02,
+     "2022": 0.04,
+     "2023": -0.0,
+     "2024": 0.01,
+     "2025": -0.05
+    }
+   },
+   "calibration": {
+    "n": 32954,
+    "mean_pips": 0.026,
+    "t": 1.7,
+    "year_share_same_sign": 1.0
+   },
+   "exploitable": false
+  },
+  "L2_US500.cash_5min": {
+   "train": {
+    "n": 13215,
+    "mean_pips": 0.023,
+    "t": 0.49,
+    "year_share_same_sign": 0.4,
+    "by_year": {
+     "2021": -0.04,
+     "2022": 0.19,
+     "2023": 0.06,
+     "2024": -0.03,
+     "2025": -0.27
+    }
+   },
+   "calibration": {
+    "n": 1655,
+    "mean_pips": 0.112,
+    "t": 1.02,
+    "year_share_same_sign": 1.0
+   },
+   "exploitable": false
+  },
+  "L1_US500.cash_15min": {
+   "train": {
+    "n": 79501,
+    "mean_pips": 0.016,
+    "t": 0.75,
+    "year_share_same_sign": 0.8,
+    "by_year": {
+     "2021": 0.09,
+     "2022": 0.03,
+     "2023": -0.01,
+     "2024": 0.0,
+     "2025": 0.02
+    }
+   },
+   "calibration": {
+    "n": 10853,
+    "mean_pips": -0.063,
+    "t": -1.33,
+    "year_share_same_sign": 1.0
+   },
+   "exploitable": false
+  },
+  "L2_US500.cash_15min": {
+   "train": {
+    "n": 4428,
+    "mean_pips": -0.058,
+    "t": -0.46,
+    "year_share_same_sign": 0.6,
+    "by_year": {
+     "2021": 0.13,
+     "2022": -0.1,
+     "2023": 0.09,
+     "2024": -0.22,
+     "2025": -0.05
+    }
+   },
+   "calibration": {
+    "n": 552,
+    "mean_pips": 0.168,
+    "t": 0.47,
+    "year_share_same_sign": 1.0
+   },
+   "exploitable": false
+  },
+  "L1_US500.cash_60min": {
+   "train": {
+    "n": 18483,
+    "mean_pips": -0.231,
+    "t": -2.56,
+    "year_share_same_sign": 0.8,
+    "by_year": {
+     "2021": -0.18,
+     "2022": -0.17,
+     "2023": 0.05,
+     "2024": -0.29,
+     "2025": -0.8
+    }
+   },
+   "calibration": {
+    "n": 2531,
+    "mean_pips": -0.296,
+    "t": -1.49,
+    "year_share_same_sign": 1.0
+   },
+   "exploitable": false
+  },
+  "L2_US500.cash_60min": {
+   "train": {
+    "n": 1106,
+    "mean_pips": -0.475,
+    "t": -1.08,
+    "year_share_same_sign": 0.6,
+    "by_year": {
+     "2021": 0.95,
+     "2022": -1.47,
+     "2023": 0.91,
+     "2024": -0.02,
+     "2025": -2.71
+    }
+   },
+   "calibration": {
+    "n": 133,
+    "mean_pips": 1.392,
+    "t": 0.92,
+    "year_share_same_sign": 1.0
+   },
+   "exploitable": false
+  },
+  "L1_GER40.cash_1min": {
+   "train": {
+    "n": 1129964,
+    "mean_pips": 0.009,
+    "t": 6.18,
+    "year_share_same_sign": 0.6,
+    "by_year": {
+     "2021": -0.0,
+     "2022": 0.01,
+     "2023": 0.01,
+     "2024": 0.01,
+     "2025": -0.0
+    }
+   },
+   "calibration": {
+    "n": 162713,
+    "mean_pips": -0.001,
+    "t": -0.27,
+    "year_share_same_sign": 1.0
+   },
+   "exploitable": false
+  },
+  "L2_GER40.cash_1min": {
+   "train": {
+    "n": 63547,
+    "mean_pips": 0.031,
+    "t": 2.99,
+    "year_share_same_sign": 1.0,
+    "by_year": {
+     "2022": 0.06,
+     "2023": 0.03,
+     "2024": 0.01,
+     "2025": 0.01
+    }
+   },
+   "calibration": {
+    "n": 8433,
+    "mean_pips": -0.011,
+    "t": -0.51,
+    "year_share_same_sign": 1.0
+   },
+   "exploitable": false
+  },
+  "L1_GER40.cash_5min": {
+   "train": {
+    "n": 221789,
+    "mean_pips": 0.007,
+    "t": 0.87,
+    "year_share_same_sign": 0.8,
+    "by_year": {
+     "2021": 0.1,
+     "2022": 0.02,
+     "2023": 0.01,
+     "2024": 0.02,
+     "2025": -0.06
+    }
+   },
+   "calibration": {
+    "n": 31964,
+    "mean_pips": 0.048,
+    "t": 3.0,
+    "year_share_same_sign": 1.0
+   },
+   "exploitable": false
+  },
+  "L2_GER40.cash_5min": {
+   "train": {
+    "n": 12586,
+    "mean_pips": 0.03,
+    "t": 0.63,
+    "year_share_same_sign": 0.5,
+    "by_year": {
+     "2022": 0.17,
+     "2023": 0.02,
+     "2024": -0.0,
+     "2025": -0.16
+    }
+   },
+   "calibration": {
+    "n": 1612,
+    "mean_pips": 0.123,
+    "t": 1.33,
+    "year_share_same_sign": 1.0
+   },
+   "exploitable": false
+  },
+  "L1_GER40.cash_15min": {
+   "train": {
+    "n": 72389,
+    "mean_pips": 0.028,
+    "t": 1.22,
+    "year_share_same_sign": 1.0,
+    "by_year": {
+     "2021": 0.33,
+     "2022": 0.02,
+     "2023": 0.05,
+     "2024": 0.02,
+     "2025": 0.01
+    }
+   },
+   "calibration": {
+    "n": 10443,
+    "mean_pips": -0.003,
+    "t": -0.07,
+    "year_share_same_sign": 1.0
+   },
+   "exploitable": false
+  },
+  "L2_GER40.cash_15min": {
+   "train": {
+    "n": 4124,
+    "mean_pips": 0.021,
+    "t": 0.15,
+    "year_share_same_sign": 0.75,
+    "by_year": {
+     "2022": 0.07,
+     "2023": 0.19,
+     "2024": 0.02,
+     "2025": -0.4
+    }
+   },
+   "calibration": {
+    "n": 559,
+    "mean_pips": 0.075,
+    "t": 0.27,
+    "year_share_same_sign": 1.0
+   },
+   "exploitable": false
+  },
+  "L1_GER40.cash_60min": {
+   "train": {
+    "n": 16848,
+    "mean_pips": 0.09,
+    "t": 0.94,
+    "year_share_same_sign": 0.6,
+    "by_year": {
+     "2021": -2.49,
+     "2022": 0.04,
+     "2023": 0.45,
+     "2024": 0.01,
+     "2025": -0.32
+    }
+   },
+   "calibration": {
+    "n": 2422,
+    "mean_pips": -0.098,
+    "t": -0.48,
+    "year_share_same_sign": 1.0
+   },
+   "exploitable": false
+  },
+  "L2_GER40.cash_60min": {
+   "train": {
+    "n": 980,
+    "mean_pips": 0.273,
+    "t": 0.56,
+    "year_share_same_sign": 0.75,
+    "by_year": {
+     "2022": 0.49,
+     "2023": 0.28,
+     "2024": 0.6,
+     "2025": -0.86
+    }
+   },
+   "calibration": {
+    "n": 115,
+    "mean_pips": -0.177,
+    "t": -0.16,
+    "year_share_same_sign": 1.0
+   },
+   "exploitable": false
+  }
+ },
+ "exploitable": []
+}
