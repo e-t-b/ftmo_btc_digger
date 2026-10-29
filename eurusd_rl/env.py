@@ -21,9 +21,10 @@ from .market import Market, gather_seq, CTX_FEATS
 
 # indices des constantes
 (K_INIT, K_RISK, K_COMM, K_CS, K_LEV, K_MARG, K_DHALT, K_WHALT, K_THALT, K_DLOSS, K_TLOSS, K_TPR,
- K_SIN, K_SOUT, K_SSTOP, K_LAT, K_MAXTR, K_VPEN, K_LOTSTEP, K_LOTMIN, K_PT) = range(21)
+ K_SIN, K_SOUT, K_SSTOP, K_LAT, K_MAXTR, K_VPEN, K_LOTSTEP, K_LOTMIN, K_PT, K_SWL, K_SWS, K_SW3) = range(24)
 # indices de l'état flottant
-(S_BAL, S_EQ, S_DAYB, S_WEEKB, S_ENTRY, S_STOP, S_TP, S_LOTS, S_STOPD) = range(9)
+(S_BAL, S_EQ, S_DAYB, S_WEEKB, S_ENTRY, S_STOP, S_TP, S_LOTS, S_STOPD, S_SWAP) = range(10)
+N_FSTATE = 10
 # état entier
 (I_POS, I_TRADES, I_HDAY, I_HWEEK, I_HTOT, I_VIOL, I_ENTRYDEC, I_PTR, I_END, I_NBLOCK, I_NINVALID) = range(11)
 # raisons de sortie
@@ -34,7 +35,7 @@ N_ACC = 10   # features de compte
 def make_consts(cfg: dict) -> np.ndarray:
     ch, ir, ex, tr = cfg["challenge"], cfg["internal_risk"], cfg["execution"], cfg["trade"]
     pt = cfg["data"]["point"]
-    k = np.zeros(21)
+    k = np.zeros(24)
     k[K_INIT] = ch["initial_capital"]; k[K_RISK] = ir["risk_per_trade"] * ch["initial_capital"]
     k[K_COMM] = ex["commission_per_lot_side"]; k[K_CS] = cfg["data"]["contract_size"]; k[K_LEV] = ch["leverage"]
     k[K_MARG] = ir["max_margin_usage"]; k[K_DHALT] = ir["daily_halt"]; k[K_WHALT] = ir["weekly_halt"]
@@ -42,6 +43,10 @@ def make_consts(cfg: dict) -> np.ndarray:
     k[K_TPR] = tr["take_profit_r"]; k[K_SIN] = ex["entry_slippage_pts"] * pt; k[K_SOUT] = ex["exit_slippage_pts"] * pt
     k[K_SSTOP] = ex["stop_slippage_pts"] * pt; k[K_LAT] = ex["latency_bars_m1"]; k[K_MAXTR] = ir["max_trades_per_day"]
     k[K_VPEN] = cfg["reward"]["violation_penalty_r"]; k[K_LOTSTEP] = 0.01; k[K_LOTMIN] = 0.01; k[K_PT] = pt
+    # swaps en USD par lot et par nuit (EURUSD : points x point x taille de contrat)
+    k[K_SWL] = cfg["data"].get("swap_long_pts", 0.0) * pt * cfg["data"]["contract_size"]
+    k[K_SWS] = cfg["data"].get("swap_short_pts", 0.0) * pt * cfg["data"]["contract_size"]
+    k[K_SW3] = cfg["data"].get("swap_triple_weekday", 2)
     return k
 
 
@@ -73,20 +78,26 @@ def _close(fs, ist, k, px, j, reason, log, nlog, e, dec):
             log[e, n, 8] = reason; log[e, n, 9] = fs[S_BAL]
             # pnl net (commission d'entrée incluse) en USD et en R nominal
             gross = pos * (px - fs[S_ENTRY]) * fs[S_LOTS] * k[K_CS]
-            log[e, n, 10] = gross - 2 * fs[S_LOTS] * k[K_COMM]
+            log[e, n, 10] = gross - 2 * fs[S_LOTS] * k[K_COMM] + fs[S_SWAP]
             log[e, n, 11] = log[e, n, 10] / k[K_RISK]
             nlog[e] = n + 1
     ist[I_POS] = 0
     fs[S_LOTS] = 0.0
+    fs[S_SWAP] = 0.0
 
 
 @nb.njit(cache=True)
-def _sim_bars(fs, ist, k, o, h, l, c, sp, j0, j1, entry_bar, log, nlog, e, dec):
-    """Simule les barres [j0, j1). Retourne 1 si violation FTMO."""
+def _sim_bars(fs, ist, k, o, h, l, c, sp, j0, j1, entry_bar, log, nlog, e, dec, day, wday):
+    """Simule les barres [j0, j1). Retourne 1 si violation FTMO. Swap appliqué au passage de minuit serveur."""
     for j in range(j0, j1):
         pos = ist[I_POS]
         if pos == 0:
             return 0
+        if j != entry_bar and j > 0 and day[j] != day[j - 1]:
+            mult = 3.0 if wday[j - 1] == k[K_SW3] else 1.0
+            sw = mult * fs[S_LOTS] * (k[K_SWL] if pos == 1 else k[K_SWS])
+            fs[S_SWAP] += sw
+            fs[S_BAL] += sw
         stop, tp = fs[S_STOP], fs[S_TP]
         if pos == 1:
             if j != entry_bar and o[j] <= stop:
@@ -141,7 +152,8 @@ def entry_allowed(fs, ist, k, can_enter, stop_d, o, d, jfill):
 
 @nb.njit(cache=True)
 def step_all(F, I, k, actions, o, h, l, c, sp, dec_m1, dec_next, dec_force, dec_day, dec_week, can_enter,
-             is_last, stop_d, log, nlog, rewards, dones, viols):
+             is_last, stop_d, log, nlog, rewards, dones, viols, day, wday):
+    """is_last : clôture forcée à cette décision (dec_force du marché)."""
     n_env = F.shape[0]
     for e in range(n_env):
         fs, ist = F[e], I[e]
@@ -155,7 +167,7 @@ def step_all(F, I, k, actions, o, h, l, c, sp, dec_m1, dec_next, dec_force, dec_
         entry_bar = -1
         if is_last[d]:
             # clôture forcée à l'ouverture de jf ; simuler [j, jf) d'abord
-            viol = _sim_bars(fs, ist, k, o, h, l, c, sp, j, jn, -1, log, nlog, e, d)
+            viol = _sim_bars(fs, ist, k, o, h, l, c, sp, j, jn, -1, log, nlog, e, d, day, wday)
             if viol == 0 and ist[I_POS] != 0:
                 jf = dec_force[d]
                 px = o[jf] - k[K_SOUT] if ist[I_POS] == 1 else o[jf] + sp[jf] + k[K_SOUT]
@@ -178,7 +190,7 @@ def step_all(F, I, k, actions, o, h, l, c, sp, dec_m1, dec_next, dec_force, dec_
                 else:
                     ist[I_NBLOCK] += 1
             elif ist[I_POS] != 0 and a == 3:
-                viol = _sim_bars(fs, ist, k, o, h, l, c, sp, j, jfill, -1, log, nlog, e, d)  # latence
+                viol = _sim_bars(fs, ist, k, o, h, l, c, sp, j, jfill, -1, log, nlog, e, d, day, wday)  # latence
                 if viol == 0 and ist[I_POS] != 0:
                     px = o[jfill] - k[K_SOUT] if ist[I_POS] == 1 else o[jfill] + sp[jfill] + k[K_SOUT]
                     _close(fs, ist, k, px, jfill, R_CLOSE, log, nlog, e, d)
@@ -186,7 +198,7 @@ def step_all(F, I, k, actions, o, h, l, c, sp, dec_m1, dec_next, dec_force, dec_
                 ist[I_NINVALID] += 1
             if viol == 0:
                 start = entry_bar if entry_bar >= 0 else (jfill + 1 if a == 3 else j)
-                viol = _sim_bars(fs, ist, k, o, h, l, c, sp, start, jn, entry_bar, log, nlog, e, d)
+                viol = _sim_bars(fs, ist, k, o, h, l, c, sp, start, jn, entry_bar, log, nlog, e, d, day, wday)
         jlast = max(jn - 1, j)
         if is_last[d]:
             jlast = dec_force[d]
@@ -223,7 +235,7 @@ class VecEnv:
         self.mk, self.k = mk, make_consts(cfg)
         self.n, self.lo, self.hi, self.ep_days = n_env, lo, hi, episode_days
         self.rng = np.random.default_rng(seed)
-        self.F = np.zeros((n_env, 9))
+        self.F = np.zeros((n_env, N_FSTATE))
         self.I = np.zeros((n_env, 11), dtype=np.int64)
         self.log = np.zeros((n_env, log_capacity, 12))
         self.nlog = np.zeros(n_env, dtype=np.int64)
@@ -257,7 +269,7 @@ class VecEnv:
         m[:, 0] = True
         for e in range(self.n):
             d = self.I[e, I_PTR]
-            if mk.dec_is_last[d]:
+            if mk.dec_force[d]:
                 continue
             if self.I[e, I_POS] == 0:
                 jfill = min(mk.dec_m1[d] + int(k[K_LAT]), max(mk.dec_next_m1[d] - 1, mk.dec_m1[d]))
@@ -296,7 +308,8 @@ class VecEnv:
         mk = self.mk
         step_all(self.F, self.I, self.k, actions.astype(np.int64), mk.o, mk.h, mk.l, mk.c, mk.spread,
                  mk.dec_m1, mk.dec_next_m1, mk.dec_force_m1, mk.dec_day, mk.dec_week, mk.dec_can_enter,
-                 mk.dec_is_last, mk.dec_stop_dist, self.log, self.nlog, self.rew, self.done, self.viol)
+                 mk.dec_force, mk.dec_stop_dist, self.log, self.nlog, self.rew, self.done, self.viol,
+                 mk.m1_day, mk.m1_wday)
         rew, done, viol = self.rew.copy(), self.done.copy(), self.viol.copy()
         info = {"equity": self.F[:, S_EQ].copy()}
         for e in np.flatnonzero(done):

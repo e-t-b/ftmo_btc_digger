@@ -9,8 +9,10 @@ from eurusd_rl.timeframes import aggregate
 
 
 @pytest.mark.slow
-def test_library_no_lookahead(real_m1):
-    sub = real_m1[(real_m1["t_utc"] >= "2023-09-01") & (real_m1["t_utc"] < "2024-02-01")].reset_index(drop=True)
+@pytest.mark.parametrize("scale", ["M5", "H1", "H4"])
+def test_library_no_lookahead(real_m1, scale):
+    start = "2023-09-01" if scale != "H4" else "2021-01-01"      # H4 : tendance hebdomadaire, il faut de l'historique
+    sub = real_m1[(real_m1["t_utc"] >= start) & (real_m1["t_utc"] < "2024-02-01")].reset_index(drop=True)
     cut = pd.Timestamp("2024-01-10 13:00")                     # heure serveur
     pert = sub.copy()
     after = pert["t_server"] >= cut
@@ -21,11 +23,11 @@ def test_library_no_lookahead(real_m1):
     pert.loc[after, "high"] = pert.loc[after, ["open", "high", "low", "close"]].max(axis=1)
     pert.loc[after, "low"] = pert.loc[after, ["open", "high", "low", "close"]].min(axis=1)
     pert.loc[after, "tick_volume"] *= 3
-    a, b = S.compute(sub), S.compute(pert)
-    sel = a["m5_end"] <= np.datetime64(cut)
-    assert sel.sum() > 20000
+    a, b = S.compute(sub, scale), S.compute(pert, scale)
+    sel = a["bar_end"] <= np.datetime64(cut)
+    assert sel.sum() > 1000
     changed_after = False
-    for name in S.NAMES:
+    for name in a["signals"]:
         for key, va in a["signals"][name].items():
             vb = b["signals"][name][key]
             np.testing.assert_array_equal(va[sel], vb[sel], err_msg=f"{name}.{key} dépend du futur")
@@ -98,3 +100,22 @@ def test_vwap_and_signal_fields_shapes(real_m1):
         # l'invalidation est toujours du bon côté de la clôture du signal
         assert np.all((d[act] == 1) & (st[act] < lib["close"][act]) | (d[act] == -1) & (st[act] > lib["close"][act])), name
         assert np.all(np.isnan(st[~act]))
+
+
+@pytest.mark.slow
+def test_signal_fires_once_and_respects_staleness(cfg, real_m1):
+    from eurusd_rl.market import build_market
+    sub = real_m1[(real_m1["t_utc"] >= "2023-01-01") & (real_m1["t_utc"] < "2024-01-01")].reset_index(drop=True)
+    mk = build_market(cfg, sub)
+    lib = S.compute(sub, "H4")
+    D0 = S.to_decisions(lib, mk, max_stale_min=0)
+    D60 = S.to_decisions(lib, mk, max_stale_min=60)
+    for name in S.names_for("H4"):
+        d0, d60 = D0[name]["dir"], D60[name]["dir"]
+        assert (np.abs(d60) >= np.abs(d0)).all()          # plus de tolérance => au moins les mêmes signaux
+        fired = np.flatnonzero(d60 != 0)
+        T = mk.dec_t_server[fired]
+        k = np.searchsorted(lib["bar_end"], T, side="right") - 1
+        assert len(np.unique(k)) == len(k)                 # chaque barre d'entrée émet au plus une fois
+        lag = (T - lib["bar_end"][k]).astype("timedelta64[m]").astype(int)
+        assert (lag >= 0).all() and (lag <= 60).all()

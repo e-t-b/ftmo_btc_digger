@@ -142,3 +142,48 @@ def test_ftmo_daily_violation_on_gap(cfg):
 def test_invalid_action_counted(cfg):
     v = run(toy_market([FLAT] * 10), cfg, [3, 0])[0]       # CLOSE sans position
     assert v.I[0, E.I_NINVALID] == 1
+
+
+# ------------------------------------------------------------------ mode swing
+def _overnight(mk):
+    import dataclasses
+    n = len(mk.dec_m1)
+    force = np.zeros(n, bool); force[-1] = True
+    jn = np.r_[mk.dec_m1[1:], mk.dec_force_m1[-1]]
+    can = np.ones(n, bool); can[mk.dec_is_last] = False
+    return dataclasses.replace(mk, dec_force=force, dec_next_m1=jn, dec_can_enter=can)
+
+
+def test_swing_holds_overnight_and_charges_swap(cfg):
+    mk = _overnight(toy_market([FLAT] * 10, n_days=3))
+    mk.m1_wday[:] = np.repeat([0, 1, 2], 10)              # lundi, mardi, mercredi
+    v, rs, tr, _ = run(mk, cfg, [1] + [0] * 40)
+    assert len(tr) == 1 and tr[0, 8] == E.R_FORCE          # tenue jusqu'à la fin des données, pas de clôture le soir
+    assert mk.m1_day[int(tr[0, 2])] == 2
+    lots = 0.5
+    swap = 2 * lots * cfg["data"]["swap_long_pts"]          # deux nuits ordinaires (lundi, mardi), en USD
+    expected = (tr[0, 5] - tr[0, 4]) * lots * 1e5 - 2 * lots * 3.5 + swap
+    assert tr[0, 10] == pytest.approx(expected)
+    assert v.F[0, E.S_BAL] - 10000 == pytest.approx(expected)
+
+
+def test_swing_triple_swap_on_wednesday_and_short_credit(cfg):
+    mk = _overnight(toy_market([FLAT] * 10, n_days=2))
+    mk.m1_wday[:] = np.repeat([2, 3], 10)                 # mercredi -> jeudi
+    tr = run(mk, cfg, [2] + [0] * 30)[2]
+    lots = 0.5
+    swap = 3 * lots * cfg["data"]["swap_short_pts"]
+    expected = (tr[0, 4] - tr[0, 5]) * lots * 1e5 - 2 * lots * 3.5 + swap
+    assert tr[0, 10] == pytest.approx(expected)
+
+
+def test_swing_weekend_gap_through_stop(cfg):
+    gap = 1.0950
+    bars_fri = [FLAT] * 10
+    mk = _overnight(toy_market(bars_fri, n_days=2))
+    # lundi : ouverture en gap sous le stop
+    j_mon = 10
+    mk.o[j_mon] = gap; mk.h[j_mon] = gap + 0.0001; mk.l[j_mon] = gap - 0.0001; mk.c[j_mon] = gap
+    mk.m1_wday[:] = np.repeat([4, 0], 10)
+    tr = run(mk, cfg, [1] + [0] * 30)[2]
+    assert tr[0, 8] == E.R_STOP and tr[0, 5] == pytest.approx(gap - 0.00005)

@@ -63,7 +63,8 @@ class Market:
     dec_day: np.ndarray           # jour serveur
     dec_week: np.ndarray          # semaine serveur
     dec_can_enter: np.ndarray     # bool : dans la fenêtre d'entrée
-    dec_is_last: np.ndarray       # bool : dernière décision du jour (clôture forcée appliquée)
+    dec_is_last: np.ndarray       # bool : dernière décision du jour
+    dec_force: np.ndarray         # bool : clôture forcée à cette décision (dernière du jour en intraday)
     dec_stop_dist: np.ndarray     # distance de stop (prix) si entrée à cette décision
     dec_min_stop: np.ndarray      # distance de stop minimale admise (coûts, 3 pips)
     dec_t_utc: np.ndarray
@@ -72,6 +73,7 @@ class Market:
     seq_feats: dict = field(default_factory=dict)  # tf -> (n_bars, n_feat) float32
     seq_idx: dict = field(default_factory=dict)    # tf -> (n_dec,) indice de la dernière bougie close
     ctx: np.ndarray = None                         # (n_dec, n_ctx) float32
+    m1_wday: np.ndarray = None                     # jour de semaine serveur de chaque M1 (lundi = 0)
     meta: dict = field(default_factory=dict)
 
     def subset_mask(self, rng: list[str]) -> np.ndarray:
@@ -125,7 +127,14 @@ def build_market(cfg: dict, m1: pd.DataFrame, spread_stress: float | None = None
     is_last = np.r_[T_day[1:] != T_day[:-1], True]
     # borne exclusive de la simulation après la décision : décision suivante du jour, ou jf pour la dernière
     # (la clôture forcée se fait à l'OUVERTURE de jf, donc la dernière décision simule [j, jf) puis ferme à jf)
-    jn = np.where(is_last, jf, np.r_[j[1:], 0])
+    overnight = bool(sess.get("overnight", False))
+    if overnight:   # la dernière décision du jour simule la nuit jusqu'à la première décision du jour suivant
+        jn = np.r_[j[1:], jf[-1]]
+        force = np.zeros(len(j), bool)
+        force[-1] = True
+    else:
+        jn = np.where(is_last, jf, np.r_[j[1:], 0])
+        force = is_last.copy()
     can_enter = (T_mod >= e0) & (T_mod < e1) & ~is_last
 
     # --- features
@@ -184,10 +193,11 @@ def build_market(cfg: dict, m1: pd.DataFrame, spread_stress: float | None = None
         c=m1["close"].to_numpy(float), spread=sp_pts * pt, m1_day=day, t_server_min=t_min,
         dec_m1=j.astype(np.int64), dec_next_m1=jn.astype(np.int64), dec_force_m1=jf.astype(np.int64),
         dec_day=T_day.astype(np.int64), dec_week=((T_day + 3) // 7).astype(np.int64),
-        dec_can_enter=can_enter, dec_is_last=is_last, dec_stop_dist=np.nan_to_num(stop, nan=1.0), dec_min_stop=min_stop,
+        dec_can_enter=can_enter, dec_is_last=is_last, dec_force=force, dec_stop_dist=np.nan_to_num(stop, nan=1.0), dec_min_stop=min_stop,
         dec_t_utc=pd.DatetimeIndex(m1["t_utc"].to_numpy()[j]).values, dec_t_server=T,
         seq_feats=seq_feats, seq_idx=seq_idx, ctx=ctx,
-        meta={"spread_profile": prof.tolist(), "spread_stress": stress, "n_dec": int(len(T))},
+        m1_wday=pd.DatetimeIndex(m1["t_server"]).dayofweek.to_numpy().astype(np.int64),
+        meta={"spread_profile": prof.tolist(), "spread_stress": stress, "n_dec": int(len(T)), "overnight": overnight},
     )
 
 

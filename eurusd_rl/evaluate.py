@@ -22,7 +22,8 @@ def period_bounds(mk: Market, rng: list[str]) -> tuple[int, int]:
 def segments(mk: Market, lo: int, hi: int, mode: str) -> list[tuple[int, int]]:
     if mode == "continuous":
         return [(lo, hi)]
-    t = pd.DatetimeIndex(mk.dec_t_utc[lo:hi]).to_period("M").asi8
+    per = {"monthly": "M", "quarterly": "Q"}[mode]
+    t = pd.DatetimeIndex(mk.dec_t_utc[lo:hi]).to_period(per).asi8
     cut = lo + np.flatnonzero(np.r_[True, t[1:] != t[:-1]])
     return list(zip(cut, np.r_[cut[1:], hi]))
 

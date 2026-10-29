@@ -6,6 +6,9 @@ data:
   sha256: 2fc008d46678332ce68dba20af54fa283df49c02e17a8ee20158e5b1f721a56e
   point: 0.00001
   contract_size: 100000
+  swap_long_pts: -9.74        # points par lot et par nuit (spécification MT5 FTMO, export du 2026-10-29)
+  swap_short_pts: 0.42
+  swap_triple_weekday: 2      # nuit du mercredi au jeudi facturée triple (lundi = 0)
   # jours serveur exclus car partiels (premier jour d'export, jour d'export en cours)
   drop_server_days: ["2015-01-02", "2026-10-29"]
 
@@ -40,7 +43,8 @@ internal_risk:                # limites internes plus prudentes que FTMO
 session:                      # heure serveur = heure de New York + 7 h (journée serveur = 17:00 NY)
   entry_start_ny: "02:00"
   entry_end_ny: "16:00"       # aucune nouvelle entrée à partir de cette heure
-  force_close_ny: "16:45"     # clôture forcée (avant le rollover de 17:00 NY)
+  force_close_ny: "16:45"     # clôture forcée (avant le rollover de 17:00 NY) ; ignorée si overnight
+  overnight: false            # true = mode swing (positions sur plusieurs jours, swaps, week-ends)
   decision_tf: 5min
 
 execution:

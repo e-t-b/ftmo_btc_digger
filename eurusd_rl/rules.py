@@ -19,14 +19,20 @@ from .evaluate import LOG_COLS, REASONS, metrics, segments
 MAX_STOP_PIPS = 40.0
 
 
-def stop_distances(dirs: np.ndarray, stop_px: np.ndarray, close: np.ndarray, min_stop: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
+def stop_distances(dirs: np.ndarray, stop_px: np.ndarray, close: np.ndarray, min_stop: np.ndarray,
+                   max_stop_pips: float = MAX_STOP_PIPS) -> tuple[np.ndarray, np.ndarray]:
+    """Distance de stop à l'entrée ; signal ignoré si l'invalidation est déjà franchie ou si le stop dépasse le plafond."""
     raw = np.abs(close - stop_px)
+    right_side = ((dirs == 1) & (stop_px < close)) | ((dirs == -1) & (stop_px > close))
     sd = np.maximum(np.nan_to_num(raw, nan=0.0), min_stop)
-    ok = (dirs != 0) & np.isfinite(raw) & (sd <= MAX_STOP_PIPS * 1e-4)
+    ok = (dirs != 0) & right_side & np.isfinite(raw) & (sd <= max_stop_pips * 1e-4)
     return np.where(ok, dirs, 0), np.where(ok, sd, 1.0)
 
 
-def run_rule(mk, cfg: dict, lo: int, hi: int, dirs: np.ndarray, stop_dist: np.ndarray, mode: str = "monthly"):
+def run_rule(mk, cfg: dict, lo: int, hi: int, dirs: np.ndarray, stop_dist: np.ndarray, mode: str = "monthly",
+             max_hold_days: int | None = None):
+    """max_hold_days : en mode swing, clôture (action CLOSE) quand la position a atteint ce nombre de jours de bourse.
+    Toute position encore ouverte à la dernière décision d'un segment est clôturée (CLOSE)."""
     mk2 = dataclasses.replace(mk, dec_stop_dist=stop_dist)
     want = np.where(dirs > 0, 1, np.where(dirs < 0, 2, 0)).astype(np.int64)
     rows_dec, rows_seg, rows_eq = [], [], []
@@ -38,7 +44,13 @@ def run_rule(mk, cfg: dict, lo: int, hi: int, dirs: np.ndarray, stop_dist: np.nd
         act = np.zeros(1, np.int64)
         eq = np.empty(b - a)
         for t, d in enumerate(range(a, b)):
-            act[0] = want[d] if v.I[0, E.I_POS] == 0 else 0
+            if v.I[0, E.I_POS] == 0:
+                act[0] = want[d]
+            else:
+                held = d - int(v.I[0, E.I_ENTRYDEC])
+                age_days = mk.dec_day[d] - mk.dec_day[int(v.I[0, E.I_ENTRYDEC])]
+                close = d == b - 1 or (max_hold_days is not None and age_days >= max_hold_days and held > 0)
+                act[0] = 3 if close else 0
             v.step(act)
             eq[t] = v.F[0, E.S_EQ]
         rows_dec.append(np.arange(a, b)); rows_seg.append(np.full(b - a, si)); rows_eq.append(eq)

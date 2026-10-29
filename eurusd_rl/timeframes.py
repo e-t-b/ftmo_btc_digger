@@ -9,13 +9,18 @@ from __future__ import annotations
 import numpy as np
 import pandas as pd
 
-TFS = {"M1": "1min", "M5": "5min", "M15": "15min", "M30": "30min", "H1": "1h", "H4": "4h", "D1": "1D"}
+TFS = {"M1": "1min", "M5": "5min", "M15": "15min", "M30": "30min", "H1": "1h", "H4": "4h", "D1": "1D", "W1": "1W"}
 
 
 def aggregate(m1: pd.DataFrame, rule: str) -> pd.DataFrame:
     """m1 : colonnes t_server, open, high, low, close, tick_volume, spread_cost_pts (optionnel)."""
     t = pd.DatetimeIndex(m1["t_server"])
-    start = t.floor(rule) if rule != "1D" else t.normalize()
+    if rule == "1D":
+        start = t.normalize()
+    elif rule == "1W":                     # semaine serveur : lundi 00:00 serveur (= dimanche 17:00 NY)
+        start = t.normalize() - pd.to_timedelta(t.dayofweek, unit="D")
+    else:
+        start = t.floor(rule)
     key = start.asi8
     # groupes consécutifs (les données sont triées)
     brk = np.r_[True, key[1:] != key[:-1]]
@@ -33,7 +38,7 @@ def aggregate(m1: pd.DataFrame, rule: str) -> pd.DataFrame:
         "n_m1": last - first + 1,
         "m1_first": first, "m1_last": last,
     })
-    out["end"] = out["start"] + pd.Timedelta(rule)
+    out["end"] = out["start"] + (pd.Timedelta(days=7) if rule == "1W" else pd.Timedelta(rule))
     out["t_utc_end"] = pd.DatetimeIndex(m1["t_utc"].to_numpy()[last]) + pd.Timedelta("1min")
     return out
 
