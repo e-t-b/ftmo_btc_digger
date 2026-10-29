@@ -65,6 +65,7 @@ class Market:
     dec_can_enter: np.ndarray     # bool : dans la fenêtre d'entrée
     dec_is_last: np.ndarray       # bool : dernière décision du jour (clôture forcée appliquée)
     dec_stop_dist: np.ndarray     # distance de stop (prix) si entrée à cette décision
+    dec_min_stop: np.ndarray      # distance de stop minimale admise (coûts, 3 pips)
     dec_t_utc: np.ndarray
     dec_t_server: np.ndarray
     # features
@@ -145,7 +146,8 @@ def build_market(cfg: dict, m1: pd.DataFrame, spread_stress: float | None = None
     rt_cost = sp_pts[j] * pt + (ex["entry_slippage_pts"] + ex["exit_slippage_pts"]) * pt + comm_px
     stop = a15[np.maximum(i15, 0)] * tr["stop_atr_mult"]
     stop = np.where(i15 >= 0, stop, np.nan)
-    stop = np.maximum(stop, np.maximum(tr["min_stop_cost_mult"] * rt_cost, tr["min_stop_pts"] * pt))
+    min_stop = np.maximum(tr["min_stop_cost_mult"] * rt_cost, tr["min_stop_pts"] * pt)
+    stop = np.maximum(stop, min_stop)
 
     # contexte
     c_prev = m1["close"].to_numpy()[np.maximum(j - 1, 0)]       # dernière clôture M1 connue (barre j-1)
@@ -182,7 +184,7 @@ def build_market(cfg: dict, m1: pd.DataFrame, spread_stress: float | None = None
         c=m1["close"].to_numpy(float), spread=sp_pts * pt, m1_day=day, t_server_min=t_min,
         dec_m1=j.astype(np.int64), dec_next_m1=jn.astype(np.int64), dec_force_m1=jf.astype(np.int64),
         dec_day=T_day.astype(np.int64), dec_week=((T_day + 3) // 7).astype(np.int64),
-        dec_can_enter=can_enter, dec_is_last=is_last, dec_stop_dist=np.nan_to_num(stop, nan=1.0),
+        dec_can_enter=can_enter, dec_is_last=is_last, dec_stop_dist=np.nan_to_num(stop, nan=1.0), dec_min_stop=min_stop,
         dec_t_utc=pd.DatetimeIndex(m1["t_utc"].to_numpy()[j]).values, dec_t_server=T,
         seq_feats=seq_feats, seq_idx=seq_idx, ctx=ctx,
         meta={"spread_profile": prof.tolist(), "spread_stress": stress, "n_dec": int(len(T))},

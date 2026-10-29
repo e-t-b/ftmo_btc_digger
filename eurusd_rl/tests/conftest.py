@@ -44,7 +44,7 @@ def toy_market(bars, spread=0.00002, n_days=1, step=5, stop=0.0010, last_force=T
     return Market(o=O, h=H, l=L, c=C, spread=np.full(len(O), spread), m1_day=day,
                   t_server_min=np.arange(len(O)), dec_m1=dec_m1, dec_next_m1=jn, dec_force_m1=jf,
                   dec_day=dec_day, dec_week=np.zeros(n, np.int64), dec_can_enter=~is_last,
-                  dec_is_last=is_last, dec_stop_dist=np.full(n, stop), dec_t_utc=t, dec_t_server=t,
+                  dec_is_last=is_last, dec_stop_dist=np.full(n, stop), dec_min_stop=np.full(n, 0.0003), dec_t_utc=t, dec_t_server=t,
                   seq_feats={"M5": np.zeros((10, 6), np.float32), "H1": np.zeros((10, 6), np.float32)},
                   seq_idx={"M5": np.zeros(n, np.int64), "H1": np.zeros(n, np.int64)},
                   ctx=np.zeros((n, 11), np.float32))
