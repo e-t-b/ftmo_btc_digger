@@ -11,3 +11,4 @@ STOP
 
 runs/
 .pytest_cache/
+*.log
