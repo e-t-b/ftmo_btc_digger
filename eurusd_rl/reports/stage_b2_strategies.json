@@ -1,0 +1,2243 @@
+{
+ "protocol": "B2",
+ "params": {
+  "scale": "H1",
+  "overnight": false,
+  "stale": 0,
+  "max_stop": 60.0,
+  "max_hold": null,
+  "seg": "monthly",
+  "min_trades": 300
+ },
+ "gate": {
+  "min_mean_R": 0.05,
+  "min_t": 3.2,
+  "min_year_share": 0.65
+ },
+ "library_version": "B2-2026-10-29",
+ "variants": {
+  "trend_pullback/tp4": {
+   "train": {
+    "n_trades": 2435,
+    "trades_per_day": 0.895,
+    "win_rate": 0.3515,
+    "mean_R": -0.1201,
+    "t_stat": -4.71,
+    "profit_factor": 0.783,
+    "total_R": -292.47,
+    "worst_month_pct": null,
+    "violations": 0,
+    "pos_year_share": 0.0,
+    "by_year": {
+     "2015": {
+      "n": 190,
+      "mean_R": -0.017,
+      "sum_R": -3.2
+     },
+     "2016": {
+      "n": 217,
+      "mean_R": -0.217,
+      "sum_R": -47.0
+     },
+     "2017": {
+      "n": 211,
+      "mean_R": -0.07,
+      "sum_R": -14.7
+     },
+     "2018": {
+      "n": 226,
+      "mean_R": -0.051,
+      "sum_R": -11.4
+     },
+     "2019": {
+      "n": 248,
+      "mean_R": -0.185,
+      "sum_R": -45.8
+     },
+     "2020": {
+      "n": 232,
+      "mean_R": -0.103,
+      "sum_R": -24.0
+     },
+     "2021": {
+      "n": 267,
+      "mean_R": -0.11,
+      "sum_R": -29.4
+     },
+     "2022": {
+      "n": 255,
+      "mean_R": -0.083,
+      "sum_R": -21.1
+     },
+     "2023": {
+      "n": 232,
+      "mean_R": -0.111,
+      "sum_R": -25.7
+     },
+     "2024": {
+      "n": 237,
+      "mean_R": -0.25,
+      "sum_R": -59.2
+     },
+     "2025": {
+      "n": 120,
+      "mean_R": -0.092,
+      "sum_R": -11.0
+     }
+    },
+    "exit_reasons": {
+     "forced": 1177,
+     "stop": 1164,
+     "tp": 94
+    },
+    "buy_sell": {
+     "BUY": {
+      "n": 1089,
+      "pnl_usd": -6764.87
+     },
+     "SELL": {
+      "n": 1346,
+      "pnl_usd": -7858.79
+     }
+    },
+    "stop_pips_median": 24.8,
+    "hold_days_median": 0.0
+   },
+   "train_stress": {
+    "n_trades": 2443,
+    "mean_R": -0.1512,
+    "t_stat": -5.95,
+    "profit_factor": 0.736
+   },
+   "train_gross": {
+    "n_trades": 2426,
+    "mean_R": -0.053,
+    "t_stat": -2.07,
+    "pos_year_share": 0.182
+   },
+   "pass_train_gate": false
+  },
+  "trend_pullback/tp2": {
+   "train": {
+    "n_trades": 2588,
+    "trades_per_day": 0.951,
+    "win_rate": 0.3849,
+    "mean_R": -0.111,
+    "t_stat": -5.28,
+    "profit_factor": 0.785,
+    "total_R": -287.27,
+    "worst_month_pct": null,
+    "violations": 0,
+    "pos_year_share": 0.0,
+    "by_year": {
+     "2015": {
+      "n": 202,
+      "mean_R": -0.008,
+      "sum_R": -1.5
+     },
+     "2016": {
+      "n": 229,
+      "mean_R": -0.155,
+      "sum_R": -35.5
+     },
+     "2017": {
+      "n": 227,
+      "mean_R": -0.081,
+      "sum_R": -18.4
+     },
+     "2018": {
+      "n": 238,
+      "mean_R": -0.064,
+      "sum_R": -15.4
+     },
+     "2019": {
+      "n": 266,
+      "mean_R": -0.13,
+      "sum_R": -34.5
+     },
+     "2020": {
+      "n": 251,
+      "mean_R": -0.088,
+      "sum_R": -22.2
+     },
+     "2021": {
+      "n": 287,
+      "mean_R": -0.074,
+      "sum_R": -21.2
+     },
+     "2022": {
+      "n": 264,
+      "mean_R": -0.129,
+      "sum_R": -33.9
+     },
+     "2023": {
+      "n": 246,
+      "mean_R": -0.157,
+      "sum_R": -38.7
+     },
+     "2024": {
+      "n": 253,
+      "mean_R": -0.193,
+      "sum_R": -48.7
+     },
+     "2025": {
+      "n": 125,
+      "mean_R": -0.137,
+      "sum_R": -17.2
+     }
+    },
+    "exit_reasons": {
+     "stop": 1147,
+     "forced": 1062,
+     "tp": 379
+    },
+    "buy_sell": {
+     "BUY": {
+      "n": 1154,
+      "pnl_usd": -6584.19
+     },
+     "SELL": {
+      "n": 1434,
+      "pnl_usd": -7779.55
+     }
+    },
+    "stop_pips_median": 25.3,
+    "hold_days_median": 0.0
+   },
+   "train_stress": {
+    "n_trades": 2596,
+    "mean_R": -0.1367,
+    "t_stat": -6.48,
+    "profit_factor": 0.744
+   },
+   "train_gross": {
+    "n_trades": 2588,
+    "mean_R": -0.0455,
+    "t_stat": -2.18,
+    "pos_year_share": 0.091
+   },
+   "pass_train_gate": false
+  },
+  "squeeze_breakout/tp4": {
+   "train": {
+    "n_trades": 286,
+    "trades_per_day": 0.105,
+    "win_rate": 0.4476,
+    "mean_R": -0.0385,
+    "t_stat": -0.85,
+    "profit_factor": 0.871,
+    "total_R": -11.02,
+    "worst_month_pct": null,
+    "violations": 0,
+    "pos_year_share": 0.545,
+    "by_year": {
+     "2015": {
+      "n": 16,
+      "mean_R": 0.154,
+      "sum_R": 2.5
+     },
+     "2016": {
+      "n": 23,
+      "mean_R": 0.008,
+      "sum_R": 0.2
+     },
+     "2017": {
+      "n": 33,
+      "mean_R": 0.035,
+      "sum_R": 1.2
+     },
+     "2018": {
+      "n": 27,
+      "mean_R": 0.103,
+      "sum_R": 2.8
+     },
+     "2019": {
+      "n": 1,
+      "mean_R": -0.691,
+      "sum_R": -0.7
+     },
+     "2020": {
+      "n": 35,
+      "mean_R": -0.148,
+      "sum_R": -5.2
+     },
+     "2021": {
+      "n": 49,
+      "mean_R": -0.196,
+      "sum_R": -9.6
+     },
+     "2022": {
+      "n": 14,
+      "mean_R": -0.021,
+      "sum_R": -0.3
+     },
+     "2023": {
+      "n": 32,
+      "mean_R": 0.051,
+      "sum_R": 1.6
+     },
+     "2024": {
+      "n": 42,
+      "mean_R": -0.105,
+      "sum_R": -4.4
+     },
+     "2025": {
+      "n": 14,
+      "mean_R": 0.07,
+      "sum_R": 1.0
+     }
+    },
+    "exit_reasons": {
+     "forced": 227,
+     "stop": 56,
+     "tp": 3
+    },
+    "buy_sell": {
+     "BUY": {
+      "n": 149,
+      "pnl_usd": -217.83
+     },
+     "SELL": {
+      "n": 137,
+      "pnl_usd": -333.21
+     }
+    },
+    "stop_pips_median": 42.1,
+    "hold_days_median": 0.0
+   },
+   "train_stress": {
+    "n_trades": 286,
+    "mean_R": -0.0514,
+    "t_stat": -1.13,
+    "profit_factor": 0.832
+   },
+   "train_gross": {
+    "n_trades": 286,
+    "mean_R": -0.0052,
+    "t_stat": -0.11,
+    "pos_year_share": 0.636
+   },
+   "pass_train_gate": false
+  },
+  "squeeze_breakout/tp2": {
+   "train": {
+    "n_trades": 287,
+    "trades_per_day": 0.105,
+    "win_rate": 0.446,
+    "mean_R": -0.0462,
+    "t_stat": -1.1,
+    "profit_factor": 0.845,
+    "total_R": -13.26,
+    "worst_month_pct": null,
+    "violations": 0,
+    "pos_year_share": 0.636,
+    "by_year": {
+     "2015": {
+      "n": 16,
+      "mean_R": 0.064,
+      "sum_R": 1.0
+     },
+     "2016": {
+      "n": 23,
+      "mean_R": 0.008,
+      "sum_R": 0.2
+     },
+     "2017": {
+      "n": 34,
+      "mean_R": 0.04,
+      "sum_R": 1.4
+     },
+     "2018": {
+      "n": 27,
+      "mean_R": 0.103,
+      "sum_R": 2.8
+     },
+     "2019": {
+      "n": 1,
+      "mean_R": -0.691,
+      "sum_R": -0.7
+     },
+     "2020": {
+      "n": 35,
+      "mean_R": -0.148,
+      "sum_R": -5.2
+     },
+     "2021": {
+      "n": 49,
+      "mean_R": -0.196,
+      "sum_R": -9.6
+     },
+     "2022": {
+      "n": 14,
+      "mean_R": 0.061,
+      "sum_R": 0.9
+     },
+     "2023": {
+      "n": 32,
+      "mean_R": 0.008,
+      "sum_R": 0.2
+     },
+     "2024": {
+      "n": 42,
+      "mean_R": -0.123,
+      "sum_R": -5.2
+     },
+     "2025": {
+      "n": 14,
+      "mean_R": 0.07,
+      "sum_R": 1.0
+     }
+    },
+    "exit_reasons": {
+     "forced": 221,
+     "stop": 56,
+     "tp": 10
+    },
+    "buy_sell": {
+     "BUY": {
+      "n": 150,
+      "pnl_usd": -165.27
+     },
+     "SELL": {
+      "n": 137,
+      "pnl_usd": -497.55
+     }
+    },
+    "stop_pips_median": 42.2,
+    "hold_days_median": 0.0
+   },
+   "train_stress": {
+    "n_trades": 287,
+    "mean_R": -0.062,
+    "t_stat": -1.49,
+    "profit_factor": 0.797
+   },
+   "train_gross": {
+    "n_trades": 287,
+    "mean_R": -0.0133,
+    "t_stat": -0.32,
+    "pos_year_share": 0.636
+   },
+   "pass_train_gate": false
+  },
+  "range_meanrev/tp4": {
+   "train": {
+    "n_trades": 346,
+    "trades_per_day": 0.127,
+    "win_rate": 0.4566,
+    "mean_R": -0.0009,
+    "t_stat": -0.02,
+    "profit_factor": 0.998,
+    "total_R": -0.31,
+    "worst_month_pct": null,
+    "violations": 0,
+    "pos_year_share": 0.455,
+    "by_year": {
+     "2015": {
+      "n": 29,
+      "mean_R": -0.118,
+      "sum_R": -3.4
+     },
+     "2016": {
+      "n": 29,
+      "mean_R": 0.157,
+      "sum_R": 4.6
+     },
+     "2017": {
+      "n": 34,
+      "mean_R": 0.164,
+      "sum_R": 5.6
+     },
+     "2018": {
+      "n": 34,
+      "mean_R": -0.051,
+      "sum_R": -1.7
+     },
+     "2019": {
+      "n": 65,
+      "mean_R": -0.041,
+      "sum_R": -2.7
+     },
+     "2020": {
+      "n": 38,
+      "mean_R": -0.147,
+      "sum_R": -5.6
+     },
+     "2021": {
+      "n": 28,
+      "mean_R": 0.188,
+      "sum_R": 5.3
+     },
+     "2022": {
+      "n": 28,
+      "mean_R": -0.335,
+      "sum_R": -9.4
+     },
+     "2023": {
+      "n": 20,
+      "mean_R": 0.564,
+      "sum_R": 11.3
+     },
+     "2024": {
+      "n": 29,
+      "mean_R": 0.05,
+      "sum_R": 1.4
+     },
+     "2025": {
+      "n": 12,
+      "mean_R": -0.475,
+      "sum_R": -5.7
+     }
+    },
+    "exit_reasons": {
+     "forced": 240,
+     "stop": 100,
+     "tp": 6
+    },
+    "buy_sell": {
+     "BUY": {
+      "n": 184,
+      "pnl_usd": -75.02
+     },
+     "SELL": {
+      "n": 162,
+      "pnl_usd": 59.44
+     }
+    },
+    "stop_pips_median": 22.7,
+    "hold_days_median": 0.0
+   },
+   "train_stress": {
+    "n_trades": 351,
+    "mean_R": -0.0506,
+    "t_stat": -0.94,
+    "profit_factor": 0.876
+   },
+   "train_gross": {
+    "n_trades": 346,
+    "mean_R": 0.0628,
+    "t_stat": 1.13,
+    "pos_year_share": 0.636
+   },
+   "pass_train_gate": false
+  },
+  "range_meanrev/tp2": {
+   "train": {
+    "n_trades": 351,
+    "trades_per_day": 0.129,
+    "win_rate": 0.4615,
+    "mean_R": -0.0009,
+    "t_stat": -0.02,
+    "profit_factor": 0.998,
+    "total_R": -0.33,
+    "worst_month_pct": null,
+    "violations": 0,
+    "pos_year_share": 0.545,
+    "by_year": {
+     "2015": {
+      "n": 29,
+      "mean_R": -0.14,
+      "sum_R": -4.1
+     },
+     "2016": {
+      "n": 29,
+      "mean_R": 0.158,
+      "sum_R": 4.6
+     },
+     "2017": {
+      "n": 34,
+      "mean_R": 0.05,
+      "sum_R": 1.7
+     },
+     "2018": {
+      "n": 34,
+      "mean_R": 0.033,
+      "sum_R": 1.1
+     },
+     "2019": {
+      "n": 66,
+      "mean_R": -0.022,
+      "sum_R": -1.4
+     },
+     "2020": {
+      "n": 38,
+      "mean_R": -0.067,
+      "sum_R": -2.6
+     },
+     "2021": {
+      "n": 30,
+      "mean_R": 0.046,
+      "sum_R": 1.4
+     },
+     "2022": {
+      "n": 28,
+      "mean_R": -0.263,
+      "sum_R": -7.4
+     },
+     "2023": {
+      "n": 21,
+      "mean_R": 0.391,
+      "sum_R": 8.2
+     },
+     "2024": {
+      "n": 30,
+      "mean_R": 0.026,
+      "sum_R": 0.8
+     },
+     "2025": {
+      "n": 12,
+      "mean_R": -0.225,
+      "sum_R": -2.7
+     }
+    },
+    "exit_reasons": {
+     "forced": 215,
+     "stop": 99,
+     "tp": 37
+    },
+    "buy_sell": {
+     "BUY": {
+      "n": 188,
+      "pnl_usd": -97.4
+     },
+     "SELL": {
+      "n": 163,
+      "pnl_usd": 81.07
+     }
+    },
+    "stop_pips_median": 22.8,
+    "hold_days_median": 0.0
+   },
+   "train_stress": {
+    "n_trades": 356,
+    "mean_R": -0.0454,
+    "t_stat": -0.92,
+    "profit_factor": 0.886
+   },
+   "train_gross": {
+    "n_trades": 351,
+    "mean_R": 0.0586,
+    "t_stat": 1.18,
+    "pos_year_share": 0.727
+   },
+   "pass_train_gate": false
+  },
+  "liquidity_sweep/tp4": {
+   "train": {
+    "n_trades": 1962,
+    "trades_per_day": 0.721,
+    "win_rate": 0.369,
+    "mean_R": -0.0687,
+    "t_stat": -2.22,
+    "profit_factor": 0.879,
+    "total_R": -134.85,
+    "worst_month_pct": null,
+    "violations": 0,
+    "pos_year_share": 0.182,
+    "by_year": {
+     "2015": {
+      "n": 172,
+      "mean_R": -0.127,
+      "sum_R": -21.9
+     },
+     "2016": {
+      "n": 187,
+      "mean_R": -0.103,
+      "sum_R": -19.3
+     },
+     "2017": {
+      "n": 192,
+      "mean_R": -0.055,
+      "sum_R": -10.6
+     },
+     "2018": {
+      "n": 196,
+      "mean_R": -0.03,
+      "sum_R": -5.8
+     },
+     "2019": {
+      "n": 195,
+      "mean_R": -0.131,
+      "sum_R": -25.6
+     },
+     "2020": {
+      "n": 201,
+      "mean_R": -0.129,
+      "sum_R": -25.9
+     },
+     "2021": {
+      "n": 195,
+      "mean_R": -0.054,
+      "sum_R": -10.5
+     },
+     "2022": {
+      "n": 187,
+      "mean_R": 0.046,
+      "sum_R": 8.6
+     },
+     "2023": {
+      "n": 189,
+      "mean_R": 0.036,
+      "sum_R": 6.8
+     },
+     "2024": {
+      "n": 183,
+      "mean_R": -0.067,
+      "sum_R": -12.3
+     },
+     "2025": {
+      "n": 65,
+      "mean_R": -0.28,
+      "sum_R": -18.2
+     }
+    },
+    "exit_reasons": {
+     "stop": 957,
+     "forced": 892,
+     "tp": 113
+    },
+    "buy_sell": {
+     "BUY": {
+      "n": 993,
+      "pnl_usd": -3978.52
+     },
+     "SELL": {
+      "n": 969,
+      "pnl_usd": -2764.14
+     }
+    },
+    "stop_pips_median": 18.7,
+    "hold_days_median": 0.0
+   },
+   "train_stress": {
+    "n_trades": 1959,
+    "mean_R": -0.1073,
+    "t_stat": -3.46,
+    "profit_factor": 0.819
+   },
+   "train_gross": {
+    "n_trades": 1943,
+    "mean_R": 0.019,
+    "t_stat": 0.61,
+    "pos_year_share": 0.545
+   },
+   "pass_train_gate": false
+  },
+  "liquidity_sweep/tp2": {
+   "train": {
+    "n_trades": 2029,
+    "trades_per_day": 0.746,
+    "win_rate": 0.3963,
+    "mean_R": -0.0768,
+    "t_stat": -3.04,
+    "profit_factor": 0.857,
+    "total_R": -155.77,
+    "worst_month_pct": null,
+    "violations": 0,
+    "pos_year_share": 0.182,
+    "by_year": {
+     "2015": {
+      "n": 178,
+      "mean_R": -0.19,
+      "sum_R": -33.8
+     },
+     "2016": {
+      "n": 187,
+      "mean_R": -0.128,
+      "sum_R": -23.9
+     },
+     "2017": {
+      "n": 198,
+      "mean_R": -0.086,
+      "sum_R": -17.0
+     },
+     "2018": {
+      "n": 203,
+      "mean_R": -0.105,
+      "sum_R": -21.3
+     },
+     "2019": {
+      "n": 206,
+      "mean_R": -0.129,
+      "sum_R": -26.6
+     },
+     "2020": {
+      "n": 205,
+      "mean_R": -0.083,
+      "sum_R": -17.0
+     },
+     "2021": {
+      "n": 204,
+      "mean_R": -0.079,
+      "sum_R": -16.0
+     },
+     "2022": {
+      "n": 192,
+      "mean_R": -0.035,
+      "sum_R": -6.7
+     },
+     "2023": {
+      "n": 197,
+      "mean_R": 0.024,
+      "sum_R": 4.6
+     },
+     "2024": {
+      "n": 192,
+      "mean_R": 0.051,
+      "sum_R": 9.7
+     },
+     "2025": {
+      "n": 67,
+      "mean_R": -0.117,
+      "sum_R": -7.9
+     }
+    },
+    "exit_reasons": {
+     "stop": 929,
+     "forced": 731,
+     "tp": 369
+    },
+    "buy_sell": {
+     "BUY": {
+      "n": 1030,
+      "pnl_usd": -5025.19
+     },
+     "SELL": {
+      "n": 999,
+      "pnl_usd": -2763.21
+     }
+    },
+    "stop_pips_median": 18.7,
+    "hold_days_median": 0.0
+   },
+   "train_stress": {
+    "n_trades": 2027,
+    "mean_R": -0.1103,
+    "t_stat": -4.33,
+    "profit_factor": 0.803
+   },
+   "train_gross": {
+    "n_trades": 2011,
+    "mean_R": 0.0057,
+    "t_stat": 0.23,
+    "pos_year_share": 0.455
+   },
+   "pass_train_gate": false
+  },
+  "mtf_momentum/tp4": {
+   "train": {
+    "n_trades": 671,
+    "trades_per_day": 0.247,
+    "win_rate": 0.4292,
+    "mean_R": -0.0018,
+    "t_stat": -0.04,
+    "profit_factor": 0.996,
+    "total_R": -1.22,
+    "worst_month_pct": null,
+    "violations": 0,
+    "pos_year_share": 0.636,
+    "by_year": {
+     "2015": {
+      "n": 61,
+      "mean_R": 0.041,
+      "sum_R": 2.5
+     },
+     "2016": {
+      "n": 52,
+      "mean_R": 0.004,
+      "sum_R": 0.2
+     },
+     "2017": {
+      "n": 60,
+      "mean_R": 0.163,
+      "sum_R": 9.8
+     },
+     "2018": {
+      "n": 80,
+      "mean_R": -0.051,
+      "sum_R": -4.1
+     },
+     "2019": {
+      "n": 40,
+      "mean_R": -0.041,
+      "sum_R": -1.6
+     },
+     "2020": {
+      "n": 71,
+      "mean_R": -0.303,
+      "sum_R": -21.5
+     },
+     "2021": {
+      "n": 72,
+      "mean_R": -0.045,
+      "sum_R": -3.3
+     },
+     "2022": {
+      "n": 70,
+      "mean_R": 0.108,
+      "sum_R": 7.6
+     },
+     "2023": {
+      "n": 64,
+      "mean_R": 0.015,
+      "sum_R": 1.0
+     },
+     "2024": {
+      "n": 73,
+      "mean_R": 0.097,
+      "sum_R": 7.1
+     },
+     "2025": {
+      "n": 28,
+      "mean_R": 0.041,
+      "sum_R": 1.1
+     }
+    },
+    "exit_reasons": {
+     "forced": 398,
+     "stop": 259,
+     "tp": 14
+    },
+    "buy_sell": {
+     "BUY": {
+      "n": 308,
+      "pnl_usd": 586.17
+     },
+     "SELL": {
+      "n": 363,
+      "pnl_usd": -646.92
+     }
+    },
+    "stop_pips_median": 28.6,
+    "hold_days_median": 0.0
+   },
+   "train_stress": {
+    "n_trades": 671,
+    "mean_R": -0.0221,
+    "t_stat": -0.5,
+    "profit_factor": 0.952
+   },
+   "train_gross": {
+    "n_trades": 670,
+    "mean_R": 0.0486,
+    "t_stat": 1.1,
+    "pos_year_share": 0.909
+   },
+   "pass_train_gate": false
+  },
+  "mtf_momentum/tp2": {
+   "train": {
+    "n_trades": 742,
+    "trades_per_day": 0.273,
+    "win_rate": 0.4353,
+    "mean_R": -0.0115,
+    "t_stat": -0.31,
+    "profit_factor": 0.974,
+    "total_R": -8.54,
+    "worst_month_pct": null,
+    "violations": 0,
+    "pos_year_share": 0.455,
+    "by_year": {
+     "2015": {
+      "n": 67,
+      "mean_R": 0.042,
+      "sum_R": 2.8
+     },
+     "2016": {
+      "n": 57,
+      "mean_R": 0.033,
+      "sum_R": 1.9
+     },
+     "2017": {
+      "n": 66,
+      "mean_R": 0.155,
+      "sum_R": 10.3
+     },
+     "2018": {
+      "n": 89,
+      "mean_R": -0.054,
+      "sum_R": -4.8
+     },
+     "2019": {
+      "n": 42,
+      "mean_R": -0.034,
+      "sum_R": -1.4
+     },
+     "2020": {
+      "n": 74,
+      "mean_R": -0.275,
+      "sum_R": -20.3
+     },
+     "2021": {
+      "n": 79,
+      "mean_R": -0.053,
+      "sum_R": -4.2
+     },
+     "2022": {
+      "n": 82,
+      "mean_R": 0.091,
+      "sum_R": 7.5
+     },
+     "2023": {
+      "n": 72,
+      "mean_R": -0.03,
+      "sum_R": -2.2
+     },
+     "2024": {
+      "n": 83,
+      "mean_R": -0.004,
+      "sum_R": -0.4
+     },
+     "2025": {
+      "n": 31,
+      "mean_R": 0.074,
+      "sum_R": 2.3
+     }
+    },
+    "exit_reasons": {
+     "forced": 377,
+     "stop": 269,
+     "tp": 96
+    },
+    "buy_sell": {
+     "BUY": {
+      "n": 341,
+      "pnl_usd": 367.34
+     },
+     "SELL": {
+      "n": 401,
+      "pnl_usd": -794.23
+     }
+    },
+    "stop_pips_median": 28.7,
+    "hold_days_median": 0.0
+   },
+   "train_stress": {
+    "n_trades": 739,
+    "mean_R": -0.0355,
+    "t_stat": -0.95,
+    "profit_factor": 0.921
+   },
+   "train_gross": {
+    "n_trades": 743,
+    "mean_R": 0.039,
+    "t_stat": 1.05,
+    "pos_year_share": 0.909
+   },
+   "pass_train_gate": false
+  },
+  "vwap_reclaim/tp4": {
+   "train": {
+    "n_trades": 2192,
+    "trades_per_day": 0.806,
+    "win_rate": 0.3631,
+    "mean_R": -0.0815,
+    "t_stat": -2.95,
+    "profit_factor": 0.85,
+    "total_R": -178.62,
+    "worst_month_pct": null,
+    "violations": 0,
+    "pos_year_share": 0.273,
+    "by_year": {
+     "2015": {
+      "n": 193,
+      "mean_R": 0.029,
+      "sum_R": 5.7
+     },
+     "2016": {
+      "n": 206,
+      "mean_R": -0.092,
+      "sum_R": -19.0
+     },
+     "2017": {
+      "n": 187,
+      "mean_R": -0.077,
+      "sum_R": -14.3
+     },
+     "2018": {
+      "n": 215,
+      "mean_R": 0.008,
+      "sum_R": 1.7
+     },
+     "2019": {
+      "n": 196,
+      "mean_R": -0.247,
+      "sum_R": -48.3
+     },
+     "2020": {
+      "n": 223,
+      "mean_R": -0.083,
+      "sum_R": -18.5
+     },
+     "2021": {
+      "n": 225,
+      "mean_R": -0.141,
+      "sum_R": -31.6
+     },
+     "2022": {
+      "n": 218,
+      "mean_R": 0.01,
+      "sum_R": 2.2
+     },
+     "2023": {
+      "n": 209,
+      "mean_R": -0.063,
+      "sum_R": -13.2
+     },
+     "2024": {
+      "n": 220,
+      "mean_R": -0.187,
+      "sum_R": -41.1
+     },
+     "2025": {
+      "n": 100,
+      "mean_R": -0.022,
+      "sum_R": -2.2
+     }
+    },
+    "exit_reasons": {
+     "forced": 1070,
+     "stop": 1021,
+     "tp": 101
+    },
+    "buy_sell": {
+     "BUY": {
+      "n": 1008,
+      "pnl_usd": -5431.51
+     },
+     "SELL": {
+      "n": 1184,
+      "pnl_usd": -3499.58
+     }
+    },
+    "stop_pips_median": 23.4,
+    "hold_days_median": 0.0
+   },
+   "train_stress": {
+    "n_trades": 2200,
+    "mean_R": -0.1142,
+    "t_stat": -4.15,
+    "profit_factor": 0.797
+   },
+   "train_gross": {
+    "n_trades": 2181,
+    "mean_R": -0.0094,
+    "t_stat": -0.34,
+    "pos_year_share": 0.455
+   },
+   "pass_train_gate": false
+  },
+  "vwap_reclaim/tp2": {
+   "train": {
+    "n_trades": 2221,
+    "trades_per_day": 0.816,
+    "win_rate": 0.3881,
+    "mean_R": -0.0881,
+    "t_stat": -3.8,
+    "profit_factor": 0.829,
+    "total_R": -195.69,
+    "worst_month_pct": null,
+    "violations": 0,
+    "pos_year_share": 0.0,
+    "by_year": {
+     "2015": {
+      "n": 195,
+      "mean_R": -0.01,
+      "sum_R": -2.0
+     },
+     "2016": {
+      "n": 208,
+      "mean_R": -0.083,
+      "sum_R": -17.4
+     },
+     "2017": {
+      "n": 191,
+      "mean_R": -0.116,
+      "sum_R": -22.2
+     },
+     "2018": {
+      "n": 217,
+      "mean_R": -0.046,
+      "sum_R": -10.0
+     },
+     "2019": {
+      "n": 198,
+      "mean_R": -0.12,
+      "sum_R": -23.7
+     },
+     "2020": {
+      "n": 226,
+      "mean_R": -0.035,
+      "sum_R": -8.0
+     },
+     "2021": {
+      "n": 229,
+      "mean_R": -0.142,
+      "sum_R": -32.5
+     },
+     "2022": {
+      "n": 222,
+      "mean_R": -0.058,
+      "sum_R": -12.9
+     },
+     "2023": {
+      "n": 211,
+      "mean_R": -0.121,
+      "sum_R": -25.5
+     },
+     "2024": {
+      "n": 224,
+      "mean_R": -0.14,
+      "sum_R": -31.4
+     },
+     "2025": {
+      "n": 100,
+      "mean_R": -0.101,
+      "sum_R": -10.1
+     }
+    },
+    "exit_reasons": {
+     "stop": 979,
+     "forced": 894,
+     "tp": 348
+    },
+    "buy_sell": {
+     "BUY": {
+      "n": 1019,
+      "pnl_usd": -6129.72
+     },
+     "SELL": {
+      "n": 1202,
+      "pnl_usd": -3654.62
+     }
+    },
+    "stop_pips_median": 23.4,
+    "hold_days_median": 0.0
+   },
+   "train_stress": {
+    "n_trades": 2229,
+    "mean_R": -0.1171,
+    "t_stat": -5.03,
+    "profit_factor": 0.781
+   },
+   "train_gross": {
+    "n_trades": 2215,
+    "mean_R": -0.0169,
+    "t_stat": -0.73,
+    "pos_year_share": 0.273
+   },
+   "pass_train_gate": false
+  },
+  "session_level_reject/tp4": {
+   "train": {
+    "n_trades": 1278,
+    "trades_per_day": 0.47,
+    "win_rate": 0.3083,
+    "mean_R": -0.1598,
+    "t_stat": -3.91,
+    "profit_factor": 0.761,
+    "total_R": -204.25,
+    "worst_month_pct": null,
+    "violations": 0,
+    "pos_year_share": 0.0,
+    "by_year": {
+     "2015": {
+      "n": 108,
+      "mean_R": -0.107,
+      "sum_R": -11.5
+     },
+     "2016": {
+      "n": 129,
+      "mean_R": -0.327,
+      "sum_R": -42.2
+     },
+     "2017": {
+      "n": 122,
+      "mean_R": -0.134,
+      "sum_R": -16.3
+     },
+     "2018": {
+      "n": 128,
+      "mean_R": -0.01,
+      "sum_R": -1.3
+     },
+     "2019": {
+      "n": 134,
+      "mean_R": -0.158,
+      "sum_R": -21.2
+     },
+     "2020": {
+      "n": 114,
+      "mean_R": -0.197,
+      "sum_R": -22.5
+     },
+     "2021": {
+      "n": 115,
+      "mean_R": -0.168,
+      "sum_R": -19.3
+     },
+     "2022": {
+      "n": 104,
+      "mean_R": -0.246,
+      "sum_R": -25.6
+     },
+     "2023": {
+      "n": 131,
+      "mean_R": -0.209,
+      "sum_R": -27.4
+     },
+     "2024": {
+      "n": 130,
+      "mean_R": -0.122,
+      "sum_R": -15.9
+     },
+     "2025": {
+      "n": 63,
+      "mean_R": -0.018,
+      "sum_R": -1.1
+     }
+    },
+    "exit_reasons": {
+     "stop": 745,
+     "forced": 444,
+     "tp": 89
+    },
+    "buy_sell": {
+     "BUY": {
+      "n": 601,
+      "pnl_usd": -4496.63
+     },
+     "SELL": {
+      "n": 677,
+      "pnl_usd": -5716.0
+     }
+    },
+    "stop_pips_median": 15.0,
+    "hold_days_median": 0.0
+   },
+   "train_stress": {
+    "n_trades": 1278,
+    "mean_R": -0.1895,
+    "t_stat": -4.6,
+    "profit_factor": 0.727
+   },
+   "train_gross": {
+    "n_trades": 1274,
+    "mean_R": -0.0425,
+    "t_stat": -1.03,
+    "pos_year_share": 0.364
+   },
+   "pass_train_gate": false
+  },
+  "session_level_reject/tp2": {
+   "train": {
+    "n_trades": 1306,
+    "trades_per_day": 0.48,
+    "win_rate": 0.3614,
+    "mean_R": -0.125,
+    "t_stat": -3.71,
+    "profit_factor": 0.797,
+    "total_R": -163.22,
+    "worst_month_pct": null,
+    "violations": 0,
+    "pos_year_share": 0.091,
+    "by_year": {
+     "2015": {
+      "n": 109,
+      "mean_R": -0.166,
+      "sum_R": -18.0
+     },
+     "2016": {
+      "n": 131,
+      "mean_R": -0.349,
+      "sum_R": -45.7
+     },
+     "2017": {
+      "n": 124,
+      "mean_R": -0.076,
+      "sum_R": -9.4
+     },
+     "2018": {
+      "n": 129,
+      "mean_R": -0.026,
+      "sum_R": -3.3
+     },
+     "2019": {
+      "n": 139,
+      "mean_R": -0.096,
+      "sum_R": -13.3
+     },
+     "2020": {
+      "n": 117,
+      "mean_R": -0.077,
+      "sum_R": -9.0
+     },
+     "2021": {
+      "n": 119,
+      "mean_R": -0.184,
+      "sum_R": -21.9
+     },
+     "2022": {
+      "n": 106,
+      "mean_R": -0.201,
+      "sum_R": -21.3
+     },
+     "2023": {
+      "n": 134,
+      "mean_R": -0.21,
+      "sum_R": -28.2
+     },
+     "2024": {
+      "n": 132,
+      "mean_R": -0.048,
+      "sum_R": -6.3
+     },
+     "2025": {
+      "n": 66,
+      "mean_R": 0.2,
+      "sum_R": 13.2
+     }
+    },
+    "exit_reasons": {
+     "stop": 701,
+     "forced": 325,
+     "tp": 280
+    },
+    "buy_sell": {
+     "BUY": {
+      "n": 613,
+      "pnl_usd": -4613.34
+     },
+     "SELL": {
+      "n": 693,
+      "pnl_usd": -3547.6
+     }
+    },
+    "stop_pips_median": 15.0,
+    "hold_days_median": 0.0
+   },
+   "train_stress": {
+    "n_trades": 1306,
+    "mean_R": -0.1551,
+    "t_stat": -4.55,
+    "profit_factor": 0.758
+   },
+   "train_gross": {
+    "n_trades": 1305,
+    "mean_R": -0.0185,
+    "t_stat": -0.55,
+    "pos_year_share": 0.545
+   },
+   "pass_train_gate": false
+  },
+  "orb/tp4": {
+   "train": {
+    "n_trades": 1690,
+    "trades_per_day": 0.621,
+    "win_rate": 0.3053,
+    "mean_R": -0.1134,
+    "t_stat": -2.9,
+    "profit_factor": 0.842,
+    "total_R": -191.58,
+    "worst_month_pct": null,
+    "violations": 0,
+    "pos_year_share": 0.091,
+    "by_year": {
+     "2015": {
+      "n": 147,
+      "mean_R": -0.181,
+      "sum_R": -26.6
+     },
+     "2016": {
+      "n": 149,
+      "mean_R": -0.012,
+      "sum_R": -1.8
+     },
+     "2017": {
+      "n": 155,
+      "mean_R": -0.058,
+      "sum_R": -9.0
+     },
+     "2018": {
+      "n": 171,
+      "mean_R": 0.099,
+      "sum_R": 17.0
+     },
+     "2019": {
+      "n": 166,
+      "mean_R": -0.107,
+      "sum_R": -17.8
+     },
+     "2020": {
+      "n": 163,
+      "mean_R": -0.058,
+      "sum_R": -9.4
+     },
+     "2021": {
+      "n": 168,
+      "mean_R": -0.259,
+      "sum_R": -43.4
+     },
+     "2022": {
+      "n": 159,
+      "mean_R": -0.092,
+      "sum_R": -14.7
+     },
+     "2023": {
+      "n": 170,
+      "mean_R": -0.06,
+      "sum_R": -10.2
+     },
+     "2024": {
+      "n": 170,
+      "mean_R": -0.254,
+      "sum_R": -43.3
+     },
+     "2025": {
+      "n": 72,
+      "mean_R": -0.45,
+      "sum_R": -32.4
+     }
+    },
+    "exit_reasons": {
+     "stop": 1097,
+     "forced": 437,
+     "tp": 156
+    },
+    "buy_sell": {
+     "BUY": {
+      "n": 868,
+      "pnl_usd": -7635.09
+     },
+     "SELL": {
+      "n": 822,
+      "pnl_usd": -1944.0
+     }
+    },
+    "stop_pips_median": 15.4,
+    "hold_days_median": 0.0
+   },
+   "train_stress": {
+    "n_trades": 1690,
+    "mean_R": -0.1779,
+    "t_stat": -4.6,
+    "profit_factor": 0.763
+   },
+   "train_gross": {
+    "n_trades": 1690,
+    "mean_R": -0.0156,
+    "t_stat": -0.4,
+    "pos_year_share": 0.545
+   },
+   "pass_train_gate": false
+  },
+  "orb/tp2": {
+   "train": {
+    "n_trades": 1690,
+    "trades_per_day": 0.621,
+    "win_rate": 0.3556,
+    "mean_R": -0.1095,
+    "t_stat": -3.46,
+    "profit_factor": 0.835,
+    "total_R": -185.04,
+    "worst_month_pct": null,
+    "violations": 0,
+    "pos_year_share": 0.182,
+    "by_year": {
+     "2015": {
+      "n": 147,
+      "mean_R": -0.18,
+      "sum_R": -26.5
+     },
+     "2016": {
+      "n": 149,
+      "mean_R": -0.066,
+      "sum_R": -9.9
+     },
+     "2017": {
+      "n": 155,
+      "mean_R": 0.013,
+      "sum_R": 2.0
+     },
+     "2018": {
+      "n": 171,
+      "mean_R": 0.056,
+      "sum_R": 9.6
+     },
+     "2019": {
+      "n": 166,
+      "mean_R": -0.128,
+      "sum_R": -21.2
+     },
+     "2020": {
+      "n": 163,
+      "mean_R": -0.034,
+      "sum_R": -5.6
+     },
+     "2021": {
+      "n": 168,
+      "mean_R": -0.231,
+      "sum_R": -38.8
+     },
+     "2022": {
+      "n": 159,
+      "mean_R": -0.095,
+      "sum_R": -15.2
+     },
+     "2023": {
+      "n": 170,
+      "mean_R": -0.138,
+      "sum_R": -23.4
+     },
+     "2024": {
+      "n": 170,
+      "mean_R": -0.144,
+      "sum_R": -24.5
+     },
+     "2025": {
+      "n": 72,
+      "mean_R": -0.439,
+      "sum_R": -31.6
+     }
+    },
+    "exit_reasons": {
+     "stop": 1017,
+     "tp": 434,
+     "forced": 239
+    },
+    "buy_sell": {
+     "BUY": {
+      "n": 868,
+      "pnl_usd": -6468.34
+     },
+     "SELL": {
+      "n": 822,
+      "pnl_usd": -2783.64
+     }
+    },
+    "stop_pips_median": 15.4,
+    "hold_days_median": 0.0
+   },
+   "train_stress": {
+    "n_trades": 1690,
+    "mean_R": -0.1656,
+    "t_stat": -5.22,
+    "profit_factor": 0.763
+   },
+   "train_gross": {
+    "n_trades": 1690,
+    "mean_R": -0.0096,
+    "t_stat": -0.3,
+    "pos_year_share": 0.455
+   },
+   "pass_train_gate": false
+  },
+  "break_retest/tp4": {
+   "train": {
+    "n_trades": 884,
+    "trades_per_day": 0.325,
+    "win_rate": 0.4106,
+    "mean_R": -0.0498,
+    "t_stat": -1.41,
+    "profit_factor": 0.88,
+    "total_R": -44.04,
+    "worst_month_pct": null,
+    "violations": 0,
+    "pos_year_share": 0.273,
+    "by_year": {
+     "2015": {
+      "n": 68,
+      "mean_R": 0.066,
+      "sum_R": 4.5
+     },
+     "2016": {
+      "n": 72,
+      "mean_R": -0.055,
+      "sum_R": -3.9
+     },
+     "2017": {
+      "n": 93,
+      "mean_R": -0.048,
+      "sum_R": -4.4
+     },
+     "2018": {
+      "n": 90,
+      "mean_R": -0.173,
+      "sum_R": -15.6
+     },
+     "2019": {
+      "n": 95,
+      "mean_R": -0.164,
+      "sum_R": -15.6
+     },
+     "2020": {
+      "n": 90,
+      "mean_R": -0.017,
+      "sum_R": -1.6
+     },
+     "2021": {
+      "n": 92,
+      "mean_R": 0.117,
+      "sum_R": 10.8
+     },
+     "2022": {
+      "n": 77,
+      "mean_R": -0.189,
+      "sum_R": -14.6
+     },
+     "2023": {
+      "n": 88,
+      "mean_R": 0.102,
+      "sum_R": 9.0
+     },
+     "2024": {
+      "n": 79,
+      "mean_R": -0.082,
+      "sum_R": -6.5
+     },
+     "2025": {
+      "n": 40,
+      "mean_R": -0.155,
+      "sum_R": -6.2
+     }
+    },
+    "exit_reasons": {
+     "forced": 576,
+     "stop": 291,
+     "tp": 17
+    },
+    "buy_sell": {
+     "BUY": {
+      "n": 418,
+      "pnl_usd": -363.58
+     },
+     "SELL": {
+      "n": 466,
+      "pnl_usd": -1838.64
+     }
+    },
+    "stop_pips_median": 26.5,
+    "hold_days_median": 0.0
+   },
+   "train_stress": {
+    "n_trades": 885,
+    "mean_R": -0.0787,
+    "t_stat": -2.24,
+    "profit_factor": 0.818
+   },
+   "train_gross": {
+    "n_trades": 883,
+    "mean_R": 0.0146,
+    "t_stat": 0.41,
+    "pos_year_share": 0.455
+   },
+   "pass_train_gate": false
+  },
+  "break_retest/tp2": {
+   "train": {
+    "n_trades": 889,
+    "trades_per_day": 0.327,
+    "win_rate": 0.4218,
+    "mean_R": -0.0643,
+    "t_stat": -2.07,
+    "profit_factor": 0.843,
+    "total_R": -57.16,
+    "worst_month_pct": null,
+    "violations": 0,
+    "pos_year_share": 0.273,
+    "by_year": {
+     "2015": {
+      "n": 69,
+      "mean_R": 0.025,
+      "sum_R": 1.7
+     },
+     "2016": {
+      "n": 73,
+      "mean_R": -0.011,
+      "sum_R": -0.8
+     },
+     "2017": {
+      "n": 94,
+      "mean_R": -0.035,
+      "sum_R": -3.3
+     },
+     "2018": {
+      "n": 92,
+      "mean_R": -0.179,
+      "sum_R": -16.5
+     },
+     "2019": {
+      "n": 95,
+      "mean_R": -0.151,
+      "sum_R": -14.3
+     },
+     "2020": {
+      "n": 90,
+      "mean_R": -0.062,
+      "sum_R": -5.6
+     },
+     "2021": {
+      "n": 92,
+      "mean_R": 0.059,
+      "sum_R": 5.4
+     },
+     "2022": {
+      "n": 77,
+      "mean_R": -0.199,
+      "sum_R": -15.3
+     },
+     "2023": {
+      "n": 88,
+      "mean_R": 0.049,
+      "sum_R": 4.3
+     },
+     "2024": {
+      "n": 79,
+      "mean_R": -0.105,
+      "sum_R": -8.3
+     },
+     "2025": {
+      "n": 40,
+      "mean_R": -0.114,
+      "sum_R": -4.6
+     }
+    },
+    "exit_reasons": {
+     "forced": 515,
+     "stop": 288,
+     "tp": 86
+    },
+    "buy_sell": {
+     "BUY": {
+      "n": 423,
+      "pnl_usd": -554.83
+     },
+     "SELL": {
+      "n": 466,
+      "pnl_usd": -2303.21
+     }
+    },
+    "stop_pips_median": 26.6,
+    "hold_days_median": 0.0
+   },
+   "train_stress": {
+    "n_trades": 890,
+    "mean_R": -0.0889,
+    "t_stat": -2.85,
+    "profit_factor": 0.791
+   },
+   "train_gross": {
+    "n_trades": 889,
+    "mean_R": -0.0068,
+    "t_stat": -0.22,
+    "pos_year_share": 0.455
+   },
+   "pass_train_gate": false
+  },
+  "fvg_reaction/tp4": {
+   "train": {
+    "n_trades": 1008,
+    "trades_per_day": 0.37,
+    "win_rate": 0.3413,
+    "mean_R": -0.1073,
+    "t_stat": -2.38,
+    "profit_factor": 0.828,
+    "total_R": -108.18,
+    "worst_month_pct": null,
+    "violations": 0,
+    "pos_year_share": 0.091,
+    "by_year": {
+     "2015": {
+      "n": 85,
+      "mean_R": -0.212,
+      "sum_R": -18.0
+     },
+     "2016": {
+      "n": 83,
+      "mean_R": -0.145,
+      "sum_R": -12.0
+     },
+     "2017": {
+      "n": 90,
+      "mean_R": -0.041,
+      "sum_R": -3.7
+     },
+     "2018": {
+      "n": 101,
+      "mean_R": -0.025,
+      "sum_R": -2.5
+     },
+     "2019": {
+      "n": 73,
+      "mean_R": 0.13,
+      "sum_R": 9.5
+     },
+     "2020": {
+      "n": 104,
+      "mean_R": -0.225,
+      "sum_R": -23.4
+     },
+     "2021": {
+      "n": 115,
+      "mean_R": -0.218,
+      "sum_R": -25.0
+     },
+     "2022": {
+      "n": 114,
+      "mean_R": -0.056,
+      "sum_R": -6.4
+     },
+     "2023": {
+      "n": 87,
+      "mean_R": -0.134,
+      "sum_R": -11.7
+     },
+     "2024": {
+      "n": 105,
+      "mean_R": -0.115,
+      "sum_R": -12.1
+     },
+     "2025": {
+      "n": 51,
+      "mean_R": -0.055,
+      "sum_R": -2.8
+     }
+    },
+    "exit_reasons": {
+     "stop": 542,
+     "forced": 404,
+     "tp": 62
+    },
+    "buy_sell": {
+     "BUY": {
+      "n": 485,
+      "pnl_usd": -3045.89
+     },
+     "SELL": {
+      "n": 523,
+      "pnl_usd": -2363.07
+     }
+    },
+    "stop_pips_median": 18.8,
+    "hold_days_median": 0.0
+   },
+   "train_stress": {
+    "n_trades": 1004,
+    "mean_R": -0.1388,
+    "t_stat": -3.08,
+    "profit_factor": 0.785
+   },
+   "train_gross": {
+    "n_trades": 1003,
+    "mean_R": 0.0023,
+    "t_stat": 0.05,
+    "pos_year_share": 0.545
+   },
+   "pass_train_gate": false
+  },
+  "fvg_reaction/tp2": {
+   "train": {
+    "n_trades": 1041,
+    "trades_per_day": 0.383,
+    "win_rate": 0.3862,
+    "mean_R": -0.0898,
+    "t_stat": -2.43,
+    "profit_factor": 0.844,
+    "total_R": -93.45,
+    "worst_month_pct": null,
+    "violations": 0,
+    "pos_year_share": 0.091,
+    "by_year": {
+     "2015": {
+      "n": 88,
+      "mean_R": -0.118,
+      "sum_R": -10.3
+     },
+     "2016": {
+      "n": 84,
+      "mean_R": -0.135,
+      "sum_R": -11.4
+     },
+     "2017": {
+      "n": 94,
+      "mean_R": -0.08,
+      "sum_R": -7.5
+     },
+     "2018": {
+      "n": 106,
+      "mean_R": -0.009,
+      "sum_R": -1.0
+     },
+     "2019": {
+      "n": 75,
+      "mean_R": 0.181,
+      "sum_R": 13.6
+     },
+     "2020": {
+      "n": 107,
+      "mean_R": -0.092,
+      "sum_R": -9.8
+     },
+     "2021": {
+      "n": 118,
+      "mean_R": -0.21,
+      "sum_R": -24.8
+     },
+     "2022": {
+      "n": 116,
+      "mean_R": -0.137,
+      "sum_R": -15.9
+     },
+     "2023": {
+      "n": 92,
+      "mean_R": -0.105,
+      "sum_R": -9.6
+     },
+     "2024": {
+      "n": 106,
+      "mean_R": -0.085,
+      "sum_R": -9.0
+     },
+     "2025": {
+      "n": 55,
+      "mean_R": -0.141,
+      "sum_R": -7.7
+     }
+    },
+    "exit_reasons": {
+     "stop": 516,
+     "forced": 320,
+     "tp": 205
+    },
+    "buy_sell": {
+     "BUY": {
+      "n": 505,
+      "pnl_usd": -2212.52
+     },
+     "SELL": {
+      "n": 536,
+      "pnl_usd": -2460.01
+     }
+    },
+    "stop_pips_median": 19.1,
+    "hold_days_median": 0.0
+   },
+   "train_stress": {
+    "n_trades": 1040,
+    "mean_R": -0.1232,
+    "t_stat": -3.31,
+    "profit_factor": 0.794
+   },
+   "train_gross": {
+    "n_trades": 1038,
+    "mean_R": 0.0193,
+    "t_stat": 0.53,
+    "pos_year_share": 0.545
+   },
+   "pass_train_gate": false
+  },
+  "fib_confluence/tp4": {
+   "train": {
+    "n_trades": 337,
+    "trades_per_day": 0.124,
+    "win_rate": 0.4036,
+    "mean_R": -0.0756,
+    "t_stat": -1.3,
+    "profit_factor": 0.828,
+    "total_R": -25.46,
+    "worst_month_pct": null,
+    "violations": 0,
+    "pos_year_share": 0.364,
+    "by_year": {
+     "2015": {
+      "n": 14,
+      "mean_R": -0.202,
+      "sum_R": -2.8
+     },
+     "2016": {
+      "n": 30,
+      "mean_R": -0.087,
+      "sum_R": -2.6
+     },
+     "2017": {
+      "n": 36,
+      "mean_R": -0.205,
+      "sum_R": -7.4
+     },
+     "2018": {
+      "n": 21,
+      "mean_R": 0.025,
+      "sum_R": 0.5
+     },
+     "2019": {
+      "n": 39,
+      "mean_R": -0.021,
+      "sum_R": -0.8
+     },
+     "2020": {
+      "n": 45,
+      "mean_R": -0.368,
+      "sum_R": -16.6
+     },
+     "2021": {
+      "n": 51,
+      "mean_R": -0.017,
+      "sum_R": -0.9
+     },
+     "2022": {
+      "n": 32,
+      "mean_R": 0.277,
+      "sum_R": 8.9
+     },
+     "2023": {
+      "n": 28,
+      "mean_R": 0.037,
+      "sum_R": 1.0
+     },
+     "2024": {
+      "n": 31,
+      "mean_R": -0.237,
+      "sum_R": -7.3
+     },
+     "2025": {
+      "n": 10,
+      "mean_R": 0.256,
+      "sum_R": 2.6
+     }
+    },
+    "exit_reasons": {
+     "forced": 212,
+     "stop": 117,
+     "tp": 8
+    },
+    "buy_sell": {
+     "BUY": {
+      "n": 154,
+      "pnl_usd": -613.39
+     },
+     "SELL": {
+      "n": 183,
+      "pnl_usd": -659.75
+     }
+    },
+    "stop_pips_median": 34.0,
+    "hold_days_median": 0.0
+   },
+   "train_stress": {
+    "n_trades": 341,
+    "mean_R": -0.101,
+    "t_stat": -1.74,
+    "profit_factor": 0.779
+   },
+   "train_gross": {
+    "n_trades": 335,
+    "mean_R": -0.0127,
+    "t_stat": -0.22,
+    "pos_year_share": 0.545
+   },
+   "pass_train_gate": false
+  },
+  "fib_confluence/tp2": {
+   "train": {
+    "n_trades": 351,
+    "trades_per_day": 0.129,
+    "win_rate": 0.4131,
+    "mean_R": -0.0824,
+    "t_stat": -1.65,
+    "profit_factor": 0.804,
+    "total_R": -28.92,
+    "worst_month_pct": null,
+    "violations": 0,
+    "pos_year_share": 0.273,
+    "by_year": {
+     "2015": {
+      "n": 14,
+      "mean_R": -0.202,
+      "sum_R": -2.8
+     },
+     "2016": {
+      "n": 31,
+      "mean_R": -0.035,
+      "sum_R": -1.1
+     },
+     "2017": {
+      "n": 38,
+      "mean_R": -0.114,
+      "sum_R": -4.3
+     },
+     "2018": {
+      "n": 21,
+      "mean_R": -0.065,
+      "sum_R": -1.4
+     },
+     "2019": {
+      "n": 40,
+      "mean_R": -0.041,
+      "sum_R": -1.6
+     },
+     "2020": {
+      "n": 45,
+      "mean_R": -0.346,
+      "sum_R": -15.6
+     },
+     "2021": {
+      "n": 56,
+      "mean_R": 0.002,
+      "sum_R": 0.1
+     },
+     "2022": {
+      "n": 33,
+      "mean_R": 0.082,
+      "sum_R": 2.7
+     },
+     "2023": {
+      "n": 31,
+      "mean_R": 0.111,
+      "sum_R": 3.4
+     },
+     "2024": {
+      "n": 32,
+      "mean_R": -0.234,
+      "sum_R": -7.5
+     },
+     "2025": {
+      "n": 10,
+      "mean_R": -0.089,
+      "sum_R": -0.9
+     }
+    },
+    "exit_reasons": {
+     "forced": 202,
+     "stop": 115,
+     "tp": 34
+    },
+    "buy_sell": {
+     "BUY": {
+      "n": 162,
+      "pnl_usd": -470.88
+     },
+     "SELL": {
+      "n": 189,
+      "pnl_usd": -974.88
+     }
+    },
+    "stop_pips_median": 34.5,
+    "hold_days_median": 0.0
+   },
+   "train_stress": {
+    "n_trades": 355,
+    "mean_R": -0.1135,
+    "t_stat": -2.28,
+    "profit_factor": 0.742
+   },
+   "train_gross": {
+    "n_trades": 351,
+    "mean_R": -0.02,
+    "t_stat": -0.4,
+    "pos_year_share": 0.455
+   },
+   "pass_train_gate": false
+  }
+ },
+ "elapsed_s": 241
+}
