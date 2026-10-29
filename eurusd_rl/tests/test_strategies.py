@@ -119,3 +119,28 @@ def test_signal_fires_once_and_respects_staleness(cfg, real_m1):
         assert len(np.unique(k)) == len(k)                 # chaque barre d'entrée émet au plus une fois
         lag = (T - lib["bar_end"][k]).astype("timedelta64[m]").astype(int)
         assert (lag >= 0).all() and (lag <= 60).all()
+
+
+@pytest.mark.slow
+def test_predictor_features_no_lookahead(cfg, real_m1):
+    import copy
+    from eurusd_rl.features_pred import build
+    from eurusd_rl.market import build_market
+    sub = real_m1[(real_m1["t_utc"] >= "2021-01-01") & (real_m1["t_utc"] < "2024-02-01")].reset_index(drop=True)
+    cut = pd.Timestamp("2024-01-10 13:00")
+    pert = sub.copy()
+    after = pert["t_server"] >= cut
+    f = 1 + np.random.default_rng(9).normal(0, 0.004, after.sum())
+    for k in ("open", "high", "low", "close"):
+        pert.loc[after, k] = pert.loc[after, k] * f
+    pert.loc[after, "high"] = pert.loc[after, ["open", "high", "low", "close"]].max(axis=1)
+    pert.loc[after, "low"] = pert.loc[after, ["open", "high", "low", "close"]].min(axis=1)
+    c = copy.deepcopy(cfg)
+    c["execution"]["spread"]["profile_fit"] = ["2021-01-01", "2021-12-31"]
+    ma, mb = build_market(c, sub), build_market(c, pert)
+    idx = np.flatnonzero(pd.DatetimeIndex(ma.dec_t_server) >= pd.Timestamp("2023-12-01"))
+    A, B = build(ma, sub, idx, with_cross=False), build(mb, pert, idx, with_cross=False)
+    before = pd.DatetimeIndex(ma.dec_t_server[idx]) <= cut
+    assert before.sum() > 1000
+    pd.testing.assert_frame_equal(A[before].reset_index(drop=True), B[before].reset_index(drop=True))
+    assert not A[~before].equals(B[~before])

@@ -187,3 +187,32 @@ def test_swing_weekend_gap_through_stop(cfg):
     mk.m1_wday[:] = np.repeat([4, 0], 10)
     tr = run(mk, cfg, [1] + [0] * 30)[2]
     assert tr[0, 8] == E.R_STOP and tr[0, 5] == pytest.approx(gap - 0.00005)
+
+
+# ------------------------------------------------------------------ étiquettes = environnement
+@pytest.mark.slow
+def test_labels_match_environment(cfg, real_m1):
+    import copy
+    from eurusd_rl.labels import make_labels
+    from eurusd_rl.market import build_market
+    sub = real_m1[(real_m1["t_utc"] >= "2024-01-01") & (real_m1["t_utc"] < "2024-03-01")].reset_index(drop=True)
+    c = copy.deepcopy(cfg)
+    c["execution"]["spread"]["profile_fit"] = ["2024-01-01", "2024-02-29"]
+    c["internal_risk"]["daily_halt"] = c["internal_risk"]["weekly_halt"] = c["internal_risk"]["total_halt"] = 1.0
+    mk = build_market(c, sub)
+    rng = np.random.default_rng(0)
+    cand = rng.choice(np.flatnonzero(mk.dec_can_enter), 60, replace=False)
+    lab = make_labels(mk, c, cand, c["trade"]["take_profit_r"])
+    for n, d in enumerate(cand):
+        for side, a, key in ((1, 1, "long"), (-1, 2, "short")):
+            v = E.VecEnv(mk, c, 1, int(d), len(mk.dec_m1), sequential=True, log_capacity=5)
+            v.step(np.array([a]))
+            while v.nlog[0] == 0:
+                _, done, _, _ = v.step(np.array([0]))
+                if done[0]:
+                    break
+            tr = v.log[0, 0]
+            assert int(tr[2]) == lab[f"exit_m1_{key}"][n]                    # même barre de sortie
+            # même R au facteur d'arrondi de lot près (R env = net / risque nominal ; R label = net / (sd x lots))
+            r_env_unit = tr[10] / (tr[6] * 1e5 * tr[7])
+            assert r_env_unit == pytest.approx(lab[f"R_{key}"][n], abs=1e-9)
