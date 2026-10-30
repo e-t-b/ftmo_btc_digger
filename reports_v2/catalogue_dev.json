@@ -1,0 +1,732 @@
+{
+  "family": 19,
+  "alpha": 0.05,
+  "holm": {
+    "S2": {
+      "p": 0.21733238277218914,
+      "threshold": 0.002631578947368421,
+      "significant": false
+    },
+    "S10": {
+      "p": 0.3002922863842413,
+      "threshold": 0.002777777777777778,
+      "significant": false
+    },
+    "S11": {
+      "p": 0.3801412657965735,
+      "threshold": 0.0029411764705882353,
+      "significant": false
+    },
+    "S3": {
+      "p": 0.5948162458318853,
+      "threshold": 0.003125,
+      "significant": false
+    },
+    "S8": {
+      "p": 0.6192927031286033,
+      "threshold": 0.0033333333333333335,
+      "significant": false
+    },
+    "S13": {
+      "p": 0.7234111463528479,
+      "threshold": 0.0035714285714285718,
+      "significant": false
+    },
+    "S4": {
+      "p": 0.7557591901840532,
+      "threshold": 0.0038461538461538464,
+      "significant": false
+    },
+    "S7": {
+      "p": 0.8709493845669236,
+      "threshold": 0.004166666666666667,
+      "significant": false
+    },
+    "B0_breakout": {
+      "p": 0.9128090940224678,
+      "threshold": 0.004545454545454546,
+      "significant": false
+    },
+    "S14": {
+      "p": 0.998257636525723,
+      "threshold": 0.005,
+      "significant": false
+    },
+    "S12": {
+      "p": 0.9999999999999999,
+      "threshold": 0.005555555555555556,
+      "significant": false
+    },
+    "S1": {
+      "p": 1.0,
+      "threshold": 0.00625,
+      "significant": false
+    },
+    "S5": {
+      "p": 1.0,
+      "threshold": 0.0071428571428571435,
+      "significant": false
+    },
+    "S6": {
+      "p": 1.0,
+      "threshold": 0.008333333333333333,
+      "significant": false
+    },
+    "S15": {
+      "p": 1.0,
+      "threshold": 0.01,
+      "significant": false
+    },
+    "H1": {
+      "p": 1.0,
+      "threshold": 0.0125,
+      "significant": false
+    },
+    "H2": {
+      "p": 1.0,
+      "threshold": 0.016666666666666666,
+      "significant": false
+    },
+    "H3": {
+      "p": 1.0,
+      "threshold": 0.025,
+      "significant": false
+    },
+    "S9": {
+      "p": 1.0,
+      "threshold": 0.05,
+      "significant": false
+    }
+  },
+  "strategies": {
+    "S1": {
+      "metrics": {
+        "n": 0,
+        "t_stat": null,
+        "p": 1.0
+      },
+      "monte_carlo": {
+        "p_pass": 0.0
+      },
+      "per_symbol": [],
+      "robustness": {},
+      "semesters_traded": 0,
+      "semesters_total": 52,
+      "start": "2018-01-01",
+      "stress": null
+    },
+    "S2": {
+      "metrics": {
+        "n": 172,
+        "expectancy_r": 0.0998,
+        "pf": 1.214,
+        "hit": 0.477,
+        "total_pct": 8.15,
+        "max_dd_pct": -6.97,
+        "max_dd_intraday_pct": -6.98,
+        "worst_day_pct": -1.11,
+        "worst_intraday_day_pct": -1.11,
+        "day_stops": 0,
+        "t_stat": 0.781,
+        "p": 0.21733238277218914
+      },
+      "monte_carlo": {
+        "p_pass": 0.0484,
+        "p_fail_phase1": 0.00445,
+        "p_fail_phase2": 0.00055,
+        "p_unresolved": 0.9466,
+        "median_days_phase1": 157.5,
+        "median_days_total": 264.0
+      },
+      "per_symbol": [
+        {
+          "symbol": "BTCUSD",
+          "n": 49,
+          "exp_r": 0.2656
+        },
+        {
+          "symbol": "US100.cash",
+          "n": 123,
+          "exp_r": 0.0338
+        }
+      ],
+      "robustness": {
+        "US100.cash": {
+          "cfg": "k0.3_s0.5_filt1",
+          "mean_r": 0.1507,
+          "neighbours": {
+            "k0.6_s0.5_filt1": 0.0159,
+            "k0.3_s1.0_filt1": 0.0173,
+            "k0.3_s0.5_filt0": 0.0878
+          },
+          "ok": true
+        },
+        "BTCUSD": {
+          "cfg": "k0.6_s0.5_filt0",
+          "mean_r": 0.1029,
+          "neighbours": {
+            "k0.3_s0.5_filt0": -0.0039,
+            "k0.6_s1.0_filt0": 0.05,
+            "k0.6_s0.5_filt1": 0.0661
+          },
+          "ok": true
+        }
+      },
+      "semesters_traded": 3,
+      "semesters_total": 14,
+      "start": "2020-07-01",
+      "stress": null
+    },
+    "S3": {
+      "metrics": {
+        "n": 637,
+        "expectancy_r": -0.0141,
+        "pf": 0.974,
+        "hit": 0.328,
+        "total_pct": -4.26,
+        "max_dd_pct": -16.13,
+        "max_dd_intraday_pct": -16.53,
+        "worst_day_pct": -1.08,
+        "worst_intraday_day_pct": -1.08,
+        "day_stops": 0,
+        "t_stat": -0.24,
+        "p": 0.5948162458318853
+      },
+      "monte_carlo": {
+        "p_pass": 0.03615,
+        "p_fail_phase1": 0.1566,
+        "p_fail_phase2": 0.0181,
+        "p_unresolved": 0.78915,
+        "median_days_phase1": 149.0,
+        "median_days_total": 254.0
+      },
+      "per_symbol": [
+        {
+          "symbol": "US100.cash",
+          "n": 210,
+          "exp_r": -0.0003
+        },
+        {
+          "symbol": "USDJPY",
+          "n": 427,
+          "exp_r": -0.0209
+        }
+      ],
+      "robustness": {
+        "USDJPY": {
+          "cfg": "a0.5_exittrail_filt1",
+          "mean_r": 0.0153,
+          "neighbours": {
+            "a0.25_exittrail_filt1": 0.0103,
+            "a0.5_exittime_filt1": 0.0181,
+            "a0.5_exittrail_filt0": -0.0062
+          },
+          "ok": true
+        },
+        "US100.cash": {
+          "cfg": "a0.25_exittime_filt0",
+          "mean_r": 0.0768,
+          "neighbours": {
+            "a0.5_exittime_filt0": 0.0231,
+            "a0.25_exittrail_filt0": 0.0317,
+            "a0.25_exittime_filt1": 0.0148
+          },
+          "ok": true
+        }
+      },
+      "semesters_traded": 9,
+      "semesters_total": 66,
+      "start": "2018-01-01",
+      "stress": null
+    },
+    "S4": {
+      "metrics": {
+        "n": 437,
+        "expectancy_r": -0.0368,
+        "pf": 0.917,
+        "hit": 0.432,
+        "total_pct": -8.09,
+        "max_dd_pct": -15.97,
+        "max_dd_intraday_pct": -16.08,
+        "worst_day_pct": -1.85,
+        "worst_intraday_day_pct": -1.85,
+        "day_stops": 0,
+        "t_stat": -0.693,
+        "p": 0.7557591901840532
+      },
+      "monte_carlo": {
+        "p_pass": 0.00245,
+        "p_fail_phase1": 0.04695,
+        "p_fail_phase2": 0.00115,
+        "p_unresolved": 0.94945,
+        "median_days_phase1": 198.0,
+        "median_days_total": 329.0
+      },
+      "per_symbol": [
+        {
+          "symbol": "US100.cash",
+          "n": 151,
+          "exp_r": -0.0632
+        },
+        {
+          "symbol": "US500.cash",
+          "n": 132,
+          "exp_r": -0.0775
+        },
+        {
+          "symbol": "USDJPY",
+          "n": 154,
+          "exp_r": 0.0242
+        }
+      ],
+      "robustness": {
+        "USDJPY": {
+          "cfg": "N50_a1.5_filt0",
+          "mean_r": 0.0648,
+          "neighbours": {
+            "N20_a1.5_filt0": 0.042,
+            "N50_a2.5_filt0": 0.0413,
+            "N50_a1.5_filt1": 0.0563
+          },
+          "ok": true
+        },
+        "US100.cash": {
+          "cfg": "N20_a2.5_filt0",
+          "mean_r": 0.0643,
+          "neighbours": {
+            "N50_a2.5_filt0": 0.0322,
+            "N20_a1.5_filt0": 0.0819,
+            "N20_a2.5_filt1": 0.0781
+          },
+          "ok": true
+        },
+        "US500.cash": {
+          "cfg": "N20_a1.5_filt1",
+          "mean_r": 0.0851,
+          "neighbours": {
+            "N50_a1.5_filt1": 0.0027,
+            "N20_a2.5_filt1": 0.0508,
+            "N20_a1.5_filt0": 0.0542
+          },
+          "ok": true
+        }
+      },
+      "semesters_traded": 7,
+      "semesters_total": 66,
+      "start": "2018-01-01",
+      "stress": null
+    },
+    "S5": {
+      "metrics": {
+        "n": 0,
+        "t_stat": null,
+        "p": 1.0
+      },
+      "monte_carlo": {
+        "p_pass": 0.0
+      },
+      "per_symbol": [],
+      "robustness": {},
+      "semesters_traded": 0,
+      "semesters_total": 6,
+      "start": "2023-07-01",
+      "stress": null
+    },
+    "S6": {
+      "metrics": {
+        "n": 0,
+        "t_stat": null,
+        "p": 1.0
+      },
+      "monte_carlo": {
+        "p_pass": 0.0
+      },
+      "per_symbol": [],
+      "robustness": {},
+      "semesters_traded": 0,
+      "semesters_total": 58,
+      "start": "2018-01-01",
+      "stress": null
+    },
+    "S7": {
+      "metrics": {
+        "n": 286,
+        "expectancy_r": -0.1028,
+        "pf": 0.838,
+        "hit": 0.353,
+        "total_pct": -14.14,
+        "max_dd_pct": -25.09,
+        "max_dd_intraday_pct": -25.13,
+        "worst_day_pct": -1.1,
+        "worst_intraday_day_pct": -1.1,
+        "day_stops": 0,
+        "t_stat": -1.131,
+        "p": 0.8709493845669236
+      },
+      "monte_carlo": {
+        "p_pass": 0.00315,
+        "p_fail_phase1": 0.08425,
+        "p_fail_phase2": 0.0014,
+        "p_unresolved": 0.9112,
+        "median_days_phase1": 191.0,
+        "median_days_total": 303.0
+      },
+      "per_symbol": [
+        {
+          "symbol": "BTCUSD",
+          "n": 206,
+          "exp_r": -0.0476
+        },
+        {
+          "symbol": "EURUSD",
+          "n": 30,
+          "exp_r": -0.385
+        },
+        {
+          "symbol": "GER40.cash",
+          "n": 50,
+          "exp_r": -0.1607
+        }
+      ],
+      "robustness": {
+        "EURUSD": {
+          "cfg": "x0.1_W2_exittime",
+          "mean_r": 0.0939,
+          "neighbours": {
+            "x0.0_W2_exittime": -0.0175,
+            "x0.1_W4_exittime": 0.0313,
+            "x0.1_W2_exittp2": 0.0539
+          },
+          "ok": true
+        },
+        "GER40.cash": {
+          "cfg": "x0.1_W2_exittime",
+          "mean_r": 0.0969,
+          "neighbours": {
+            "x0.0_W2_exittime": -0.0579,
+            "x0.1_W4_exittime": 0.0758,
+            "x0.1_W2_exittp2": 0.0303
+          },
+          "ok": true
+        },
+        "BTCUSD": {
+          "cfg": "x0.0_W4_exittime",
+          "mean_r": -0.0083,
+          "neighbours": {
+            "x0.1_W4_exittime": -0.0694,
+            "x0.0_W2_exittime": 0.0228,
+            "x0.0_W4_exittp2": -0.0357
+          },
+          "ok": false
+        }
+      },
+      "semesters_traded": 7,
+      "semesters_total": 66,
+      "start": "2018-01-01",
+      "stress": null
+    },
+    "S8": {
+      "metrics": {
+        "n": 79,
+        "expectancy_r": -0.0418,
+        "pf": 0.92,
+        "hit": 0.443,
+        "total_pct": -1.64,
+        "max_dd_pct": -7.26,
+        "max_dd_intraday_pct": -7.33,
+        "worst_day_pct": -0.54,
+        "worst_intraday_day_pct": -0.54,
+        "day_stops": 0,
+        "t_stat": -0.304,
+        "p": 0.6192927031286033
+      },
+      "monte_carlo": {
+        "p_pass": 0.00675,
+        "p_fail_phase1": 0.10355,
+        "p_fail_phase2": 0.0033,
+        "p_unresolved": 0.8864,
+        "median_days_phase1": 187.0,
+        "median_days_total": 314.0
+      },
+      "per_symbol": [
+        {
+          "symbol": "US100.cash",
+          "n": 79,
+          "exp_r": -0.0418
+        }
+      ],
+      "robustness": {
+        "US100.cash": {
+          "cfg": "q0.1_hold1_filt1",
+          "mean_r": 0.0644,
+          "neighbours": {
+            "q0.2_hold1_filt1": -0.0052,
+            "q0.1_hold2_filt1": 0.0991,
+            "q0.1_hold1_filt0": -0.0539
+          },
+          "ok": false
+        }
+      },
+      "semesters_traded": 2,
+      "semesters_total": 6,
+      "start": "2023-07-01",
+      "stress": null
+    },
+    "S10": {
+      "metrics": {
+        "n": 46,
+        "expectancy_r": 0.0417,
+        "pf": 1.222,
+        "hit": 0.543,
+        "total_pct": 0.97,
+        "max_dd_pct": -2.02,
+        "max_dd_intraday_pct": -2.43,
+        "worst_day_pct": -1.02,
+        "worst_intraday_day_pct": -1.02,
+        "day_stops": 0,
+        "t_stat": 0.524,
+        "p": 0.3002922863842413
+      },
+      "monte_carlo": {
+        "p_pass": 0.0,
+        "p_fail_phase1": 0.0,
+        "p_fail_phase2": 0.0,
+        "p_unresolved": 1.0,
+        "median_days_phase1": NaN,
+        "median_days_total": NaN
+      },
+      "per_symbol": [
+        {
+          "symbol": "US100.cash",
+          "n": 23,
+          "exp_r": 0.0327
+        },
+        {
+          "symbol": "US500.cash",
+          "n": 23,
+          "exp_r": 0.0508
+        }
+      ],
+      "robustness": null,
+      "semesters_traded": 2,
+      "semesters_total": 2,
+      "start": "2021-09-14",
+      "stress": null
+    },
+    "S11": {
+      "metrics": {
+        "n": 394,
+        "expectancy_r": 0.017,
+        "pf": 1.037,
+        "hit": 0.47,
+        "total_pct": 3.3,
+        "max_dd_pct": -9.74,
+        "max_dd_intraday_pct": -10.08,
+        "worst_day_pct": -1.55,
+        "worst_intraday_day_pct": -1.55,
+        "day_stops": 0,
+        "t_stat": 0.305,
+        "p": 0.3801412657965735
+      },
+      "monte_carlo": {
+        "p_pass": 0.1318,
+        "p_fail_phase1": 0.22035,
+        "p_fail_phase2": 0.0527,
+        "p_unresolved": 0.59515,
+        "median_days_phase1": 141.0,
+        "median_days_total": 232.0
+      },
+      "per_symbol": [
+        {
+          "symbol": "GER40.cash",
+          "n": 122,
+          "exp_r": -0.0495
+        },
+        {
+          "symbol": "US100.cash",
+          "n": 136,
+          "exp_r": 0.0733
+        },
+        {
+          "symbol": "US500.cash",
+          "n": 136,
+          "exp_r": 0.0203
+        }
+      ],
+      "robustness": null,
+      "semesters_traded": 3,
+      "semesters_total": 3,
+      "start": "2021-09-14",
+      "stress": null
+    },
+    "S12": {
+      "metrics": {
+        "n": 6043,
+        "expectancy_r": -0.0928,
+        "pf": 0.766,
+        "hit": 0.439,
+        "total_pct": -276.06,
+        "max_dd_pct": -278.27,
+        "max_dd_intraday_pct": -279.08,
+        "worst_day_pct": -2.24,
+        "worst_intraday_day_pct": -2.24,
+        "day_stops": 26,
+        "t_stat": -8.241,
+        "p": 0.9999999999999999
+      },
+      "monte_carlo": {
+        "p_pass": 0.0014,
+        "p_fail_phase1": 0.9825,
+        "p_fail_phase2": 0.01495,
+        "p_unresolved": 0.00115,
+        "median_days_phase1": 40.5,
+        "median_days_total": 72.5
+      },
+      "per_symbol": [
+        {
+          "symbol": "AUDUSD",
+          "n": 89,
+          "exp_r": -0.1632
+        },
+        {
+          "symbol": "BTCUSD",
+          "n": 941,
+          "exp_r": -0.1349
+        },
+        {
+          "symbol": "EURUSD",
+          "n": 1685,
+          "exp_r": -0.0719
+        },
+        {
+          "symbol": "GBPUSD",
+          "n": 1657,
+          "exp_r": -0.0622
+        },
+        {
+          "symbol": "USDJPY",
+          "n": 1671,
+          "exp_r": -0.1168
+        }
+      ],
+      "robustness": null,
+      "semesters_traded": 59,
+      "semesters_total": 66,
+      "start": "2018-01-01",
+      "stress": null
+    },
+    "S13": {
+      "metrics": {
+        "n": 322,
+        "expectancy_r": -0.0183,
+        "pf": 0.919,
+        "hit": 0.494,
+        "total_pct": -2.97,
+        "max_dd_pct": -5.88,
+        "max_dd_intraday_pct": -6.14,
+        "worst_day_pct": -0.54,
+        "worst_intraday_day_pct": -0.54,
+        "day_stops": 0,
+        "t_stat": -0.593,
+        "p": 0.7234111463528479
+      },
+      "monte_carlo": {
+        "p_pass": 0.0,
+        "p_fail_phase1": 0.0,
+        "p_fail_phase2": 0.0,
+        "p_unresolved": 1.0,
+        "median_days_phase1": NaN,
+        "median_days_total": NaN
+      },
+      "per_symbol": [
+        {
+          "symbol": "GBPUSD",
+          "n": 322,
+          "exp_r": -0.0183
+        }
+      ],
+      "robustness": {
+        "GBPUSD": {
+          "cfg": "p30_thr0.1_hold30",
+          "mean_r": 0.016,
+          "neighbours": {
+            "p60_thr0.1_hold30": -0.0244,
+            "p30_thr0.0_hold30": -0.0191,
+            "p30_thr0.1_hold60": 0.0115
+          },
+          "ok": false
+        }
+      },
+      "semesters_traded": 5,
+      "semesters_total": 52,
+      "start": "2018-01-01",
+      "stress": null
+    },
+    "S14": {
+      "metrics": {
+        "n": 8,
+        "expectancy_r": -0.7865,
+        "pf": 0.148,
+        "hit": 0.125,
+        "total_pct": -3.05,
+        "max_dd_pct": -3.09,
+        "max_dd_intraday_pct": -3.09,
+        "worst_day_pct": -0.56,
+        "worst_intraday_day_pct": -0.56,
+        "day_stops": 0,
+        "t_stat": -2.921,
+        "p": 0.998257636525723
+      },
+      "monte_carlo": {
+        "p_pass": 0.0,
+        "p_fail_phase1": 0.0,
+        "p_fail_phase2": 0.0,
+        "p_unresolved": 1.0,
+        "median_days_phase1": NaN,
+        "median_days_total": NaN
+      },
+      "per_symbol": [
+        {
+          "symbol": "GBPUSD",
+          "n": 8,
+          "exp_r": -0.7865
+        }
+      ],
+      "robustness": {
+        "GBPUSD": {
+          "cfg": "evnfp+cpi_m0.1_X150",
+          "mean_r": -0.0686,
+          "neighbours": {
+            "evnfp_m0.1_X150": -0.2147,
+            "evnfp+cpi_m0.0_X150": -0.0776,
+            "evnfp+cpi_m0.1_X60": -0.1365
+          },
+          "ok": false
+        }
+      },
+      "semesters_traded": 1,
+      "semesters_total": 58,
+      "start": "2018-01-01",
+      "stress": null
+    },
+    "S15": {
+      "metrics": {
+        "n": 0,
+        "t_stat": null,
+        "p": 1.0
+      },
+      "monte_carlo": {
+        "p_pass": 0.0
+      },
+      "per_symbol": [],
+      "robustness": {},
+      "semesters_traded": 0,
+      "semesters_total": 15,
+      "start": "2018-01-01",
+      "stress": null
+    }
+  },
+  "survivors": [],
+  "combination": null,
+  "holdout_allowed": false
+}
