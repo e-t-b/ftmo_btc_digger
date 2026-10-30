@@ -61,3 +61,17 @@ toutes les positions touchent leur extrême du jour en même temps (prudent).
 Publiés sans effet sur la décision : durée médiane pour réussir, stress coûts/swaps, résultat par stratégie et par année.
 
 **GO** → essai sur le compte gratuit FTMO. **NO-GO** → arrêt de la piste swing sur ces règles.
+
+## Amendement 1 (2026-10-30, avant tout calcul de performance)
+
+Constat sur la disponibilité des données (aucun résultat de stratégie calculé) : les indices cash FTMO ne commencent
+qu'en décembre 2017 (US30/AUS200 février 2019, HK50 décembre 2018), donc aucune donnée de développement pour M1
+et pour les indices dans T1-T3. Correctifs :
+- **Indices en développement : barres D1 Dukascopy** (US500, US100, GER40, US30, UK100, JP225 ; 2013 → 2017,
+  `v2/swing_dk.py`), jour serveur FTMO, spread et swaps du symbole FTMO correspondant. Elles ne servent **jamais**
+  en période finale (où seuls les symboles FTMO sont utilisés).
+- **Commissions FTMO** ajoutées au coût (forex 3,5 $/lot/côté ≈ 3e-5 du prix ; crypto 3,25 pb/côté).
+- Plancher de spread : au moins le plancher de `v2/config.py` quand il existe ; crypto ≥ 1e-4 du prix.
+- Contrôle qualité : BTC/ETH présentent des journées à très grande amplitude (2011-2013, cohérentes avec la
+  volatilité de l'époque) ; conservées, résultat publié par symbole.
+- Pétrole US, gaz naturel, indices FTMO : période finale seulement (données trop courtes avant 2018).

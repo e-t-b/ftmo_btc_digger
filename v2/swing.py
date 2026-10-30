@@ -16,7 +16,18 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+from . import config as C
+
 D1_DIR = Path(__file__).resolve().parent.parent / "data" / "d1"
+COMM_FRAC = {"fx": 3e-5, "crypto": 3.25e-4}          # commission FTMO par côté, en fraction du prix
+
+
+def _klass(sym):
+    if sym in ("BTCUSD", "ETHUSD"):
+        return "crypto"
+    if len(sym) == 6 and sym.isalpha() and not sym.startswith("XA"):
+        return "fx"
+    return "other"
 
 
 def load(sym: str) -> dict:
@@ -29,7 +40,13 @@ def load(sym: str) -> dict:
     sp = df["spread_px"].to_numpy(float)
     recent = sp[-750:]
     floor_frac = float(np.median(recent[recent > 0] / c[-750:][recent > 0])) if (recent > 0).any() else 1e-4
-    spread = np.maximum(sp, floor_frac * c)
+    cfg = C.INSTRUMENTS.get(sym) or {}
+    if cfg.get("floor_px"):
+        floor_frac = max(floor_frac, cfg["floor_px"] / c[-1])
+    if sym in ("BTCUSD", "ETHUSD"):
+        floor_frac = max(floor_frac, 1e-4)
+    comm = COMM_FRAC.get(_klass(sym), 0.0)
+    spread = np.maximum(sp, floor_frac * c) + 2 * comm * c     # commission aller (+ retour) intégrée à l'écart
     pc = np.r_[np.nan, c[:-1]]
     tr = np.nanmax(np.vstack([h - l, np.abs(h - pc), np.abs(l - pc)]), axis=0)
     return dict(sym=sym, date=df["date"].to_numpy(), o=o, h=h, l=l, c=c, spread=spread, tr=tr, spec=spec,

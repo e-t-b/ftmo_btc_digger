@@ -59,7 +59,10 @@ def trades_for(sid, Ds, swap_model="base", cost_mult=1.0):
 
 
 def window(df, a, b):
-    return df[(df["entry_date"] >= np.datetime64(a)) & (df["entry_date"] < np.datetime64(b))]
+    w = df[(df["entry_date"] >= np.datetime64(a)) & (df["entry_date"] < np.datetime64(b))]
+    if np.datetime64(b) > np.datetime64(DEV_END):          # Dukascopy : développement seulement
+        w = w[~w["sym"].str.startswith("DK_") | (w["entry_date"] < np.datetime64(DEV_END))]
+    return w
 
 
 def evaluate(tr, Ds, a, b, risk, n_paths=10_000):
