@@ -1,0 +1,90 @@
+{
+  "S26 (origine) | dukascopy": {
+    "n": 841,
+    "R": 0.0441,
+    "t": 1.734,
+    "pf": 1.172,
+    "hit": 0.533,
+    "pct_an": 2.1,
+    "dd": -9.08,
+    "MC": 0.003,
+    "jours_MC": 387.0
+  },
+  "S26 (origine) | ftmo": {
+    "n": 337,
+    "R": 0.0637,
+    "t": 1.743,
+    "pf": 1.27,
+    "hit": 0.564,
+    "pct_an": 3.8,
+    "dd": -2.26,
+    "MC": 0.039,
+    "jours_MC": 348.0
+  },
+  "stop mi-chemin seul | dukascopy": {
+    "n": 841,
+    "R": 0.0851,
+    "t": 1.952,
+    "pf": 1.19,
+    "hit": 0.485,
+    "pct_an": 4.1,
+    "dd": -12.5,
+    "MC": 0.083,
+    "jours_MC": 292.0
+  },
+  "stop mi-chemin seul | ftmo": {
+    "n": 337,
+    "R": 0.0725,
+    "t": 1.121,
+    "pf": 1.157,
+    "hit": 0.481,
+    "pct_an": 4.4,
+    "dd": -6.92,
+    "MC": 0.168,
+    "jours_MC": 267.5
+  },
+  "filtres seuls | dukascopy": {
+    "n": 547,
+    "R": 0.0593,
+    "t": 1.898,
+    "pf": 1.231,
+    "hit": 0.536,
+    "pct_an": 1.9,
+    "dd": -7.2,
+    "MC": 0.0,
+    "jours_MC": 414.5
+  },
+  "filtres seuls | ftmo": {
+    "n": 272,
+    "R": 0.0911,
+    "t": 2.27,
+    "pf": 1.419,
+    "hit": 0.577,
+    "pct_an": 4.4,
+    "dd": -3.17,
+    "MC": 0.036,
+    "jours_MC": 358.0
+  },
+  "S26b (stop mi-chemin + filtres) | dukascopy": {
+    "n": 547,
+    "R": 0.0958,
+    "t": 1.814,
+    "pf": 1.211,
+    "hit": 0.486,
+    "pct_an": 3.0,
+    "dd": -7.31,
+    "MC": 0.031,
+    "jours_MC": 329.0
+  },
+  "S26b (stop mi-chemin + filtres) | ftmo": {
+    "n": 272,
+    "R": 0.1005,
+    "t": 1.387,
+    "pf": 1.223,
+    "hit": 0.485,
+    "pct_an": 4.9,
+    "dd": -7.52,
+    "MC": 0.16,
+    "jours_MC": 283.0
+  }
+}
