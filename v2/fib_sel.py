@@ -70,11 +70,11 @@ def setups(P, filt, mode, f, rr=2.0, bar=3600):
     return _pack(rows), meta
 
 
-def run(P, filt, mode, f, zero_cost=False):
+def run(P, filt, mode, f, zero_cost=False, rr=2.0):
     if zero_cost:
         n = len(P["t"])
         P = dict(P, sc=np.zeros(n), slip=np.zeros(n), sslip=np.zeros(n), comm=np.zeros(n))
-    S, meta = setups(P, filt, mode, f)
+    S, meta = setups(P, filt, mode, f, rr=rr)
     old = C.MIN_STOP_COST_MULT
     C.MIN_STOP_COST_MULT = 0.0
     try:
