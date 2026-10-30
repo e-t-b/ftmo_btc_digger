@@ -15,7 +15,7 @@ from .catalogue_run import prepared
 from .lot2 import _pack, atr_at
 
 
-def setups(P, f, n_conf=2, max_bars=8):
+def setups(P, f, n_conf=2, max_bars=8, rr=2.0):
     t, o, h, l, c = P["t"], P["o"], P["h"], P["l"], P["c"]
     sc, slip = P["sc"], P["slip"]
     rows, meta = [], {}
@@ -53,17 +53,17 @@ def setups(P, f, n_conf=2, max_bars=8):
                         break
                     e = o[j] + sc[j] + slip[j] if dr == 1 else o[j] - slip[j]
                     if dr * (tp - e) > 0:
-                        rows.append((-1, j, dr, e - dr * abs(tp - e) / 2, tp, exit_t, 0.0))
+                        rows.append((-1, j, dr, e - dr * abs(tp - e) / rr, tp, exit_t, 0.0))
                         meta[int(t[j])] = name
                     break
     return _pack(rows), meta
 
 
-def run(P, f, zero_cost=False):
+def run(P, f, zero_cost=False, rr=2.0):
     if zero_cost:
         n = len(P["t"])
         P = dict(P, sc=np.zeros(n), slip=np.zeros(n), sslip=np.zeros(n), comm=np.zeros(n))
-    S, meta = setups(P, f)
+    S, meta = setups(P, f, rr=rr)
     old = C.MIN_STOP_COST_MULT
     C.MIN_STOP_COST_MULT = 0.0
     try:
