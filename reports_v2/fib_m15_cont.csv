@@ -1,0 +1,87 @@
+variante,coûts,période,détail,trades,R,gagnants,coût_R_médian
+"SL 61,8 %",avec coûts,Dukascopy 2013-2021,TOTAL,4999,-0.431,0.262,0.257
+"SL 61,8 %",avec coûts,Dukascopy 2013-2021,Londres,1562,-0.504,0.253,0.313
+"SL 61,8 %",avec coûts,Dukascopy 2013-2021,NY,2971,-0.368,0.27,0.205
+"SL 61,8 %",avec coûts,Dukascopy 2013-2021,Tokyo,466,-0.584,0.242,0.445
+"SL 61,8 %",avec coûts,Dukascopy 2013-2021,DK_GER40,824,-0.318,0.282,0.183
+"SL 61,8 %",avec coûts,Dukascopy 2013-2021,DK_JP225,619,-0.654,0.239,0.473
+"SL 61,8 %",avec coûts,Dukascopy 2013-2021,DK_UK100,1020,-0.656,0.235,0.413
+"SL 61,8 %",avec coûts,Dukascopy 2013-2021,DK_US100,974,-0.216,0.293,0.132
+"SL 61,8 %",avec coûts,Dukascopy 2013-2021,DK_US30,831,-0.324,0.271,0.189
+"SL 61,8 %",avec coûts,Dukascopy 2013-2021,DK_US500,731,-0.463,0.248,0.305
+"SL 61,8 %",avec coûts,FTMO 2024-07 → 2026-10,TOTAL,2317,-0.37,0.279,0.23
+"SL 61,8 %",avec coûts,FTMO 2024-07 → 2026-10,Londres,613,-0.509,0.246,0.276
+"SL 61,8 %",avec coûts,FTMO 2024-07 → 2026-10,NY,1341,-0.254,0.309,0.186
+"SL 61,8 %",avec coûts,FTMO 2024-07 → 2026-10,Tokyo,363,-0.563,0.223,0.27
+"SL 61,8 %",avec coûts,FTMO 2024-07 → 2026-10,AUDUSD,104,-0.518,0.269,0.447
+"SL 61,8 %",avec coûts,FTMO 2024-07 → 2026-10,BTCUSD,162,-0.599,0.272,0.401
+"SL 61,8 %",avec coûts,FTMO 2024-07 → 2026-10,EURUSD,99,-0.334,0.323,0.292
+"SL 61,8 %",avec coûts,FTMO 2024-07 → 2026-10,GBPUSD,106,-0.49,0.255,0.281
+"SL 61,8 %",avec coûts,FTMO 2024-07 → 2026-10,GER40.cash,280,-0.29,0.279,0.166
+"SL 61,8 %",avec coûts,FTMO 2024-07 → 2026-10,JP225.cash,307,-0.345,0.28,0.245
+"SL 61,8 %",avec coûts,FTMO 2024-07 → 2026-10,UK100.cash,406,-0.675,0.227,0.433
+"SL 61,8 %",avec coûts,FTMO 2024-07 → 2026-10,US100.cash,240,-0.072,0.325,0.075
+"SL 61,8 %",avec coûts,FTMO 2024-07 → 2026-10,US30.cash,316,-0.13,0.323,0.112
+"SL 61,8 %",avec coûts,FTMO 2024-07 → 2026-10,US500.cash,190,-0.193,0.305,0.195
+"SL 61,8 %",avec coûts,FTMO 2024-07 → 2026-10,USDJPY,107,-0.605,0.206,0.26
+"SL 61,8 %",avec coûts,FTMO → 2024-06,TOTAL,4211,-0.368,0.286,0.262
+"SL 61,8 %",avec coûts,FTMO → 2024-06,Londres,1288,-0.344,0.301,0.28
+"SL 61,8 %",avec coûts,FTMO → 2024-06,NY,2318,-0.317,0.294,0.221
+"SL 61,8 %",avec coûts,FTMO → 2024-06,Tokyo,605,-0.616,0.225,0.37
+"SL 61,8 %",avec coûts,FTMO → 2024-06,AUDUSD,343,-0.509,0.259,0.346
+"SL 61,8 %",avec coûts,FTMO → 2024-06,BTCUSD,188,-0.368,0.298,0.344
+"SL 61,8 %",avec coûts,FTMO → 2024-06,EURUSD,491,-0.283,0.318,0.254
+"SL 61,8 %",avec coûts,FTMO → 2024-06,GBPUSD,446,-0.309,0.294,0.211
+"SL 61,8 %",avec coûts,FTMO → 2024-06,GER40.cash,318,-0.34,0.28,0.197
+"SL 61,8 %",avec coûts,FTMO → 2024-06,JP225.cash,346,-0.818,0.179,0.444
+"SL 61,8 %",avec coûts,FTMO → 2024-06,UK100.cash,457,-0.546,0.278,0.448
+"SL 61,8 %",avec coûts,FTMO → 2024-06,US100.cash,329,-0.097,0.322,0.091
+"SL 61,8 %",avec coûts,FTMO → 2024-06,US30.cash,598,-0.205,0.303,0.158
+"SL 61,8 %",avec coûts,FTMO → 2024-06,US500.cash,253,-0.403,0.253,0.242
+"SL 61,8 %",avec coûts,FTMO → 2024-06,USDJPY,442,-0.297,0.326,0.31
+"SL 61,8 %",sans coût,Dukascopy 2013-2021,TOTAL,5238,0.009,0.337,0.0
+"SL 61,8 %",sans coût,FTMO 2024-07 → 2026-10,TOTAL,2393,-0.019,0.328,0.0
+"SL 61,8 %",sans coût,FTMO → 2024-06,TOTAL,4357,0.021,0.341,0.0
+SL 100 %,avec coûts,Dukascopy 2013-2021,TOTAL,5946,-0.165,0.318,0.108
+SL 100 %,avec coûts,Dukascopy 2013-2021,Londres,1872,-0.208,0.312,0.134
+SL 100 %,avec coûts,Dukascopy 2013-2021,NY,3502,-0.124,0.326,0.085
+SL 100 %,avec coûts,Dukascopy 2013-2021,Tokyo,572,-0.275,0.292,0.2
+SL 100 %,avec coûts,Dukascopy 2013-2021,DK_GER40,969,-0.201,0.303,0.078
+SL 100 %,avec coûts,Dukascopy 2013-2021,DK_JP225,732,-0.203,0.321,0.209
+SL 100 %,avec coûts,Dukascopy 2013-2021,DK_UK100,1238,-0.285,0.3,0.183
+SL 100 %,avec coûts,Dukascopy 2013-2021,DK_US100,1144,-0.079,0.33,0.056
+SL 100 %,avec coûts,Dukascopy 2013-2021,DK_US30,982,-0.069,0.343,0.079
+SL 100 %,avec coûts,Dukascopy 2013-2021,DK_US500,881,-0.142,0.316,0.131
+SL 100 %,avec coûts,FTMO 2024-07 → 2026-10,TOTAL,2802,-0.103,0.339,0.094
+SL 100 %,avec coûts,FTMO 2024-07 → 2026-10,Londres,718,-0.046,0.358,0.116
+SL 100 %,avec coûts,FTMO 2024-07 → 2026-10,NY,1636,-0.112,0.337,0.076
+SL 100 %,avec coûts,FTMO 2024-07 → 2026-10,Tokyo,448,-0.16,0.315,0.118
+SL 100 %,avec coûts,FTMO 2024-07 → 2026-10,AUDUSD,121,-0.308,0.298,0.174
+SL 100 %,avec coûts,FTMO 2024-07 → 2026-10,BTCUSD,187,-0.359,0.278,0.176
+SL 100 %,avec coûts,FTMO 2024-07 → 2026-10,EURUSD,112,-0.082,0.357,0.12
+SL 100 %,avec coûts,FTMO 2024-07 → 2026-10,GBPUSD,119,0.1,0.412,0.11
+SL 100 %,avec coûts,FTMO 2024-07 → 2026-10,GER40.cash,328,-0.019,0.351,0.068
+SL 100 %,avec coûts,FTMO 2024-07 → 2026-10,JP225.cash,372,-0.087,0.336,0.107
+SL 100 %,avec coûts,FTMO 2024-07 → 2026-10,UK100.cash,495,-0.269,0.305,0.194
+SL 100 %,avec coûts,FTMO 2024-07 → 2026-10,US100.cash,310,0.069,0.371,0.032
+SL 100 %,avec coûts,FTMO 2024-07 → 2026-10,US30.cash,398,-0.026,0.362,0.048
+SL 100 %,avec coûts,FTMO 2024-07 → 2026-10,US500.cash,243,-0.083,0.333,0.084
+SL 100 %,avec coûts,FTMO 2024-07 → 2026-10,USDJPY,117,-0.045,0.359,0.095
+SL 100 %,avec coûts,FTMO → 2024-06,TOTAL,4935,-0.139,0.33,0.106
+SL 100 %,avec coûts,FTMO → 2024-06,Londres,1483,-0.135,0.329,0.116
+SL 100 %,avec coûts,FTMO → 2024-06,NY,2748,-0.12,0.338,0.088
+SL 100 %,avec coûts,FTMO → 2024-06,Tokyo,704,-0.222,0.301,0.153
+SL 100 %,avec coûts,FTMO → 2024-06,AUDUSD,377,-0.156,0.332,0.139
+SL 100 %,avec coûts,FTMO → 2024-06,BTCUSD,244,-0.139,0.34,0.141
+SL 100 %,avec coûts,FTMO → 2024-06,EURUSD,541,-0.096,0.349,0.102
+SL 100 %,avec coûts,FTMO → 2024-06,GBPUSD,477,-0.152,0.329,0.082
+SL 100 %,avec coûts,FTMO → 2024-06,GER40.cash,385,-0.229,0.294,0.086
+SL 100 %,avec coûts,FTMO → 2024-06,JP225.cash,410,-0.335,0.271,0.194
+SL 100 %,avec coûts,FTMO → 2024-06,UK100.cash,565,-0.127,0.349,0.2
+SL 100 %,avec coûts,FTMO → 2024-06,US100.cash,409,0.053,0.374,0.04
+SL 100 %,avec coûts,FTMO → 2024-06,US30.cash,723,-0.128,0.32,0.068
+SL 100 %,avec coûts,FTMO → 2024-06,US500.cash,307,-0.166,0.309,0.102
+SL 100 %,avec coûts,FTMO → 2024-06,USDJPY,497,-0.103,0.352,0.122
+SL 100 %,sans coût,Dukascopy 2013-2021,TOTAL,6046,0.014,0.349,0.0
+SL 100 %,sans coût,FTMO 2024-07 → 2026-10,TOTAL,2828,0.041,0.362,0.0
+SL 100 %,sans coût,FTMO → 2024-06,TOTAL,5004,0.01,0.352,0.0
