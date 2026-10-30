@@ -82,6 +82,10 @@ def run(cands: pd.DataFrame, paths: dict, specs: dict, risk_frac: float = C.RISK
                 continue
             if any(o.sym == r["symbol"] for o in live):
                 continue
+            bloc = C.INSTRUMENTS[r["symbol"]].get("bloc")       # actifs quasi identiques (ex. indices US)
+            if bloc and sum(1 for o in live if C.INSTRUMENTS[o.sym].get("bloc") == bloc and o.d == int(r["dir"])) \
+                    >= C.RISK.get("max_same_bloc", 99):
+                continue
             u, risk_real, notional = _units(r["symbol"], specs[r["symbol"]], float(r["R"]), float(r["entry"]), risk_usd)
             if u <= 0:
                 continue

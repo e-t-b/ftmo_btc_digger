@@ -1,0 +1,458 @@
+{
+  "A S26b (3 indices, 2 h) | dukascopy": {
+    "n": 547,
+    "trades_an": 63,
+    "R": 0.0958,
+    "t": 1.814,
+    "pf": 1.211,
+    "pct_an": 3.0,
+    "dd": -7.31,
+    "MC": 0.031,
+    "jours_MC": 329.0,
+    "per_symbol": [
+      {
+        "symbol": "DK_GER40",
+        "size": 180,
+        "mean": 0.109
+      },
+      {
+        "symbol": "DK_US100",
+        "size": 232,
+        "mean": 0.101
+      },
+      {
+        "symbol": "DK_US500",
+        "size": 135,
+        "mean": 0.069
+      }
+    ]
+  },
+  "A S26b (3 indices, 2 h) | ftmo": {
+    "n": 272,
+    "trades_an": 97,
+    "R": 0.1005,
+    "t": 1.387,
+    "pf": 1.223,
+    "pct_an": 4.8,
+    "dd": -7.52,
+    "MC": 0.162,
+    "jours_MC": 278.0,
+    "per_symbol": [
+      {
+        "symbol": "GER40.cash",
+        "size": 64,
+        "mean": 0.175
+      },
+      {
+        "symbol": "US100.cash",
+        "size": 122,
+        "mean": 0.014
+      },
+      {
+        "symbol": "US500.cash",
+        "size": 86,
+        "mean": 0.168
+      }
+    ]
+  },
+  "B 3 indices, 1-2-3 h | dukascopy": {
+    "n": 1091,
+    "trades_an": 126,
+    "R": 0.0976,
+    "t": 2.419,
+    "pf": 1.199,
+    "pct_an": 6.1,
+    "dd": -10.84,
+    "MC": 0.174,
+    "jours_MC": 257.0,
+    "per_symbol": [
+      {
+        "symbol": "DK_GER40",
+        "size": 343,
+        "mean": 0.051
+      },
+      {
+        "symbol": "DK_US100",
+        "size": 481,
+        "mean": 0.119
+      },
+      {
+        "symbol": "DK_US500",
+        "size": 267,
+        "mean": 0.118
+      }
+    ]
+  },
+  "B 3 indices, 1-2-3 h | ftmo": {
+    "n": 504,
+    "trades_an": 179,
+    "R": 0.0801,
+    "t": 1.421,
+    "pf": 1.164,
+    "pct_an": 7.1,
+    "dd": -11.06,
+    "MC": 0.324,
+    "jours_MC": 212.5,
+    "per_symbol": [
+      {
+        "symbol": "GER40.cash",
+        "size": 122,
+        "mean": 0.09
+      },
+      {
+        "symbol": "US100.cash",
+        "size": 236,
+        "mean": 0.047
+      },
+      {
+        "symbol": "US500.cash",
+        "size": 146,
+        "mean": 0.125
+      }
+    ]
+  },
+  "C 6 indices, 2 h | dukascopy": {
+    "n": 992,
+    "trades_an": 115,
+    "R": 0.0479,
+    "t": 1.273,
+    "pf": 1.105,
+    "pct_an": 2.8,
+    "dd": -13.65,
+    "MC": 0.078,
+    "jours_MC": 265.5,
+    "per_symbol": [
+      {
+        "symbol": "DK_GER40",
+        "size": 180,
+        "mean": 0.109
+      },
+      {
+        "symbol": "DK_JP225",
+        "size": 132,
+        "mean": -0.089
+      },
+      {
+        "symbol": "DK_UK100",
+        "size": 171,
+        "mean": 0.016
+      },
+      {
+        "symbol": "DK_US100",
+        "size": 232,
+        "mean": 0.102
+      },
+      {
+        "symbol": "DK_US30",
+        "size": 142,
+        "mean": 0.026
+      },
+      {
+        "symbol": "DK_US500",
+        "size": 135,
+        "mean": 0.07
+      }
+    ]
+  },
+  "C 6 indices, 2 h | ftmo": {
+    "n": 493,
+    "trades_an": 175,
+    "R": -0.0045,
+    "t": -0.088,
+    "pf": 0.991,
+    "pct_an": 0.2,
+    "dd": -13.56,
+    "MC": 0.086,
+    "jours_MC": 231.0,
+    "per_symbol": [
+      {
+        "symbol": "GER40.cash",
+        "size": 64,
+        "mean": 0.175
+      },
+      {
+        "symbol": "JP225.cash",
+        "size": 85,
+        "mean": -0.235
+      },
+      {
+        "symbol": "UK100.cash",
+        "size": 61,
+        "mean": -0.224
+      },
+      {
+        "symbol": "US100.cash",
+        "size": 122,
+        "mean": 0.014
+      },
+      {
+        "symbol": "US30.cash",
+        "size": 75,
+        "mean": 0.055
+      },
+      {
+        "symbol": "US500.cash",
+        "size": 86,
+        "mean": 0.168
+      }
+    ]
+  },
+  "D 6 indices, 1-2-3 h | dukascopy": {
+    "n": 1921,
+    "trades_an": 222,
+    "R": 0.038,
+    "t": 1.313,
+    "pf": 1.077,
+    "pct_an": 4.3,
+    "dd": -18.83,
+    "MC": 0.188,
+    "jours_MC": 216.0,
+    "per_symbol": [
+      {
+        "symbol": "DK_GER40",
+        "size": 343,
+        "mean": 0.051
+      },
+      {
+        "symbol": "DK_JP225",
+        "size": 249,
+        "mean": -0.138
+      },
+      {
+        "symbol": "DK_UK100",
+        "size": 318,
+        "mean": -0.026
+      },
+      {
+        "symbol": "DK_US100",
+        "size": 478,
+        "mean": 0.117
+      },
+      {
+        "symbol": "DK_US30",
+        "size": 266,
+        "mean": 0.039
+      },
+      {
+        "symbol": "DK_US500",
+        "size": 267,
+        "mean": 0.118
+      }
+    ]
+  },
+  "D 6 indices, 1-2-3 h | ftmo": {
+    "n": 918,
+    "trades_an": 326,
+    "R": 0.0037,
+    "t": 0.092,
+    "pf": 1.007,
+    "pct_an": 0.9,
+    "dd": -21.18,
+    "MC": 0.2,
+    "jours_MC": 158.0,
+    "per_symbol": [
+      {
+        "symbol": "GER40.cash",
+        "size": 122,
+        "mean": 0.09
+      },
+      {
+        "symbol": "JP225.cash",
+        "size": 158,
+        "mean": -0.099
+      },
+      {
+        "symbol": "UK100.cash",
+        "size": 115,
+        "mean": -0.185
+      },
+      {
+        "symbol": "US100.cash",
+        "size": 236,
+        "mean": 0.047
+      },
+      {
+        "symbol": "US30.cash",
+        "size": 141,
+        "mean": -0.008
+      },
+      {
+        "symbol": "US500.cash",
+        "size": 146,
+        "mean": 0.132
+      }
+    ]
+  },
+  "E 6 indices, 1-2-3 h, bloc US max 2 | dukascopy": {
+    "n": 1812,
+    "trades_an": 209,
+    "R": 0.0364,
+    "t": 1.216,
+    "pf": 1.074,
+    "pct_an": 3.9,
+    "dd": -18.23,
+    "MC": 0.166,
+    "jours_MC": 224.0,
+    "per_symbol": [
+      {
+        "symbol": "DK_GER40",
+        "size": 343,
+        "mean": 0.051
+      },
+      {
+        "symbol": "DK_JP225",
+        "size": 249,
+        "mean": -0.138
+      },
+      {
+        "symbol": "DK_UK100",
+        "size": 318,
+        "mean": -0.026
+      },
+      {
+        "symbol": "DK_US100",
+        "size": 460,
+        "mean": 0.141
+      },
+      {
+        "symbol": "DK_US30",
+        "size": 175,
+        "mean": -0.034
+      },
+      {
+        "symbol": "DK_US500",
+        "size": 267,
+        "mean": 0.119
+      }
+    ]
+  },
+  "E 6 indices, 1-2-3 h, bloc US max 2 | ftmo": {
+    "n": 860,
+    "trades_an": 305,
+    "R": -0.0043,
+    "t": -0.103,
+    "pf": 0.992,
+    "pct_an": -0.3,
+    "dd": -20.14,
+    "MC": 0.156,
+    "jours_MC": 183.0,
+    "per_symbol": [
+      {
+        "symbol": "GER40.cash",
+        "size": 122,
+        "mean": 0.09
+      },
+      {
+        "symbol": "JP225.cash",
+        "size": 158,
+        "mean": -0.099
+      },
+      {
+        "symbol": "UK100.cash",
+        "size": 115,
+        "mean": -0.185
+      },
+      {
+        "symbol": "US100.cash",
+        "size": 226,
+        "mean": 0.032
+      },
+      {
+        "symbol": "US30.cash",
+        "size": 94,
+        "mean": -0.043
+      },
+      {
+        "symbol": "US500.cash",
+        "size": 145,
+        "mean": 0.131
+      }
+    ]
+  },
+  "F 6 indices, 1-2-3 h, bloc US max 1 | dukascopy": {
+    "n": 1558,
+    "trades_an": 180,
+    "R": 0.0217,
+    "t": 0.667,
+    "pf": 1.043,
+    "pct_an": 2.0,
+    "dd": -18.98,
+    "MC": 0.1,
+    "jours_MC": 239.0,
+    "per_symbol": [
+      {
+        "symbol": "DK_GER40",
+        "size": 343,
+        "mean": 0.051
+      },
+      {
+        "symbol": "DK_JP225",
+        "size": 249,
+        "mean": -0.138
+      },
+      {
+        "symbol": "DK_UK100",
+        "size": 318,
+        "mean": -0.026
+      },
+      {
+        "symbol": "DK_US100",
+        "size": 325,
+        "mean": 0.054
+      },
+      {
+        "symbol": "DK_US30",
+        "size": 107,
+        "mean": -0.022
+      },
+      {
+        "symbol": "DK_US500",
+        "size": 216,
+        "mean": 0.202
+      }
+    ]
+  },
+  "F 6 indices, 1-2-3 h, bloc US max 1 | ftmo": {
+    "n": 724,
+    "trades_an": 257,
+    "R": -0.0394,
+    "t": -0.878,
+    "pf": 0.924,
+    "pct_an": -4.7,
+    "dd": -23.63,
+    "MC": 0.047,
+    "jours_MC": 211.0,
+    "per_symbol": [
+      {
+        "symbol": "GER40.cash",
+        "size": 122,
+        "mean": 0.09
+      },
+      {
+        "symbol": "JP225.cash",
+        "size": 158,
+        "mean": -0.099
+      },
+      {
+        "symbol": "UK100.cash",
+        "size": 115,
+        "mean": -0.185
+      },
+      {
+        "symbol": "US100.cash",
+        "size": 148,
+        "mean": -0.051
+      },
+      {
+        "symbol": "US30.cash",
+        "size": 59,
+        "mean": -0.135
+      },
+      {
+        "symbol": "US500.cash",
+        "size": 122,
+        "mean": 0.105
+      }
+    ]
+  }
+}
