@@ -27,7 +27,7 @@ SESSIONS = {"Tokyo": ("Asia/Tokyo", 9, 0), "Londres": ("Europe/London", 8, 0), "
 PERIODS = {"FTMO 2015/2021 → 2024-06": ("1970-01-01", "2024-07-01"), "FTMO 2024-07 → 2026-10": ("2024-07-01", "2026-10-29")}
 
 
-def setups(P, f, sessions=SESSIONS):
+def setups(P, f, sessions=SESSIONS, bar=900):
     t, o, h, l, c = P["t"], P["o"], P["h"], P["l"], P["c"]
     sc, slip = P["sc"], P["slip"]
     rows, meta = [], []
@@ -41,8 +41,8 @@ def setups(P, f, sessions=SESSIONS):
             a = K._ts(d, tz, hh, mm)
             if name == "Tokyo" and exit_t < a:
                 continue
-            i0, i1 = np.searchsorted(t, a), np.searchsorted(t, a + 900)
-            if i1 - i0 < 12 or t[i0] > a + 120:
+            i0, i1 = np.searchsorted(t, a), np.searchsorted(t, a + bar)
+            if i1 - i0 < 0.8 * bar / 60 or t[i0] > a + 120:
                 continue
             atr = atr_at(P, a)
             H, L, O, Cl = h[i0:i1].max(), l[i0:i1].min(), o[i0], c[i1 - 1]
@@ -50,7 +50,7 @@ def setups(P, f, sessions=SESSIONS):
             if not (atr > 0) or rng < 0.25 * atr or Cl == O:
                 continue
             j = i1
-            if j >= len(t) or t[j] > a + 900 + 300 or t[j] >= exit_t:
+            if j >= len(t) or t[j] > a + bar + 300 or t[j] >= exit_t:
                 continue
             if Cl < O:
                 dr, tp = 1, L + f * rng
@@ -66,8 +66,11 @@ def setups(P, f, sessions=SESSIONS):
     return _pack(rows), dict(meta)
 
 
-def run(P, f):
-    S, meta = setups(P, f)
+def run(P, f, bar=900, zero_cost=False):
+    if zero_cost:
+        n = len(P["t"])
+        P = dict(P, sc=np.zeros(n), slip=np.zeros(n), sslip=np.zeros(n), comm=np.zeros(n))
+    S, meta = setups(P, f, bar=bar)
     old = C.MIN_STOP_COST_MULT
     C.MIN_STOP_COST_MULT = 0.0
     try:
