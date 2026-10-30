@@ -1,0 +1,122 @@
+{
+  "window": [
+    "2024-07-01",
+    "2026-10-28"
+  ],
+  "strategy": "S26-B3",
+  "risk": 0.0075,
+  "metrics": {
+    "n": 403,
+    "expectancy_r": 0.0719,
+    "pf": 1.153,
+    "hit": 0.442,
+    "total_pct": 21.5,
+    "max_dd_pct": -18.4,
+    "max_dd_intraday_pct": -19.45,
+    "worst_day_pct": -2.08,
+    "worst_intraday_day_pct": -2.08,
+    "day_stops": 3,
+    "t_stat": 1.08
+  },
+  "monte_carlo": {
+    "p_pass": 0.37855,
+    "p_fail_phase1": 0.32375,
+    "p_fail_phase2": 0.1504,
+    "p_unresolved": 0.1473,
+    "median_days_phase1": 84.0,
+    "median_days_total": 142.0
+  },
+  "criteria": {
+    "1_expectancy>0": true,
+    "2_PF>=1.1": true,
+    "3_MC>=40%": false,
+    "4_DD<=10%": false
+  },
+  "decision": "NO-GO",
+  "info": {
+    "per_symbol": [
+      {
+        "symbol": "GER40.cash",
+        "size": 120,
+        "mean": 0.088
+      },
+      {
+        "symbol": "US100.cash",
+        "size": 160,
+        "mean": 0.184
+      },
+      {
+        "symbol": "US500.cash",
+        "size": 123,
+        "mean": -0.091
+      }
+    ],
+    "per_hour": [
+      {
+        "hour": 1,
+        "size": 138,
+        "mean": 0.068
+      },
+      {
+        "hour": 2,
+        "size": 155,
+        "mean": 0.184
+      },
+      {
+        "hour": 3,
+        "size": 110,
+        "mean": -0.08
+      }
+    ],
+    "per_semester": [
+      {
+        "sem": "2024-S2",
+        "size": 105,
+        "mean": -0.042
+      },
+      {
+        "sem": "2025-S1",
+        "size": 82,
+        "mean": 0.07
+      },
+      {
+        "sem": "2025-S2",
+        "size": 84,
+        "mean": 0.245
+      },
+      {
+        "sem": "2026-S1",
+        "size": 80,
+        "mean": 0.079
+      },
+      {
+        "sem": "2026-S2",
+        "size": 52,
+        "mean": 0.015
+      }
+    ]
+  },
+  "s26_original_info": {
+    "metrics": {
+      "n": 276,
+      "expectancy_r": 0.0829,
+      "pf": 1.403,
+      "hit": 0.518,
+      "total_pct": 11.23,
+      "max_dd_pct": -3.97,
+      "max_dd_intraday_pct": -4.16,
+      "worst_day_pct": -1.13,
+      "worst_intraday_day_pct": -1.13,
+      "day_stops": 0,
+      "t_stat": 2.03
+    },
+    "monte_carlo": {
+      "p_pass": 0.07185,
+      "p_fail_phase1": 0.0008,
+      "p_fail_phase2": 0.0002,
+      "p_unresolved": 0.92715,
+      "median_days_phase1": 199.0,
+      "median_days_total": 332.0
+    }
+  }
+}
