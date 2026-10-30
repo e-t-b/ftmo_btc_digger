@@ -1,0 +1,242 @@
+{
+  "lot": "lot3",
+  "family_size": 27,
+  "strategies": {
+    "S21": {
+      "metrics": {
+        "n": 6461,
+        "expectancy_r": -0.0239,
+        "pf": 0.918,
+        "hit": 0.466,
+        "total_pct": -73.87,
+        "max_dd_pct": -88.19,
+        "max_dd_intraday_pct": -88.29,
+        "worst_day_pct": -2.02,
+        "worst_intraday_day_pct": -2.02,
+        "day_stops": 3,
+        "t_stat": -2.636,
+        "p": 0.9958016617443619
+      },
+      "monte_carlo": {
+        "p_pass": 0.02715,
+        "p_fail_phase1": 0.64915,
+        "p_fail_phase2": 0.05585,
+        "p_unresolved": 0.26785,
+        "median_days_phase1": 117.0,
+        "median_days_total": 188.0
+      },
+      "per_symbol": [
+        {
+          "symbol": "AUDUSD",
+          "n": 1125,
+          "exp_r": -0.0726
+        },
+        {
+          "symbol": "BTCUSD",
+          "n": 425,
+          "exp_r": -0.0157
+        },
+        {
+          "symbol": "EURUSD",
+          "n": 1368,
+          "exp_r": -0.0157
+        },
+        {
+          "symbol": "GBPUSD",
+          "n": 1476,
+          "exp_r": -0.0324
+        },
+        {
+          "symbol": "GER40.cash",
+          "n": 464,
+          "exp_r": -0.0089
+        },
+        {
+          "symbol": "US100.cash",
+          "n": 262,
+          "exp_r": 0.0151
+        },
+        {
+          "symbol": "US500.cash",
+          "n": 195,
+          "exp_r": -0.0113
+        },
+        {
+          "symbol": "USDJPY",
+          "n": 1146,
+          "exp_r": 0.0049
+        }
+      ],
+      "start": "2015-01-05",
+      "stress": {
+        "n": 6464,
+        "expectancy_r": -0.037,
+        "pf": 0.875,
+        "t_stat": -4.096
+      },
+      "holm": {
+        "p": 0.9958016617443619,
+        "threshold": 0.004166666666666667,
+        "significant": false
+      }
+    },
+    "S22": {
+      "metrics": {
+        "n": 673,
+        "expectancy_r": -0.0315,
+        "pf": 0.875,
+        "hit": 0.462,
+        "total_pct": -9.99,
+        "max_dd_pct": -13.12,
+        "max_dd_intraday_pct": -13.21,
+        "worst_day_pct": -1.65,
+        "worst_intraday_day_pct": -1.76,
+        "day_stops": 0,
+        "t_stat": -1.322,
+        "p": 0.9069796388265731
+      },
+      "monte_carlo": {
+        "p_pass": 0.0,
+        "p_fail_phase1": 0.0003,
+        "p_fail_phase2": 0.0,
+        "p_unresolved": 0.9997,
+        "median_days_phase1": NaN,
+        "median_days_total": NaN
+      },
+      "per_symbol": [
+        {
+          "symbol": "AUDUSD",
+          "n": 107,
+          "exp_r": -0.1588
+        },
+        {
+          "symbol": "BTCUSD",
+          "n": 38,
+          "exp_r": 0.0214
+        },
+        {
+          "symbol": "EURUSD",
+          "n": 138,
+          "exp_r": 0.0247
+        },
+        {
+          "symbol": "GBPUSD",
+          "n": 168,
+          "exp_r": -0.0345
+        },
+        {
+          "symbol": "GER40.cash",
+          "n": 52,
+          "exp_r": -0.084
+        },
+        {
+          "symbol": "US100.cash",
+          "n": 37,
+          "exp_r": -0.0145
+        },
+        {
+          "symbol": "US500.cash",
+          "n": 28,
+          "exp_r": -0.0625
+        },
+        {
+          "symbol": "USDJPY",
+          "n": 105,
+          "exp_r": 0.0384
+        }
+      ],
+      "start": "2015-01-05",
+      "stress": {
+        "n": 671,
+        "expectancy_r": -0.043,
+        "pf": 0.832,
+        "t_stat": -1.812
+      },
+      "holm": {
+        "p": 0.9069796388265731,
+        "threshold": 0.003125,
+        "significant": false
+      }
+    },
+    "S23": {
+      "metrics": {
+        "n": 1156,
+        "expectancy_r": -0.0822,
+        "pf": 0.885,
+        "hit": 0.286,
+        "total_pct": -48.03,
+        "max_dd_pct": -69.62,
+        "max_dd_intraday_pct": -71.03,
+        "worst_day_pct": -2.16,
+        "worst_intraday_day_pct": -2.16,
+        "day_stops": 20,
+        "t_stat": -1.511,
+        "p": 0.9345532736185207
+      },
+      "monte_carlo": {
+        "p_pass": 0.059,
+        "p_fail_phase1": 0.5685,
+        "p_fail_phase2": 0.089,
+        "p_unresolved": 0.2835,
+        "median_days_phase1": 106.0,
+        "median_days_total": 183.5
+      },
+      "per_symbol": [
+        {
+          "symbol": "AUDUSD",
+          "n": 211,
+          "exp_r": -0.146
+        },
+        {
+          "symbol": "BTCUSD",
+          "n": 90,
+          "exp_r": 0.0736
+        },
+        {
+          "symbol": "EURUSD",
+          "n": 225,
+          "exp_r": -0.1197
+        },
+        {
+          "symbol": "GBPUSD",
+          "n": 243,
+          "exp_r": -0.0715
+        },
+        {
+          "symbol": "GER40.cash",
+          "n": 63,
+          "exp_r": -0.1395
+        },
+        {
+          "symbol": "US100.cash",
+          "n": 59,
+          "exp_r": -0.0516
+        },
+        {
+          "symbol": "US500.cash",
+          "n": 51,
+          "exp_r": 0.0362
+        },
+        {
+          "symbol": "USDJPY",
+          "n": 214,
+          "exp_r": -0.0772
+        }
+      ],
+      "start": "2015-01-05",
+      "stress": {
+        "n": 1101,
+        "expectancy_r": -0.109,
+        "pf": 0.851,
+        "t_stat": -1.985
+      },
+      "holm": {
+        "p": 0.9345532736185207,
+        "threshold": 0.0038461538461538464,
+        "significant": false
+      }
+    }
+  },
+  "candidates": [],
+  "pistes": []
+}
