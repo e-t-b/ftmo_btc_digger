@@ -75,3 +75,12 @@ et pour les indices dans T1-T3. Correctifs :
 - Contrôle qualité : BTC/ETH présentent des journées à très grande amplitude (2011-2013, cohérentes avec la
   volatilité de l'époque) ; conservées, résultat publié par symbole.
 - Pétrole US, gaz naturel, indices FTMO : période finale seulement (données trop courtes avant 2018).
+
+## Amendement 2 (2026-10-30, après le premier calcul de développement — correction d'un bug d'unité)
+
+Le premier passage appliquait les swaps en points **absolus** au niveau de prix de 2026 à des prix anciens
+(ex. US500 à 1 500 en 2013 débité comme à 6 000), soit un coût de portage ×3 à ×4 sur les indices. Correction :
+le swap en points est converti en fraction du dernier prix puis appliqué au prix du jour. Seul ce bug est corrigé ;
+stratégies, paramètres, univers et règles de sélection inchangés. Premier résultat (avec le bug) conservé dans
+`reports_v2/swing_dev_bug_swap.json` ; aucune stratégie ne passait Holm (meilleure : T1, t = 1,08).
+Les p-values ajoutées à la famille par ce premier passage sont remplacées (même famille, mêmes 4 hypothèses).

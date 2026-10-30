@@ -1,0 +1,19 @@
+{
+  "symbol": "UKOIL.cash",
+  "digits": 3,
+  "point": 0.001,
+  "contract_size": 100.0,
+  "volume_min": 0.01,
+  "volume_step": 0.01,
+  "currency_profit": "USD",
+  "currency_base": "USD",
+  "swap_mode": 1,
+  "swap_long": 50.38,
+  "swap_short": -234.88,
+  "swap_rollover3days": 5,
+  "margin_initial": 0.0,
+  "spread_now_points": 68,
+  "last_close": 118.453,
+  "first_bar": "2016-04-22",
+  "rows": 2717
+}

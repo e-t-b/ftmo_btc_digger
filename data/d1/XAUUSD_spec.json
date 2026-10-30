@@ -1,0 +1,19 @@
+{
+  "symbol": "XAUUSD",
+  "digits": 2,
+  "point": 0.01,
+  "contract_size": 100.0,
+  "volume_min": 0.01,
+  "volume_step": 0.01,
+  "currency_profit": "USD",
+  "currency_base": "USD",
+  "swap_mode": 1,
+  "swap_long": -64.8,
+  "swap_short": -4.2,
+  "swap_rollover3days": 3,
+  "margin_initial": 0.0,
+  "spread_now_points": 35,
+  "last_close": 3896.35,
+  "first_bar": "2004-06-11",
+  "rows": 5761
+}

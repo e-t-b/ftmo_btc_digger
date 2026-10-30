@@ -59,12 +59,12 @@ def swap_per_unit_day(D: dict, i: int, d: int) -> float:
     v = s["swap_long"] if d == 1 else s["swap_short"]
     mode = s["swap_mode"]
     px = D["c"][i]
-    if mode == 1:                       # points
-        return v * s["point"]
+    if mode == 1:                       # points, au niveau de prix actuel → proportionnel au prix (amendement 2)
+        return v * s["point"] / D["c"][-1] * px
     if mode in (5, 6):                  # intérêt annuel en % du prix
         return v / 100.0 / 360.0 * px
     if mode in (2, 3, 4):               # monnaie par lot : approximé en unités de prix (quote USD)
-        return v / s["contract_size"]
+        return v / s["contract_size"] / D["c"][-1] * px
     return 0.0
 
 

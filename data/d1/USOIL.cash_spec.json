@@ -1,0 +1,19 @@
+{
+  "symbol": "USOIL.cash",
+  "digits": 3,
+  "point": 0.001,
+  "contract_size": 100.0,
+  "volume_min": 0.01,
+  "volume_step": 0.01,
+  "currency_profit": "USD",
+  "currency_base": "USD",
+  "swap_mode": 1,
+  "swap_long": 8.84,
+  "swap_short": -53.07,
+  "swap_rollover3days": 5,
+  "margin_initial": 0.0,
+  "spread_now_points": 74,
+  "last_close": 105.046,
+  "first_bar": "2020-12-31",
+  "rows": 1507
+}

@@ -1,0 +1,483 @@
+{
+ "universe": {
+  "AUDJPY": "2000-03-29",
+  "AUDUSD": "2000-03-29",
+  "AUS200.cash": "2019-02-08",
+  "BTCUSD": "2011-03-24",
+  "DK_GER40": "2013-10-01",
+  "DK_JP225": "2013-01-04",
+  "DK_UK100": "2013-01-02",
+  "DK_US100": "2013-01-02",
+  "DK_US30": "2013-09-30",
+  "DK_US500": "2013-01-02",
+  "ETHUSD": "2016-05-02",
+  "EU50.cash": "2017-12-29",
+  "EURAUD": "2004-06-17",
+  "EURGBP": "2000-03-29",
+  "EURJPY": "2000-03-29",
+  "EURUSD": "2000-03-29",
+  "FRA40.cash": "2017-12-29",
+  "GBPJPY": "2000-03-29",
+  "GBPUSD": "2000-03-29",
+  "GER40.cash": "2017-12-28",
+  "HK50.cash": "2018-12-17",
+  "JP225.cash": "2017-12-28",
+  "NATGAS.cash": "2024-10-23",
+  "NZDUSD": "2000-03-29",
+  "UK100.cash": "2017-12-28",
+  "UKOIL.cash": "2016-04-22",
+  "US100.cash": "2017-12-29",
+  "US30.cash": "2019-02-08",
+  "US500.cash": "2017-12-29",
+  "USDCAD": "2000-03-29",
+  "USDCHF": "2000-03-29",
+  "USDJPY": "2000-03-29",
+  "USOIL.cash": "2020-12-31",
+  "XAGUSD": "2008-11-07"
+ },
+ "strategies": {
+  "T1": {
+   "n": 1043,
+   "R": 0.261,
+   "t": 1.08,
+   "p": 0.13985909716656497,
+   "R_stress": 0.18,
+   "pos_2yr_blocks": "4/9",
+   "by_2yr": {
+    "2000": -0.083,
+    "2002": 0.594,
+    "2004": -0.533,
+    "2006": -0.227,
+    "2008": 0.715,
+    "2010": -0.42,
+    "2012": 1.042,
+    "2014": -0.351,
+    "2016": 1.246
+   },
+   "per_symbol": [
+    {
+     "sym": "AUDJPY",
+     "size": 79,
+     "mean": -0.242
+    },
+    {
+     "sym": "AUDUSD",
+     "size": 73,
+     "mean": 0.166
+    },
+    {
+     "sym": "BTCUSD",
+     "size": 18,
+     "mean": 12.683
+    },
+    {
+     "sym": "DK_GER40",
+     "size": 17,
+     "mean": -0.545
+    },
+    {
+     "sym": "DK_JP225",
+     "size": 21,
+     "mean": -0.645
+    },
+    {
+     "sym": "DK_UK100",
+     "size": 20,
+     "mean": -0.95
+    },
+    {
+     "sym": "DK_US100",
+     "size": 19,
+     "mean": -1.515
+    },
+    {
+     "sym": "DK_US30",
+     "size": 20,
+     "mean": -0.574
+    },
+    {
+     "sym": "DK_US500",
+     "size": 24,
+     "mean": -1.145
+    },
+    {
+     "sym": "ETHUSD",
+     "size": 4,
+     "mean": 54.13
+    },
+    {
+     "sym": "EURAUD",
+     "size": 60,
+     "mean": -0.152
+    },
+    {
+     "sym": "EURGBP",
+     "size": 69,
+     "mean": -0.189
+    },
+    {
+     "sym": "EURJPY",
+     "size": 69,
+     "mean": -0.018
+    },
+    {
+     "sym": "EURUSD",
+     "size": 65,
+     "mean": 0.484
+    },
+    {
+     "sym": "GBPJPY",
+     "size": 74,
+     "mean": -0.192
+    },
+    {
+     "sym": "GBPUSD",
+     "size": 81,
+     "mean": -0.126
+    },
+    {
+     "sym": "NZDUSD",
+     "size": 70,
+     "mean": 0.129
+    },
+    {
+     "sym": "UKOIL.cash",
+     "size": 8,
+     "mean": -1.526
+    },
+    {
+     "sym": "USDCAD",
+     "size": 72,
+     "mean": 0.003
+    },
+    {
+     "sym": "USDCHF",
+     "size": 72,
+     "mean": -0.271
+    },
+    {
+     "sym": "USDJPY",
+     "size": 69,
+     "mean": -0.102
+    },
+    {
+     "sym": "XAGUSD",
+     "size": 39,
+     "mean": -0.264
+    }
+   ]
+  },
+  "T2": {
+   "n": 2096,
+   "R": 0.089,
+   "t": 0.64,
+   "p": 0.26240402029264265,
+   "R_stress": 0.049,
+   "pos_2yr_blocks": "4/9",
+   "by_2yr": {
+    "2000": -0.041,
+    "2002": 0.133,
+    "2004": -0.335,
+    "2006": -0.191,
+    "2008": 0.091,
+    "2010": -0.003,
+    "2012": 0.584,
+    "2014": -0.16,
+    "2016": 0.454
+   },
+   "per_symbol": [
+    {
+     "sym": "AUDJPY",
+     "size": 145,
+     "mean": -0.167
+    },
+    {
+     "sym": "AUDUSD",
+     "size": 139,
+     "mean": 0.104
+    },
+    {
+     "sym": "BTCUSD",
+     "size": 38,
+     "mean": 6.424
+    },
+    {
+     "sym": "DK_GER40",
+     "size": 33,
+     "mean": -0.293
+    },
+    {
+     "sym": "DK_JP225",
+     "size": 43,
+     "mean": -0.35
+    },
+    {
+     "sym": "DK_UK100",
+     "size": 47,
+     "mean": -0.533
+    },
+    {
+     "sym": "DK_US100",
+     "size": 42,
+     "mean": -1.123
+    },
+    {
+     "sym": "DK_US30",
+     "size": 35,
+     "mean": -0.283
+    },
+    {
+     "sym": "DK_US500",
+     "size": 44,
+     "mean": -0.677
+    },
+    {
+     "sym": "ETHUSD",
+     "size": 13,
+     "mean": 20.175
+    },
+    {
+     "sym": "EURAUD",
+     "size": 116,
+     "mean": -0.097
+    },
+    {
+     "sym": "EURGBP",
+     "size": 149,
+     "mean": -0.278
+    },
+    {
+     "sym": "EURJPY",
+     "size": 136,
+     "mean": -0.047
+    },
+    {
+     "sym": "EURUSD",
+     "size": 138,
+     "mean": 0.084
+    },
+    {
+     "sym": "GBPJPY",
+     "size": 158,
+     "mean": -0.208
+    },
+    {
+     "sym": "GBPUSD",
+     "size": 149,
+     "mean": -0.058
+    },
+    {
+     "sym": "NZDUSD",
+     "size": 132,
+     "mean": 0.108
+    },
+    {
+     "sym": "UKOIL.cash",
+     "size": 16,
+     "mean": -0.938
+    },
+    {
+     "sym": "USDCAD",
+     "size": 141,
+     "mean": -0.085
+    },
+    {
+     "sym": "USDCHF",
+     "size": 152,
+     "mean": -0.237
+    },
+    {
+     "sym": "USDJPY",
+     "size": 154,
+     "mean": -0.221
+    },
+    {
+     "sym": "XAGUSD",
+     "size": 76,
+     "mean": -0.015
+    }
+   ]
+  },
+  "T3": {
+   "n": 1004,
+   "R": -0.008,
+   "t": -0.2,
+   "p": 0.5803942540781449,
+   "R_stress": -0.045,
+   "pos_2yr_blocks": "3/9",
+   "by_2yr": {
+    "2000": -0.188,
+    "2002": 0.254,
+    "2004": -0.317,
+    "2006": 0.123,
+    "2008": -0.015,
+    "2010": -0.112,
+    "2012": 0.326,
+    "2014": -0.136,
+    "2016": -0.013
+   },
+   "per_symbol": [
+    {
+     "sym": "AUDJPY",
+     "size": 69,
+     "mean": -0.186
+    },
+    {
+     "sym": "AUDUSD",
+     "size": 65,
+     "mean": 0.089
+    },
+    {
+     "sym": "BTCUSD",
+     "size": 30,
+     "mean": 1.774
+    },
+    {
+     "sym": "DK_GER40",
+     "size": 14,
+     "mean": -0.005
+    },
+    {
+     "sym": "DK_JP225",
+     "size": 23,
+     "mean": -0.366
+    },
+    {
+     "sym": "DK_UK100",
+     "size": 20,
+     "mean": -0.283
+    },
+    {
+     "sym": "DK_US100",
+     "size": 20,
+     "mean": -0.59
+    },
+    {
+     "sym": "DK_US30",
+     "size": 15,
+     "mean": 0.318
+    },
+    {
+     "sym": "DK_US500",
+     "size": 19,
+     "mean": -0.409
+    },
+    {
+     "sym": "ETHUSD",
+     "size": 7,
+     "mean": 1.172
+    },
+    {
+     "sym": "EURAUD",
+     "size": 53,
+     "mean": 0.007
+    },
+    {
+     "sym": "EURGBP",
+     "size": 71,
+     "mean": -0.196
+    },
+    {
+     "sym": "EURJPY",
+     "size": 72,
+     "mean": -0.128
+    },
+    {
+     "sym": "EURUSD",
+     "size": 69,
+     "mean": 0.084
+    },
+    {
+     "sym": "GBPJPY",
+     "size": 79,
+     "mean": -0.077
+    },
+    {
+     "sym": "GBPUSD",
+     "size": 67,
+     "mean": -0.002
+    },
+    {
+     "sym": "NZDUSD",
+     "size": 64,
+     "mean": 0.067
+    },
+    {
+     "sym": "UKOIL.cash",
+     "size": 5,
+     "mean": -0.763
+    },
+    {
+     "sym": "USDCAD",
+     "size": 68,
+     "mean": -0.06
+    },
+    {
+     "sym": "USDCHF",
+     "size": 68,
+     "mean": 0.015
+    },
+    {
+     "sym": "USDJPY",
+     "size": 69,
+     "mean": -0.095
+    },
+    {
+     "sym": "XAGUSD",
+     "size": 37,
+     "mean": -0.026
+    }
+   ]
+  },
+  "M1": {
+   "n": 210,
+   "R": 0.058,
+   "t": 1.57,
+   "p": 0.059069340715652875,
+   "R_stress": -0.009,
+   "pos_2yr_blocks": "2/2",
+   "by_2yr": {
+    "2014": 0.004,
+    "2016": 0.116
+   },
+   "per_symbol": [
+    {
+     "sym": "DK_GER40",
+     "size": 26,
+     "mean": -0.031
+    },
+    {
+     "sym": "DK_JP225",
+     "size": 30,
+     "mean": 0.126
+    },
+    {
+     "sym": "DK_UK100",
+     "size": 31,
+     "mean": -0.111
+    },
+    {
+     "sym": "DK_US100",
+     "size": 44,
+     "mean": 0.092
+    },
+    {
+     "sym": "DK_US30",
+     "size": 37,
+     "mean": 0.111
+    },
+    {
+     "sym": "DK_US500",
+     "size": 42,
+     "mean": 0.109
+    }
+   ]
+  }
+ },
+ "holm": {
+  "m_family": 37,
+  "kept": [],
+  "kept_swing_only": []
+ },
+ "selected": []
+}

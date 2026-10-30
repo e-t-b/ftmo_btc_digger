@@ -1,0 +1,19 @@
+{
+  "symbol": "AUS200.cash",
+  "digits": 2,
+  "point": 0.01,
+  "contract_size": 1.0,
+  "volume_min": 0.01,
+  "volume_step": 0.01,
+  "currency_profit": "AUD",
+  "currency_base": "AUD",
+  "swap_mode": 1,
+  "swap_long": -251.5,
+  "swap_short": 13.39,
+  "swap_rollover3days": 5,
+  "margin_initial": 0.0,
+  "spread_now_points": 100,
+  "last_close": 8879.4,
+  "first_bar": "2019-02-08",
+  "rows": 1956
+}

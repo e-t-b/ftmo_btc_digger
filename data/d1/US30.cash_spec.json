@@ -1,0 +1,19 @@
+{
+  "symbol": "US30.cash",
+  "digits": 2,
+  "point": 0.01,
+  "contract_size": 1.0,
+  "volume_min": 0.01,
+  "volume_step": 0.01,
+  "currency_profit": "USD",
+  "currency_base": "USD",
+  "swap_mode": 1,
+  "swap_long": -1295.47,
+  "swap_short": 40.86,
+  "swap_rollover3days": 5,
+  "margin_initial": 0.0,
+  "spread_now_points": 210,
+  "last_close": 51939.2,
+  "first_bar": "2019-02-08",
+  "rows": 1978
+}

@@ -1,0 +1,19 @@
+{
+  "symbol": "ETHUSD",
+  "digits": 2,
+  "point": 0.01,
+  "contract_size": 10.0,
+  "volume_min": 0.01,
+  "volume_step": 0.01,
+  "currency_profit": "USD",
+  "currency_base": "USD",
+  "swap_mode": 5,
+  "swap_long": -30.0,
+  "swap_short": -30.0,
+  "swap_rollover3days": 5,
+  "margin_initial": 0.0,
+  "spread_now_points": 60,
+  "last_close": 2234.77,
+  "first_bar": "2016-05-02",
+  "rows": 3519
+}

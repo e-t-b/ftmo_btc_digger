@@ -1,0 +1,19 @@
+{
+  "symbol": "GER40.cash",
+  "digits": 2,
+  "point": 0.01,
+  "contract_size": 1.0,
+  "volume_min": 0.01,
+  "volume_step": 0.01,
+  "currency_profit": "EUR",
+  "currency_base": "EUR",
+  "swap_mode": 1,
+  "swap_long": -513.13,
+  "swap_short": -51.78,
+  "swap_rollover3days": 5,
+  "margin_initial": 0.0,
+  "spread_now_points": 123,
+  "last_close": 25787.34,
+  "first_bar": "2017-12-28",
+  "rows": 2117
+}

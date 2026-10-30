@@ -1,0 +1,19 @@
+{
+  "symbol": "AUDJPY",
+  "digits": 3,
+  "point": 0.001,
+  "contract_size": 100000.0,
+  "volume_min": 0.01,
+  "volume_step": 0.01,
+  "currency_profit": "JPY",
+  "currency_base": "AUD",
+  "swap_mode": 1,
+  "swap_long": 4.45,
+  "swap_short": -15.88,
+  "swap_rollover3days": 3,
+  "margin_initial": 0.0,
+  "spread_now_points": 9,
+  "last_close": 110.787,
+  "first_bar": "2000-03-29",
+  "rows": 6852
+}

@@ -1,0 +1,19 @@
+{
+  "symbol": "USDJPY",
+  "digits": 3,
+  "point": 0.001,
+  "contract_size": 100000.0,
+  "volume_min": 0.01,
+  "volume_step": 0.01,
+  "currency_profit": "JPY",
+  "currency_base": "USD",
+  "swap_mode": 1,
+  "swap_long": 4.31,
+  "swap_short": -20.68,
+  "swap_rollover3days": 3,
+  "margin_initial": 0.0,
+  "spread_now_points": 9,
+  "last_close": 157.414,
+  "first_bar": "2000-03-29",
+  "rows": 6910
+}

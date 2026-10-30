@@ -1,0 +1,19 @@
+{
+  "symbol": "USDCHF",
+  "digits": 5,
+  "point": 1e-05,
+  "contract_size": 100000.0,
+  "volume_min": 0.01,
+  "volume_step": 0.01,
+  "currency_profit": "CHF",
+  "currency_base": "USD",
+  "swap_mode": 1,
+  "swap_long": 2.62,
+  "swap_short": -14.76,
+  "swap_rollover3days": 3,
+  "margin_initial": 0.0,
+  "spread_now_points": 4,
+  "last_close": 0.82334,
+  "first_bar": "2000-03-29",
+  "rows": 6910
+}

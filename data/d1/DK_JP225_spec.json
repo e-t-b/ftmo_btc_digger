@@ -1,0 +1,20 @@
+{
+ "symbol": "DK_JP225",
+ "digits": 2,
+ "point": 0.01,
+ "contract_size": 10.0,
+ "volume_min": 0.01,
+ "volume_step": 0.01,
+ "currency_profit": "JPY",
+ "currency_base": "JPY",
+ "swap_mode": 1,
+ "swap_long": -983.14,
+ "swap_short": -404.82,
+ "swap_rollover3days": 5,
+ "margin_initial": 0.0,
+ "spread_now_points": 1000,
+ "last_close": 62435.0,
+ "first_bar": "2013-01-04",
+ "rows": 2338,
+ "source": "dukascopy"
+}
