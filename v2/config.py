@@ -44,6 +44,14 @@ INSTRUMENTS.update({
                        comm_usd_lot_side=0.0, comm_bps_side=0.0, slip_px=1.0, stop_slip_px=3.0,
                        leverage=15.0, first_test="2023-07-01", asset="index"),
 })
+# Ajouté par docs/protocole_catalogue.md §4
+INSTRUMENTS["GBPUSD"] = dict(session=("Europe/London", 8, 0), close_ny=(16, 45), usd_side=-1, quote="USD",
+                             trust=("2022-01-01", "2024-12-31"), floor_px=2e-5,
+                             comm_usd_lot_side=3.5, comm_bps_side=0.0, slip_px=2e-5, stop_slip_px=5e-5,
+                             leverage=30.0, first_test="2018-01-01", asset="forex")
+# Paires synthétiques S15 (P&L d'une position neutre en notionnel ; marge des deux jambes : levier / 2)
+INSTRUMENTS["PAIR_US100_US500"] = dict(usd_side=0, quote="USD", leverage=7.5, first_test="2023-07-01", asset="pair")
+INSTRUMENTS["PAIR_EURUSD_GBPUSD"] = dict(usd_side=0, quote="USD", leverage=15.0, first_test="2018-01-01", asset="pair")
 BREAKOUT_SYMBOLS = ("EURUSD", "USDJPY", "AUDUSD", "US100.cash", "BTCUSD")
 
 # Séances cash (fuseau, ouverture h, m, clôture h, m) pour H1-H3

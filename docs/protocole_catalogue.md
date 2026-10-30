@@ -111,6 +111,15 @@ Sur les clôtures M5 de la fenêtre : z = (S − moyenne) / écart-type des N de
 |z| > z0 → position vers la moyenne ; stop au niveau correspondant à |z| = z0 + 1,5.
 Grille : N ∈ {48, 96} ; z0 ∈ {2,0 ; 2,5} ; sortie ∈ {objectif = moyenne au signal, 60 min}.
 
+## 3 bis. Correctif du 2026-10-30 (avant le run de développement)
+
+S15 : les extrêmes de minute de la série synthétique étaient pris comme « plus haut de A / plus bas de B »
+(et inversement), un cas irréaliste pour deux actifs corrélés à plus de 0,9, qui sortait presque tous les trades
+au stop. Ils sont remplacés par les extrêmes co-mouvants (haut A / haut B, bas A / bas B, ouverture, clôture).
+Constat fait sur un test de fumée qui, par erreur, couvrait aussi la période finale (une configuration par
+stratégie sur EURUSD, US500 et la paire indices, S9 comprise). Aucune règle de stratégie n'est modifiée ;
+tous les diagnostics suivants sont restreints à la période de développement.
+
 ## 4. Coûts additionnels
 
 GBPUSD : comme EURUSD (fenêtre de confiance 2022 → 2024, plancher 2 points, 3,5 $/lot/côté, glissement 0,2 pip,
