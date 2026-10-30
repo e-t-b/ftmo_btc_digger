@@ -27,7 +27,7 @@ def ts(x: str) -> int:
 def load_prepared() -> dict:
     CACHE.mkdir(exist_ok=True)
     out = {}
-    for s in C.INSTRUMENTS:
+    for s in C.BREAKOUT_SYMBOLS:
         f = CACHE / f"{s}.pkl"
         if f.exists():
             out[s] = pickle.loads(f.read_bytes())
@@ -72,7 +72,8 @@ def tstat(r: np.ndarray) -> float:
 
 def walk_forward(runs: dict, end: str) -> tuple[pd.DataFrame, pd.DataFrame]:
     sel_rows, oos = [], []
-    for s, ic in C.INSTRUMENTS.items():
+    for s in C.BREAKOUT_SYMBOLS:
+        ic = C.INSTRUMENTS[s]
         for a, b, lab in semesters(ic["first_test"], end):
             best, best_t, best_n = None, -np.inf, 0
             for ci in range(len(C.GRID)):
@@ -131,7 +132,7 @@ def run_portfolio(oos: pd.DataFrame, runs: dict, Ps: dict, start: str, end: str)
 def robustness(runs: dict, sel: pd.DataFrame, end: str) -> dict:
     out = {}
     e = ts(end) + 86400
-    for s in C.INSTRUMENTS:
+    for s in C.BREAKOUT_SYMBOLS:
         cs = sel[(sel["symbol"] == s) & sel["traded"]]["ci"]
         if cs.empty:
             continue
@@ -160,7 +161,7 @@ def main():
     end = C.DEV_END
     sel, oos = walk_forward(runs, end)
     sel.to_csv(OUT / "wf_selection.csv", index=False)
-    start = min(ic["first_test"] for ic in C.INSTRUMENTS.values())
+    start = min(C.INSTRUMENTS[s]["first_test"] for s in C.BREAKOUT_SYMBOLS)
     acc, days = run_portfolio(oos, runs, Ps, start, end)
     acc.drop(columns=["pkey"]).to_csv(OUT / "oos_trades_dev.csv", index=False)
     days.to_csv(OUT / "oos_days_dev.csv", index=False)
@@ -168,12 +169,12 @@ def main():
     per_sym = {s: dict(n=int((g := acc[acc["symbol"] == s])["r_eff"].size),
                        expectancy_r=round(float(g["r_eff"].mean()), 4) if len(g) else None,
                        pnl_pct=round(float(g["pnl"].sum() / C.ACCOUNT * 100), 2))
-               for s in C.INSTRUMENTS}
+               for s in C.BREAKOUT_SYMBOLS}
     acc["year"] = pd.to_datetime(acc["entry_t"], unit="s").dt.year
     per_year = acc.groupby("year").agg(n=("r_eff", "size"), exp_r=("r_eff", "mean"),
                                        pnl_pct=("pnl", lambda x: x.sum() / C.ACCOUNT * 100)).round(3)
     # stress des coûts sur les configurations sélectionnées
-    only = {s: set(sel[(sel["symbol"] == s) & sel["traded"]]["ci"].astype(int)) for s in C.INSTRUMENTS}
+    only = {s: set(sel[(sel["symbol"] == s) & sel["traded"]]["ci"].astype(int)) for s in C.BREAKOUT_SYMBOLS}
     runs_st = grid_runs(Ps, spread_mult=1.5, slip_mult=2.0, only=only)
     oos_st = []
     for _, r in sel[sel["traded"]].iterrows():

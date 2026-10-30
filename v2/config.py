@@ -29,6 +29,35 @@ INSTRUMENTS = {
                    leverage=1.0, first_test="2020-07-01", asset="crypto"),
 }
 
+# Indices ajoutés par docs/protocole_jalon_A_intraday.md (§1, §3). "session"/"close_ny" ne servent qu'au breakout.
+INSTRUMENTS.update({
+    "US500.cash": dict(session=("America/New_York", 9, 30), close_ny=(15, 55), usd_side=0, quote="USD",
+                       trust=("2022-01-01", "2026-12-31"), floor_px=0.25,
+                       comm_usd_lot_side=0.0, comm_bps_side=0.0, slip_px=0.25, stop_slip_px=0.75,
+                       leverage=15.0, first_test="2023-07-01", asset="index"),
+    "US30.cash": dict(session=("America/New_York", 9, 30), close_ny=(15, 55), usd_side=0, quote="USD",
+                      trust=("2022-01-01", "2026-12-31"), floor_px=1.5,
+                      comm_usd_lot_side=0.0, comm_bps_side=0.0, slip_px=1.5, stop_slip_px=4.0,
+                      leverage=15.0, first_test="2023-07-01", asset="index"),
+    "GER40.cash": dict(session=("Europe/Berlin", 9, 0), close_ny=(15, 55), usd_side=0, quote="USD",
+                       trust=("2022-02-01", "2026-12-31"), floor_px=1.0,
+                       comm_usd_lot_side=0.0, comm_bps_side=0.0, slip_px=1.0, stop_slip_px=3.0,
+                       leverage=15.0, first_test="2023-07-01", asset="index"),
+})
+BREAKOUT_SYMBOLS = ("EURUSD", "USDJPY", "AUDUSD", "US100.cash", "BTCUSD")
+
+# Séances cash (fuseau, ouverture h, m, clôture h, m) pour H1-H3
+CASH = {"US100.cash": ("America/New_York", 9, 30, 16, 0), "US500.cash": ("America/New_York", 9, 30, 16, 0),
+        "US30.cash": ("America/New_York", 9, 30, 16, 0), "GER40.cash": ("Europe/Berlin", 9, 0, 17, 30),
+        "BTCUSD": ("America/New_York", 9, 30, 16, 0)}
+HYP = {
+    "H1": dict(symbols=("US100.cash", "US500.cash", "US30.cash", "GER40.cash"),
+               keys=("thr", "E", "m"), values=dict(thr=(0.0, 0.2), E=(30, 60), m=(0.25, 0.5))),
+    "H2": dict(symbols=("BTCUSD",), keys=("thr", "E", "m"), values=dict(thr=(0.0, 0.2), E=(30, 60), m=(0.25, 0.5))),
+    "H3": dict(symbols=("US100.cash", "US500.cash", "US30.cash", "GER40.cash"),
+               keys=("lo", "hi", "X"), values=dict(lo=(0.2, 0.3), hi=(0.8, 1.2), X=(30, 60))),
+}
+
 PROFILE_FIT = ("2022-01-01", "2024-06-30")
 PROFILE_Q = 0.75
 DEV_END = "2024-06-30"

@@ -1,0 +1,161 @@
+{
+  "H1": {
+    "symbols": [
+      "US100.cash",
+      "US500.cash",
+      "GER40.cash"
+    ],
+    "period": {
+      "start": "2023-07-01",
+      "end": "2024-06-30"
+    },
+    "metrics": {
+      "n": 0
+    },
+    "stress": {
+      "n": 0
+    },
+    "monte_carlo": {
+      "p_pass": 0.0
+    },
+    "robustness": {},
+    "in_sample_grid": {
+      "US100.cash": {
+        "n_med": 580,
+        "gross_mean": -0.0351,
+        "net_mean": -0.0351,
+        "net_best": 0.0063,
+        "n_configs_pos": 2,
+        "first_data": "2017-12-28"
+      },
+      "US500.cash": {
+        "n_med": 570,
+        "gross_mean": -0.079,
+        "net_mean": -0.079,
+        "net_best": -0.0316,
+        "n_configs_pos": 0,
+        "first_data": "2017-12-28"
+      },
+      "GER40.cash": {
+        "n_med": 525,
+        "gross_mean": -0.073,
+        "net_mean": -0.073,
+        "net_best": -0.0424,
+        "n_configs_pos": 0,
+        "first_data": "2017-12-27"
+      }
+    },
+    "checks": {
+      "1_trades>=300": false,
+      "2_expectancy>0_t>=2": false,
+      "3_PF>=1.3": false,
+      "4_maxDD<=6%": false,
+      "5_MC_pass>=50%": false,
+      "6_stress_expectancy>0": false,
+      "7_robustness": false
+    },
+    "dev_pass": false,
+    "semesters_traded": 0,
+    "semesters_total": 6
+  },
+  "H2": {
+    "symbols": [
+      "BTCUSD"
+    ],
+    "period": {
+      "start": "2020-07-01",
+      "end": "2024-06-30"
+    },
+    "metrics": {
+      "n": 0
+    },
+    "stress": {
+      "n": 0
+    },
+    "monte_carlo": {
+      "p_pass": 0.0
+    },
+    "robustness": {},
+    "in_sample_grid": {
+      "BTCUSD": {
+        "n_med": 1253,
+        "gross_mean": -0.054,
+        "net_mean": -0.0934,
+        "net_best": -0.0626,
+        "n_configs_pos": 0,
+        "first_data": "2014-12-31"
+      }
+    },
+    "checks": {
+      "1_trades>=300": false,
+      "2_expectancy>0_t>=2": false,
+      "3_PF>=1.3": false,
+      "4_maxDD<=6%": false,
+      "5_MC_pass>=50%": false,
+      "6_stress_expectancy>0": false,
+      "7_robustness": false
+    },
+    "dev_pass": false,
+    "semesters_traded": 0,
+    "semesters_total": 8
+  },
+  "H3": {
+    "symbols": [
+      "US100.cash",
+      "US500.cash",
+      "GER40.cash"
+    ],
+    "period": {
+      "start": "2023-07-01",
+      "end": "2024-06-30"
+    },
+    "metrics": {
+      "n": 0
+    },
+    "stress": {
+      "n": 0
+    },
+    "monte_carlo": {
+      "p_pass": 0.0
+    },
+    "robustness": {},
+    "in_sample_grid": {
+      "US100.cash": {
+        "n_med": 347,
+        "gross_mean": -0.0635,
+        "net_mean": -0.0635,
+        "net_best": -0.0571,
+        "n_configs_pos": 0,
+        "first_data": "2017-12-28"
+      },
+      "US500.cash": {
+        "n_med": 357,
+        "gross_mean": -0.0911,
+        "net_mean": -0.0911,
+        "net_best": -0.0696,
+        "n_configs_pos": 0,
+        "first_data": "2017-12-28"
+      },
+      "GER40.cash": {
+        "n_med": 313,
+        "gross_mean": -0.0396,
+        "net_mean": -0.0396,
+        "net_best": -0.0123,
+        "n_configs_pos": 0,
+        "first_data": "2017-12-27"
+      }
+    },
+    "checks": {
+      "1_trades>=300": false,
+      "2_expectancy>0_t>=2": false,
+      "3_PF>=1.3": false,
+      "4_maxDD<=6%": false,
+      "5_MC_pass>=50%": false,
+      "6_stress_expectancy>0": false,
+      "7_robustness": false
+    },
+    "dev_pass": false,
+    "semesters_traded": 0,
+    "semesters_total": 6
+  }
+}

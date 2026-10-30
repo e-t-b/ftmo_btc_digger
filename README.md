@@ -15,7 +15,8 @@ Recherche et bot MT5 pour le FTMO 2-Step (compte démo). Aucune donnée brute ni
 - `v2/` : chargement des M1 FTMO, coûts, breakout de session, portefeuille + module de risque, simulateur FTMO, jalon A.
 - `tests_v2/` : tests de la mécanique (`python -m pytest tests_v2`).
 - `reports_v2/jalon_a_dev.md` : résultat du jalon A — **NO-GO** (espérance hors échantillon −0,064 R).
+- `docs/protocole_jalon_A_intraday.md`, `v2/intraday.py`, `reports_v2/jalon_a_intraday_dev.md` : hypothèses intraday H1-H3 (momentum de fin de séance, BTCUSD, comblement de gap) — **NO-GO**, aucun semestre tradé.
 
 Données attendues dans `data/m1/<SYMBOLE>.npz` + `<SYMBOLE>_spec.json` (non versionnées).
 
-État : aucun avantage validé hors échantillon à ce jour (forex, BTC, US100, breakout de session v2). Ne pas acheter le challenge avant validation.
+État : aucun avantage validé hors échantillon à ce jour (forex, BTC, indices : breakout de session, momentum de fin de séance, comblement de gap). Ne pas acheter le challenge avant validation.
