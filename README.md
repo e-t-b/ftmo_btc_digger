@@ -16,6 +16,7 @@ Recherche et bot MT5 pour le FTMO 2-Step (compte démo). Aucune donnée brute ni
 - `tests_v2/` : tests de la mécanique (`python -m pytest tests_v2`).
 - `reports_v2/jalon_a_dev.md` : résultat du jalon A — **NO-GO** (espérance hors échantillon −0,064 R).
 - `docs/protocole_catalogue.md`, `v2/catalogue.py`, `v2/catalogue_run.py`, `reports_v2/catalogue_dev.md` : catalogue de 15 stratégies intraday, correction de Holm sur 19 — **NO-GO**, aucune survivante.
+- `docs/protocole_lot2.md` … `lot4.md`, `v2/lot2.py` … `lot4.py`, `v2/lot_run.py`, `reports_v2/recherche_lots.md` : lots 2-4 (stratégies publiées, Crabel, calendrier, journée de tendance) — aucun candidat sur une famille cumulée de 30 stratégies (`reports_v2/famille.json`).
 - `data/calendar/` : dates FOMC (federalreserve.gov), NFP et CPI (bls.gov).
 - `docs/protocole_jalon_A_intraday.md`, `v2/intraday.py`, `reports_v2/jalon_a_intraday_dev.md` : hypothèses intraday H1-H3 (momentum de fin de séance, BTCUSD, comblement de gap) — **NO-GO**, aucun semestre tradé.
 

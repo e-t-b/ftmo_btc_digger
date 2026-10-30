@@ -1,0 +1,167 @@
+{
+  "lot": "lot4",
+  "family_size": 30,
+  "strategies": {
+    "S24": {
+      "metrics": {
+        "n": 42,
+        "expectancy_r": -0.3508,
+        "pf": 0.565,
+        "hit": 0.238,
+        "total_pct": -7.29,
+        "max_dd_pct": -14.07,
+        "max_dd_intraday_pct": -14.34,
+        "worst_day_pct": -1.16,
+        "worst_intraday_day_pct": -1.16,
+        "day_stops": 0,
+        "t_stat": -1.413,
+        "p": 0.9212452093437087
+      },
+      "monte_carlo": {
+        "p_pass": 0.00195,
+        "p_fail_phase1": 0.0274,
+        "p_fail_phase2": 0.0003,
+        "p_unresolved": 0.97035,
+        "median_days_phase1": 185.0,
+        "median_days_total": 329.0
+      },
+      "per_symbol": [
+        {
+          "symbol": "US100.cash",
+          "n": 22,
+          "exp_r": -0.3913
+        },
+        {
+          "symbol": "US500.cash",
+          "n": 20,
+          "exp_r": -0.3063
+        }
+      ],
+      "start": "2021-09-14",
+      "stress": {
+        "n": 41,
+        "expectancy_r": -0.3853,
+        "pf": 0.538,
+        "t_stat": -1.547
+      },
+      "holm": {
+        "p": 0.9212452093437087,
+        "threshold": 0.0035714285714285718,
+        "significant": false
+      }
+    },
+    "S25": {
+      "metrics": {
+        "n": 30,
+        "expectancy_r": 0.0708,
+        "pf": 1.215,
+        "hit": 0.6,
+        "total_pct": 1.05,
+        "max_dd_pct": -2.58,
+        "max_dd_intraday_pct": -2.74,
+        "worst_day_pct": -1.24,
+        "worst_intraday_day_pct": -1.3,
+        "day_stops": 0,
+        "t_stat": 0.441,
+        "p": 0.3297557081218965
+      },
+      "monte_carlo": {
+        "p_pass": 0.0,
+        "p_fail_phase1": 0.0,
+        "p_fail_phase2": 0.0,
+        "p_unresolved": 1.0,
+        "median_days_phase1": NaN,
+        "median_days_total": NaN
+      },
+      "per_symbol": [
+        {
+          "symbol": "GER40.cash",
+          "n": 9,
+          "exp_r": -0.033
+        },
+        {
+          "symbol": "US100.cash",
+          "n": 8,
+          "exp_r": 0.0612
+        },
+        {
+          "symbol": "US500.cash",
+          "n": 13,
+          "exp_r": 0.1485
+        }
+      ],
+      "start": "2021-09-14",
+      "stress": {
+        "n": 30,
+        "expectancy_r": 0.0438,
+        "pf": 1.128,
+        "t_stat": 0.272
+      },
+      "holm": {
+        "p": 0.3297557081218965,
+        "threshold": 0.0019230769230769232,
+        "significant": false
+      }
+    },
+    "S26": {
+      "metrics": {
+        "n": 416,
+        "expectancy_r": 0.0416,
+        "pf": 1.183,
+        "hit": 0.534,
+        "total_pct": 8.55,
+        "max_dd_pct": -2.63,
+        "max_dd_intraday_pct": -2.7,
+        "worst_day_pct": -1.17,
+        "worst_intraday_day_pct": -1.37,
+        "day_stops": 0,
+        "t_stat": 1.333,
+        "p": 0.09121441487110138
+      },
+      "monte_carlo": {
+        "p_pass": 5e-05,
+        "p_fail_phase1": 0.0,
+        "p_fail_phase2": 0.0,
+        "p_unresolved": 0.99995,
+        "median_days_phase1": 247.0,
+        "median_days_total": 379.0
+      },
+      "per_symbol": [
+        {
+          "symbol": "BTCUSD",
+          "n": 79,
+          "exp_r": -0.0529
+        },
+        {
+          "symbol": "GER40.cash",
+          "n": 76,
+          "exp_r": 0.0221
+        },
+        {
+          "symbol": "US100.cash",
+          "n": 144,
+          "exp_r": 0.0561
+        },
+        {
+          "symbol": "US500.cash",
+          "n": 117,
+          "exp_r": 0.1001
+        }
+      ],
+      "start": "2017-04-05",
+      "stress": {
+        "n": 416,
+        "expectancy_r": 0.0235,
+        "pf": 1.1,
+        "t_stat": 0.758
+      },
+      "holm": {
+        "p": 0.09121441487110138,
+        "threshold": 0.0016666666666666668,
+        "significant": false
+      }
+    }
+  },
+  "candidates": [],
+  "pistes": []
+}
