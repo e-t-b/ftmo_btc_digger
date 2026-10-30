@@ -1,0 +1,106 @@
+[
+ {
+  "semester": "2018-S1",
+  "n_train": 17748,
+  "n_test": 3180,
+  "n_selected": 1074,
+  "mean_r_selected": -0.0608,
+  "mean_r_all": -0.0806
+ },
+ {
+  "semester": "2018-S2",
+  "n_train": 20928,
+  "n_test": 3140,
+  "n_selected": 893,
+  "mean_r_selected": -0.1658,
+  "mean_r_all": -0.1638
+ },
+ {
+  "semester": "2019-S1",
+  "n_train": 24052,
+  "n_test": 2005,
+  "n_selected": 643,
+  "mean_r_selected": -0.1225,
+  "mean_r_all": -0.104
+ },
+ {
+  "semester": "2019-S2",
+  "n_train": 26073,
+  "n_test": 2191,
+  "n_selected": 400,
+  "mean_r_selected": -0.1002,
+  "mean_r_all": -0.0596
+ },
+ {
+  "semester": "2020-S1",
+  "n_train": 28258,
+  "n_test": 3152,
+  "n_selected": 870,
+  "mean_r_selected": 0.0653,
+  "mean_r_all": -0.0358
+ },
+ {
+  "semester": "2020-S2",
+  "n_train": 31416,
+  "n_test": 3278,
+  "n_selected": 580,
+  "mean_r_selected": -0.0954,
+  "mean_r_all": -0.1348
+ },
+ {
+  "semester": "2021-S1",
+  "n_train": 34694,
+  "n_test": 3277,
+  "n_selected": 1099,
+  "mean_r_selected": -0.0492,
+  "mean_r_all": -0.0725
+ },
+ {
+  "semester": "2021-S2",
+  "n_train": 37971,
+  "n_test": 4744,
+  "n_selected": 1003,
+  "mean_r_selected": -0.0891,
+  "mean_r_all": -0.0712
+ },
+ {
+  "semester": "2022-S1",
+  "n_train": 42715,
+  "n_test": 6857,
+  "n_selected": 1958,
+  "mean_r_selected": 0.0423,
+  "mean_r_all": -0.0168
+ },
+ {
+  "semester": "2022-S2",
+  "n_train": 49572,
+  "n_test": 6788,
+  "n_selected": 1744,
+  "mean_r_selected": 0.0513,
+  "mean_r_all": -0.0262
+ },
+ {
+  "semester": "2023-S1",
+  "n_train": 56360,
+  "n_test": 6665,
+  "n_selected": 2151,
+  "mean_r_selected": -0.0314,
+  "mean_r_all": -0.1058
+ },
+ {
+  "semester": "2023-S2",
+  "n_train": 63025,
+  "n_test": 6629,
+  "n_selected": 1294,
+  "mean_r_selected": -0.0122,
+  "mean_r_all": -0.0936
+ },
+ {
+  "semester": "2024-S1",
+  "n_train": 69654,
+  "n_test": 6408,
+  "n_selected": 1668,
+  "mean_r_selected": -0.1264,
+  "mean_r_all": -0.1147
+ }
+]

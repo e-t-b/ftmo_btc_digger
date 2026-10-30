@@ -1,0 +1,24 @@
+{
+  "metrics": {
+    "n": 6587,
+    "expectancy_r": -0.0664,
+    "pf": 0.875,
+    "hit": 0.379,
+    "total_pct": -217.73,
+    "max_dd_pct": -233.91,
+    "max_dd_intraday_pct": -234.57,
+    "worst_day_pct": -2.86,
+    "worst_intraday_day_pct": -2.86,
+    "day_stops": 207,
+    "t_stat": -3.952,
+    "p": 0.9999611816907665
+  },
+  "monte_carlo": {
+    "p_pass": 0.0418,
+    "p_fail_phase1": 0.8606,
+    "p_fail_phase2": 0.0968,
+    "p_unresolved": 0.0008,
+    "median_days_phase1": 33.0,
+    "median_days_total": 53.0
+  }
+}
