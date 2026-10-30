@@ -1,0 +1,291 @@
+{
+  "S2 volatility breakout": {
+    "dukascopy": {
+      "n": 2485,
+      "R": 0.0249,
+      "t": 0.88,
+      "corr_S26": 0.229,
+      "R_jours_perdants_S26": -0.222
+    },
+    "ftmo": {
+      "n": 950,
+      "R": 0.0053,
+      "t": 0.1,
+      "corr_S26": 0.266,
+      "R_jours_perdants_S26": -0.164
+    },
+    "retenu": false
+  },
+  "S3 cassure veille": {
+    "dukascopy": {
+      "n": 4459,
+      "R": -0.0485,
+      "t": -2.02,
+      "corr_S26": 0.301,
+      "R_jours_perdants_S26": -0.698
+    },
+    "ftmo": {
+      "n": 1573,
+      "R": -0.0349,
+      "t": -0.86,
+      "corr_S26": 0.301,
+      "R_jours_perdants_S26": -0.457
+    },
+    "retenu": false
+  },
+  "S4 Donchian H1": {
+    "dukascopy": {
+      "n": 3325,
+      "R": -0.023,
+      "t": -1.18,
+      "corr_S26": 0.452,
+      "R_jours_perdants_S26": -0.7
+    },
+    "ftmo": {
+      "n": 1296,
+      "R": 0.0281,
+      "t": 0.81,
+      "corr_S26": 0.503,
+      "R_jours_perdants_S26": -0.858
+    },
+    "retenu": false
+  },
+  "S5 VWAP": {
+    "dukascopy": {
+      "n": 4047,
+      "R": -0.223,
+      "t": -8.92,
+      "corr_S26": -0.024,
+      "R_jours_perdants_S26": -0.951
+    },
+    "ftmo": {
+      "n": 1521,
+      "R": -0.277,
+      "t": -7.02,
+      "corr_S26": -0.048,
+      "R_jours_perdants_S26": -0.953
+    },
+    "retenu": false
+  },
+  "S6 Bollinger range": {
+    "dukascopy": {
+      "n": 1970,
+      "R": -0.1798,
+      "t": -5.83,
+      "corr_S26": -0.039,
+      "R_jours_perdants_S26": -0.442
+    },
+    "ftmo": {
+      "n": 617,
+      "R": -0.2142,
+      "t": -4.11,
+      "corr_S26": -0.063,
+      "R_jours_perdants_S26": -0.381
+    },
+    "retenu": false
+  },
+  "S7 Turtle Soup": {
+    "dukascopy": {
+      "n": 2811,
+      "R": -0.0534,
+      "t": -2.18,
+      "corr_S26": 0.054,
+      "R_jours_perdants_S26": -0.04
+    },
+    "ftmo": {
+      "n": 1017,
+      "R": -0.1109,
+      "t": -2.82,
+      "corr_S26": 0.07,
+      "R_jours_perdants_S26": -0.094
+    },
+    "retenu": false
+  },
+  "S8 IBS": {
+    "dukascopy": {
+      "n": 3976,
+      "R": -0.1106,
+      "t": -7.83,
+      "corr_S26": -0.092,
+      "R_jours_perdants_S26": -0.208
+    },
+    "ftmo": {
+      "n": 1501,
+      "R": -0.0878,
+      "t": -3.34,
+      "corr_S26": -0.177,
+      "R_jours_perdants_S26": -0.049
+    },
+    "retenu": false
+  },
+  "S9 retournement fin de s\u00e9ance": {
+    "dukascopy": {
+      "n": 6107,
+      "R": -0.0311,
+      "t": -7.72,
+      "corr_S26": 0.011,
+      "R_jours_perdants_S26": -0.035
+    },
+    "ftmo": {
+      "n": 2016,
+      "R": -0.0053,
+      "t": -0.72,
+      "corr_S26": -0.017,
+      "R_jours_perdants_S26": 0.06
+    },
+    "retenu": false
+  },
+  "S10 avant Fed": {
+    "dukascopy": {
+      "n": 193,
+      "R": -0.2275,
+      "t": -5.28,
+      "corr_S26": 0.027,
+      "R_jours_perdants_S26": 0.57
+    },
+    "ftmo": {
+      "n": 65,
+      "R": 0.0422,
+      "t": 0.62,
+      "corr_S26": -0.023,
+      "R_jours_perdants_S26": 0.797
+    },
+    "retenu": false
+  },
+  "S11 tournant de mois": {
+    "dukascopy": {
+      "n": 1176,
+      "R": -0.0667,
+      "t": -2.19,
+      "corr_S26": 0.088,
+      "R_jours_perdants_S26": -0.774
+    },
+    "ftmo": {
+      "n": 394,
+      "R": 0.017,
+      "t": 0.31,
+      "corr_S26": 0.085,
+      "R_jours_perdants_S26": -0.177
+    },
+    "retenu": false
+  },
+  "S16 ORB 5 min": {
+    "dukascopy": {
+      "n": 5613,
+      "R": -0.0593,
+      "t": -1.84,
+      "corr_S26": 0.248,
+      "R_jours_perdants_S26": -0.229
+    },
+    "ftmo": {
+      "n": 1964,
+      "R": -0.0758,
+      "t": -1.41,
+      "corr_S26": 0.19,
+      "R_jours_perdants_S26": 0.159
+    },
+    "retenu": false
+  },
+  "S17 Noise Area": {
+    "dukascopy": {
+      "n": 6058,
+      "R": 0.0189,
+      "t": 1.04,
+      "corr_S26": 0.489,
+      "R_jours_perdants_S26": -0.883
+    },
+    "ftmo": {
+      "n": 2178,
+      "R": -0.0013,
+      "t": -0.05,
+      "corr_S26": 0.502,
+      "R_jours_perdants_S26": -0.82
+    },
+    "retenu": false
+  },
+  "S21 stretch Crabel": {
+    "dukascopy": {
+      "n": 4246,
+      "R": -0.0089,
+      "t": -0.82,
+      "corr_S26": 0.483,
+      "R_jours_perdants_S26": -0.382
+    },
+    "ftmo": {
+      "n": 1572,
+      "R": -0.0023,
+      "t": -0.13,
+      "corr_S26": 0.414,
+      "R_jours_perdants_S26": -0.277
+    },
+    "retenu": false
+  },
+  "S23 ORB NR7": {
+    "dukascopy": {
+      "n": 737,
+      "R": -0.0858,
+      "t": -2.23,
+      "corr_S26": 0.088,
+      "R_jours_perdants_S26": -0.122
+    },
+    "ftmo": {
+      "n": 212,
+      "R": -0.0591,
+      "t": -0.83,
+      "corr_S26": 0.128,
+      "R_jours_perdants_S26": -0.356
+    },
+    "retenu": false
+  },
+  "S24 apr\u00e8s Fed": {
+    "dukascopy": {
+      "n": 118,
+      "R": 0.0839,
+      "t": 0.4,
+      "corr_S26": -0.015,
+      "R_jours_perdants_S26": 0.446
+    },
+    "ftmo": {
+      "n": 42,
+      "R": -0.3508,
+      "t": -1.41,
+      "corr_S26": 0.015,
+      "R_jours_perdants_S26": -1.859
+    },
+    "retenu": false
+  },
+  "S25 veille f\u00e9ri\u00e9": {
+    "dukascopy": {
+      "n": 159,
+      "R": 0.0581,
+      "t": 0.82,
+      "corr_S26": -0.004,
+      "R_jours_perdants_S26": 0.436
+    },
+    "ftmo": {
+      "n": 30,
+      "R": 0.0708,
+      "t": 0.44,
+      "corr_S26": 0.011,
+      "R_jours_perdants_S26": -0.563
+    },
+    "retenu": true
+  },
+  "S27 r\u00e9int\u00e9gration OPR": {
+    "dukascopy": {
+      "n": 2385,
+      "R": -0.0863,
+      "t": -3.3,
+      "corr_S26": 0.002,
+      "R_jours_perdants_S26": -0.226
+    },
+    "ftmo": {
+      "n": 745,
+      "R": -0.1138,
+      "t": -2.48,
+      "corr_S26": -0.019,
+      "R_jours_perdants_S26": -0.215
+    },
+    "retenu": false
+  }
+}
