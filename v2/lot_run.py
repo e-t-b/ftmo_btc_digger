@@ -39,6 +39,9 @@ def lot_modules(name):
     if name == "lot4":
         from . import lot4
         return lot4.LOT, lot4.run
+    if name == "lot5":
+        from . import lot5
+        return lot5.LOT, lot5.run
     raise SystemExit(f"lot inconnu : {name}")
 
 
