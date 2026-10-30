@@ -1,0 +1,576 @@
+{
+  "window": {
+    "start": "2013-01-02",
+    "end": "2021-08-31"
+  },
+  "confirmatory": {
+    "S2": {
+      "metrics": {
+        "n": 2485,
+        "expectancy_r": 0.0249,
+        "pf": 1.055,
+        "hit": 0.444,
+        "total_pct": 30.69,
+        "max_dd_pct": -22.84,
+        "max_dd_intraday_pct": -23.31,
+        "worst_day_pct": -2.04,
+        "worst_intraday_day_pct": -2.04,
+        "day_stops": 1,
+        "t_stat": 0.881,
+        "p": 0.18919448345437195
+      },
+      "monte_carlo": {
+        "p_pass": 0.1919,
+        "p_fail_phase1": 0.3419,
+        "p_fail_phase2": 0.11495,
+        "p_unresolved": 0.35125,
+        "median_days_phase1": 108.0,
+        "median_days_total": 182.0
+      },
+      "per_symbol": [
+        {
+          "symbol": "DK_GER40",
+          "n": 803,
+          "exp_r": 0.0507
+        },
+        {
+          "symbol": "DK_US100",
+          "n": 860,
+          "exp_r": 0.0969
+        },
+        {
+          "symbol": "DK_US500",
+          "n": 822,
+          "exp_r": -0.0756
+        }
+      ],
+      "per_year": [
+        {
+          "year": 2013,
+          "size": 141,
+          "mean": -0.249
+        },
+        {
+          "year": 2014,
+          "size": 287,
+          "mean": 0.069
+        },
+        {
+          "year": 2015,
+          "size": 316,
+          "mean": -0.047
+        },
+        {
+          "year": 2016,
+          "size": 309,
+          "mean": 0.064
+        },
+        {
+          "year": 2017,
+          "size": 291,
+          "mean": 0.028
+        },
+        {
+          "year": 2018,
+          "size": 317,
+          "mean": 0.168
+        },
+        {
+          "year": 2019,
+          "size": 310,
+          "mean": -0.038
+        },
+        {
+          "year": 2020,
+          "size": 324,
+          "mean": -0.002
+        },
+        {
+          "year": 2021,
+          "size": 190,
+          "mean": 0.125
+        }
+      ],
+      "stress": {
+        "n": 2414,
+        "expectancy_r": -0.0074
+      },
+      "holm": {
+        "p": 0.18919448345437195,
+        "threshold": 0.0125,
+        "significant": false
+      },
+      "confirmed": false
+    },
+    "S10": {
+      "metrics": {
+        "n": 131,
+        "expectancy_r": -0.2971,
+        "pf": 0.31,
+        "hit": 0.305,
+        "total_pct": -19.43,
+        "max_dd_pct": -19.43,
+        "max_dd_intraday_pct": -19.5,
+        "worst_day_pct": -1.05,
+        "worst_intraday_day_pct": -1.05,
+        "day_stops": 0,
+        "t_stat": -5.581,
+        "p": 0.9999999880636222
+      },
+      "monte_carlo": {
+        "p_pass": 0.0,
+        "p_fail_phase1": 0.0,
+        "p_fail_phase2": 0.0,
+        "p_unresolved": 1.0,
+        "median_days_phase1": NaN,
+        "median_days_total": NaN
+      },
+      "per_symbol": [
+        {
+          "symbol": "DK_US100",
+          "n": 66,
+          "exp_r": -0.3121
+        },
+        {
+          "symbol": "DK_US500",
+          "n": 65,
+          "exp_r": -0.2818
+        }
+      ],
+      "per_year": [
+        {
+          "year": 2013,
+          "size": 11,
+          "mean": -0.581
+        },
+        {
+          "year": 2014,
+          "size": 16,
+          "mean": -0.051
+        },
+        {
+          "year": 2015,
+          "size": 16,
+          "mean": -0.388
+        },
+        {
+          "year": 2016,
+          "size": 16,
+          "mean": -0.359
+        },
+        {
+          "year": 2017,
+          "size": 16,
+          "mean": -0.542
+        },
+        {
+          "year": 2018,
+          "size": 16,
+          "mean": 0.092
+        },
+        {
+          "year": 2019,
+          "size": 16,
+          "mean": -0.361
+        },
+        {
+          "year": 2020,
+          "size": 14,
+          "mean": 0.006
+        },
+        {
+          "year": 2021,
+          "size": 10,
+          "mean": -0.685
+        }
+      ],
+      "stress": {
+        "n": 131,
+        "expectancy_r": -0.3277
+      },
+      "holm": {
+        "p": 0.9999999880636222,
+        "threshold": 0.05,
+        "significant": false
+      },
+      "confirmed": false
+    },
+    "S11": {
+      "metrics": {
+        "n": 1176,
+        "expectancy_r": -0.0667,
+        "pf": 0.859,
+        "hit": 0.435,
+        "total_pct": -39.17,
+        "max_dd_pct": -57.43,
+        "max_dd_intraday_pct": -57.51,
+        "worst_day_pct": -2.72,
+        "worst_intraday_day_pct": -2.72,
+        "day_stops": 2,
+        "t_stat": -2.192,
+        "p": 0.9858209944328916
+      },
+      "monte_carlo": {
+        "p_pass": 0.01475,
+        "p_fail_phase1": 0.31515,
+        "p_fail_phase2": 0.0186,
+        "p_unresolved": 0.6515,
+        "median_days_phase1": 157.0,
+        "median_days_total": 267.0
+      },
+      "per_symbol": [
+        {
+          "symbol": "DK_GER40",
+          "n": 376,
+          "exp_r": -0.0334
+        },
+        {
+          "symbol": "DK_US100",
+          "n": 402,
+          "exp_r": -0.0347
+        },
+        {
+          "symbol": "DK_US500",
+          "n": 398,
+          "exp_r": -0.1304
+        }
+      ],
+      "per_year": [
+        {
+          "year": 2013,
+          "size": 73,
+          "mean": -0.004
+        },
+        {
+          "year": 2014,
+          "size": 144,
+          "mean": -0.226
+        },
+        {
+          "year": 2015,
+          "size": 144,
+          "mean": -0.263
+        },
+        {
+          "year": 2016,
+          "size": 144,
+          "mean": -0.183
+        },
+        {
+          "year": 2017,
+          "size": 144,
+          "mean": -0.015
+        },
+        {
+          "year": 2018,
+          "size": 144,
+          "mean": 0.001
+        },
+        {
+          "year": 2019,
+          "size": 144,
+          "mean": -0.023
+        },
+        {
+          "year": 2020,
+          "size": 143,
+          "mean": 0.256
+        },
+        {
+          "year": 2021,
+          "size": 96,
+          "mean": -0.131
+        }
+      ],
+      "stress": {
+        "n": 1176,
+        "expectancy_r": -0.1026
+      },
+      "holm": {
+        "p": 0.9858209944328916,
+        "threshold": 0.025,
+        "significant": false
+      },
+      "confirmed": false
+    },
+    "S25": {
+      "metrics": {
+        "n": 159,
+        "expectancy_r": 0.0581,
+        "pf": 1.174,
+        "hit": 0.547,
+        "total_pct": 4.6,
+        "max_dd_pct": -4.76,
+        "max_dd_intraday_pct": -4.83,
+        "worst_day_pct": -2.15,
+        "worst_intraday_day_pct": -2.15,
+        "day_stops": 1,
+        "t_stat": 0.815,
+        "p": 0.20750410200142988
+      },
+      "monte_carlo": {
+        "p_pass": 0.0,
+        "p_fail_phase1": 0.0,
+        "p_fail_phase2": 0.0,
+        "p_unresolved": 1.0,
+        "median_days_phase1": NaN,
+        "median_days_total": NaN
+      },
+      "per_symbol": [
+        {
+          "symbol": "DK_GER40",
+          "n": 30,
+          "exp_r": 0.1932
+        },
+        {
+          "symbol": "DK_US100",
+          "n": 51,
+          "exp_r": -0.078
+        },
+        {
+          "symbol": "DK_US500",
+          "n": 78,
+          "exp_r": 0.0952
+        }
+      ],
+      "per_year": [
+        {
+          "year": 2013,
+          "size": 25,
+          "mean": 0.288
+        },
+        {
+          "year": 2014,
+          "size": 25,
+          "mean": -0.186
+        },
+        {
+          "year": 2015,
+          "size": 16,
+          "mean": -0.073
+        },
+        {
+          "year": 2016,
+          "size": 18,
+          "mean": 0.064
+        },
+        {
+          "year": 2017,
+          "size": 26,
+          "mean": -0.16
+        },
+        {
+          "year": 2018,
+          "size": 16,
+          "mean": 0.102
+        },
+        {
+          "year": 2019,
+          "size": 14,
+          "mean": 0.328
+        },
+        {
+          "year": 2020,
+          "size": 12,
+          "mean": 0.143
+        },
+        {
+          "year": 2021,
+          "size": 7,
+          "mean": 0.415
+        }
+      ],
+      "stress": {
+        "n": 159,
+        "expectancy_r": 0.0267
+      },
+      "holm": {
+        "p": 0.20750410200142988,
+        "threshold": 0.016666666666666666,
+        "significant": false
+      },
+      "confirmed": false
+    },
+    "S26": {
+      "metrics": {
+        "n": 841,
+        "expectancy_r": 0.0441,
+        "pf": 1.172,
+        "hit": 0.533,
+        "total_pct": 18.45,
+        "max_dd_pct": -9.08,
+        "max_dd_intraday_pct": -9.62,
+        "worst_day_pct": -1.03,
+        "worst_intraday_day_pct": -1.13,
+        "day_stops": 0,
+        "t_stat": 1.734,
+        "p": 0.041431807202330306
+      },
+      "monte_carlo": {
+        "p_pass": 0.00365,
+        "p_fail_phase1": 0.0014,
+        "p_fail_phase2": 0.0,
+        "p_unresolved": 0.99495,
+        "median_days_phase1": 211.0,
+        "median_days_total": 379.0
+      },
+      "per_symbol": [
+        {
+          "symbol": "DK_GER40",
+          "n": 231,
+          "exp_r": 0.0504
+        },
+        {
+          "symbol": "DK_US100",
+          "n": 339,
+          "exp_r": 0.0506
+        },
+        {
+          "symbol": "DK_US500",
+          "n": 271,
+          "exp_r": 0.0308
+        }
+      ],
+      "per_year": [
+        {
+          "year": 2013,
+          "size": 46,
+          "mean": 0.003
+        },
+        {
+          "year": 2014,
+          "size": 114,
+          "mean": 0.054
+        },
+        {
+          "year": 2015,
+          "size": 101,
+          "mean": 0.079
+        },
+        {
+          "year": 2016,
+          "size": 102,
+          "mean": -0.072
+        },
+        {
+          "year": 2017,
+          "size": 81,
+          "mean": -0.015
+        },
+        {
+          "year": 2018,
+          "size": 113,
+          "mean": 0.14
+        },
+        {
+          "year": 2019,
+          "size": 111,
+          "mean": 0.006
+        },
+        {
+          "year": 2020,
+          "size": 102,
+          "mean": 0.046
+        },
+        {
+          "year": 2021,
+          "size": 71,
+          "mean": 0.144
+        }
+      ],
+      "stress": {
+        "n": 841,
+        "expectancy_r": 0.0235
+      },
+      "holm": {
+        "p": 0.041431807202330306,
+        "threshold": 0.01,
+        "significant": false
+      },
+      "confirmed": false
+    }
+  },
+  "exploratory": {
+    "S3": {
+      "n": 4459,
+      "expectancy_r": -0.0485,
+      "t": -2.02
+    },
+    "S4": {
+      "n": 3325,
+      "expectancy_r": -0.023,
+      "t": -1.18
+    },
+    "S5": {
+      "n": 4047,
+      "expectancy_r": -0.223,
+      "t": -8.92
+    },
+    "S6": {
+      "n": 1970,
+      "expectancy_r": -0.1798,
+      "t": -5.83
+    },
+    "S7": {
+      "n": 2811,
+      "expectancy_r": -0.0534,
+      "t": -2.18
+    },
+    "S8": {
+      "n": 3976,
+      "expectancy_r": -0.1106,
+      "t": -7.83
+    },
+    "S9": {
+      "n": 6107,
+      "expectancy_r": -0.0311,
+      "t": -7.72
+    },
+    "S16": {
+      "n": 5613,
+      "expectancy_r": -0.0593,
+      "t": -1.84
+    },
+    "S17": {
+      "n": 6058,
+      "expectancy_r": 0.0189,
+      "t": 1.04
+    },
+    "S21": {
+      "n": 4246,
+      "expectancy_r": -0.0089,
+      "t": -0.82
+    },
+    "S22": {
+      "n": 474,
+      "expectancy_r": -0.0179,
+      "t": -0.6
+    },
+    "S23": {
+      "n": 737,
+      "expectancy_r": -0.0858,
+      "t": -2.23
+    },
+    "S24": {
+      "n": 118,
+      "expectancy_r": 0.0839,
+      "t": 0.4
+    },
+    "S27": {
+      "n": 2385,
+      "expectancy_r": -0.0863,
+      "t": -3.3
+    },
+    "S28": {
+      "n": 2367,
+      "expectancy_r": -0.0763,
+      "t": -2.92
+    },
+    "S15": {
+      "n": 527,
+      "expectancy_r": -0.3411,
+      "t": -6.6
+    }
+  },
+  "confirmed": []
+}
