@@ -42,3 +42,17 @@ Stop 0,25 × ATR D1. (L'étude conditionne ce trade au profit réalisé avant 9:
 **S20 — BTC 21:00 → 23:00 UTC** (Quantpedia : heures 22:00 et 23:00 UTC les plus fortes, 2015-2022).
 Long tous les jours (week-ends compris) à 21:00 UTC, sortie à 23:00 UTC. Stop 0,5 × ATR D1.
 Le trade peut franchir le reset FTMO de minuit à Prague en été ; il est rattaché au jour de son entrée.
+
+## 3. Correctif du 2026-10-30 (après le premier run, avant toute décision)
+
+Le premier run de S20 incluait des journées où FTMO ne fournit pas de minutes (BTCUSD : une barre par jour avant
+avril 2017, week-ends mal couverts jusqu'en 2021), ce qui produisait des « trades » de plusieurs jours.
+Ajout de la règle de validité déjà appliquée aux autres stratégies : au moins 80 % des minutes de la fenêtre
+présentes (S18, S19, S20). Aucune règle de trading n'est modifiée.
+
+## 4. Constat après le second run (information, aucune décision changée)
+
+S20 reste fortement négative. Cause identifiée : de 2017 à 2021, la minute du rollover du serveur FTMO (22:00 UTC
+l'hiver, 21:00 l'été) contient sur BTCUSD des mèches aberrantes (jusqu'à −20 % en une minute) qui déclenchent le stop.
+Sur la période propre (2022-01 → 2024-06), S20 vaut encore −0,09 R (t = −3,5) : en été, l'entrée tombe au rollover,
+où le spread s'élargit. Le résultat officiel reste celui du protocole (p = 1).
